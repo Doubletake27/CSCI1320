@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	float area;
+	double area;
 	const double pi = 3.14;
 	double radius = 4;
 
@@ -18,7 +18,6 @@ int main()
 
 	cout << "The area of a circle with radius " << radius  <<
 	  " is " << area << "." << endl;
-
 
     return 0;
 }
