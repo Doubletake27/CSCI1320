@@ -1,0 +1,213 @@
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp: In function 'int main()':
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:6: error: no match for 'operator>>' (operand types are 'std::istream {aka std::basic_istream<char>}' and 'const double')
+  cin >> radius;
+  ~~~~^~~~~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:168:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(bool&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(bool& __n)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:168:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'bool&' from an rvalue of type 'bool'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:172:7: note: candidate: std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(short int&) [with _CharT = char; _Traits = std::char_traits<char>] <near match>
+       operator>>(short& __n);
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:172:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'short int&' from an rvalue of type 'short int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:175:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(short unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(unsigned short& __n)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:175:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'short unsigned int&' from an rvalue of type 'short unsigned int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:179:7: note: candidate: std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(int&) [with _CharT = char; _Traits = std::char_traits<char>] <near match>
+       operator>>(int& __n);
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:179:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'int&' from an rvalue of type 'int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:182:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(unsigned int& __n)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:182:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'unsigned int&' from an rvalue of type 'unsigned int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:186:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long int&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(long& __n)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:186:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'long int&' from an rvalue of type 'long int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:190:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(unsigned long& __n)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:190:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'long unsigned int&' from an rvalue of type 'long unsigned int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:195:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long long int&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(long long& __n)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:195:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'long long int&' from an rvalue of type 'long long int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:199:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long long unsigned int&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(unsigned long long& __n)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:199:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'long long unsigned int&' from an rvalue of type 'long long unsigned int'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:214:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(float&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(float& __f)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:214:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'float&' from an rvalue of type 'float'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:218:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(double&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(double& __f)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:218:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: binding 'const double' to reference of type 'double&' discards qualifiers
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:222:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(long double&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>] <near match>
+       operator>>(long double& __f)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:222:7: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: invalid initialization of non-const reference of type 'long double&' from an rvalue of type 'long double'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:120:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(std::basic_istream<_CharT, _Traits>::__istream_type& (*)(std::basic_istream<_CharT, _Traits>::__istream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>]
+       operator>>(__istream_type& (*__pf)(__istream_type&))
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:120:7: note:   no known conversion for argument 1 from 'const double' to 'std::basic_istream<char>::__istream_type& (*)(std::basic_istream<char>::__istream_type&) {aka std::basic_istream<char>& (*)(std::basic_istream<char>&)}'
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:124:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(std::basic_istream<_CharT, _Traits>::__ios_type& (*)(std::basic_istream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>; std::basic_istream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]
+       operator>>(__ios_type& (*__pf)(__ios_type&))
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:124:7: note:   no known conversion for argument 1 from 'const double' to 'std::basic_istream<char>::__ios_type& (*)(std::basic_istream<char>::__ios_type&) {aka std::basic_ios<char>& (*)(std::basic_ios<char>&)}'
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:131:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>]
+       operator>>(ios_base& (*__pf)(ios_base&))
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:131:7: note:   no known conversion for argument 1 from 'const double' to 'std::ios_base& (*)(std::ios_base&)'
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:235:7: note: candidate: std::basic_istream<_CharT, _Traits>::__istream_type& std::basic_istream<_CharT, _Traits>::operator>>(void*&) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__istream_type = std::basic_istream<char>]
+       operator>>(void*& __p)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:235:7: note:   no known conversion for argument 1 from 'const double' to 'void*&'
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:259:7: note: candidate: std::basic_istream<_CharT, _Traits>& std::basic_istream<_CharT, _Traits>::operator>>(std::basic_istream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_istream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]
+       operator>>(__streambuf_type* __sb);
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:259:7: note:   no known conversion for argument 1 from 'const double' to 'std::basic_istream<char>::__streambuf_type* {aka std::basic_streambuf<char>*}'
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:53:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h:40,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:41,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:42,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:38,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:39,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.tcc:1437:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::basic_istream<_CharT, _Traits>& std::operator>>(std::basic_istream<_CharT, _Traits>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator>>(basic_istream<_CharT, _Traits>& __in,
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.tcc:1437:5: note:   template argument deduction/substitution failed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: note:   mismatched types 'std::__cxx11::basic_string<_CharT, _Traits, _Alloc>' and 'const double'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:934:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc:955:5: note: candidate: template<class _CharT2, class _Traits2> std::basic_istream<_CharT, _Traits>& std::operator>>(std::basic_istream<_CharT, _Traits>&, _CharT2*)
+     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc:955:5: note:   template argument deduction/substitution failed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: note:   mismatched types '_CharT2*' and 'double'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:934:0,
+                 from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc:923:5: note: candidate: template<class _CharT, class _Traits> std::basic_istream<_CharT, _Traits>& std::operator>>(std::basic_istream<_CharT, _Traits>&, _CharT&)
+     operator>>(basic_istream<_CharT, _Traits>& __in, _CharT& __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc:923:5: note:   template argument deduction/substitution failed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: note:   deduced conflicting types for parameter '_CharT' ('char' and 'const double')
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:756:5: note: candidate: template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(std::basic_istream<char, _Traits>&, unsigned char&)
+     operator>>(basic_istream<char, _Traits>& __in, unsigned char& __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:756:5: note:   template argument deduction/substitution failed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: note:   cannot convert 'radius' (type 'const double') to type 'unsigned char&'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:761:5: note: candidate: template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(std::basic_istream<char, _Traits>&, signed char&)
+     operator>>(basic_istream<char, _Traits>& __in, signed char& __c)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:761:5: note:   template argument deduction/substitution failed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: note:   cannot convert 'radius' (type 'const double') to type 'signed char&'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:803:5: note: candidate: template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(std::basic_istream<char, _Traits>&, unsigned char*)
+     operator>>(basic_istream<char, _Traits>& __in, unsigned char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:803:5: note:   template argument deduction/substitution failed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: note:   cannot convert 'radius' (type 'const double') to type 'unsigned char*'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:808:5: note: candidate: template<class _Traits> std::basic_istream<char, _Traits>& std::operator>>(std::basic_istream<char, _Traits>&, signed char*)
+     operator>>(basic_istream<char, _Traits>& __in, signed char* __s)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:808:5: note:   template argument deduction/substitution failed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: note:   cannot convert 'radius' (type 'const double') to type 'signed char*'
+  cin >> radius;
+         ^~~~~~
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream:40:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:5:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:924:5: note: candidate: std::basic_istream<_CharT, _Traits>& std::operator>>(std::basic_istream<_CharT, _Traits>&&, _Tp&) [with _CharT = char; _Traits = std::char_traits<char>; _Tp = const double] <near match>
+     operator>>(basic_istream<_CharT, _Traits>&& __is, _Tp& __x)
+     ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:924:5: note:   conversion of argument 1 would be ill-formed:
+C:\Users\Randy\Documents\2018-2019\CSCI\Lab 7\lab7assignment7\circleAreaBuggy.cpp:15:9: error: cannot bind 'std::istream {aka std::basic_istream<char>}' lvalue to 'std::basic_istream<char>&&'
+  cin >> radius;
+         ^~~~~~

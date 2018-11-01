@@ -7,10 +7,11 @@ using namespace std;
 
 int main()
 {
+	float area;
 	const double pi = 3.14;
-	const double radius = 4;
+	double radius = 4;
 
-	cout << "Please enter radius: ";
+	cout << "Please enter radius: " << endl;
 	cin >> radius;
 
 	area = pi * radius * radius;
