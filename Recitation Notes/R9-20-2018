@@ -1,0 +1,32 @@
+CSCI - Recitation 3 - 9/20/2018
+
+Due Dates
+  Lab 2 due Sunday by 6pm
+  **Assignment 3 due next Sunday**
+  Quiz 3 due this Sunday
+
+Interview Grading this weekend is just make-up
+
+Pratice
+  >> v = 100:-1:1;
+  >> v(55)
+      = 46
+
+  >> m = [2 3 0; 3 0 7; 8 9 2];
+  >> zero = find(m==0);
+
+  >> x = -2*pi:.0001:2*pi;
+  >> y = sin(x);
+  >> plot(x,y);
+  >> hold on
+  >> plot(x,[0,0],'k--');
+
+
+Linspace
+  linspace(start,end,increments)
+
+  >> v = linspace(100,1,100)
+
+Limits
+  xlim([0,1])
+  ylim([-5,5])

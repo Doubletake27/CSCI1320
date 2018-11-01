@@ -1,0 +1,76 @@
+CSCI - Lecture 19 - 10/10/2018
+
+Buy Ski Pass
+Lab 5 due Friday
+assignment 5 due Sunday
+
+D = delay
+y(t) = echo(x(t))
+x(t)
+echo should return x(t) with some time delay(D), then sum them.
+x(t) + ax(t-D)
+
+a is the gain aka how strong the signal is on Return
+0<a<1
+----------
+Reading Excel Spreadsheets
+
+1) Read in data from external file (e.g. spreadsheet)
+2) clean data(remove unnecessary columns, changes symbols to zeros)
+3) save it
+4) do work on it
+
+Saving Workspaces
+  %save entire Workspace
+    save('myData.mat')
+  %save only select variables
+    save('myData.mat','x','y')
+
+  %load data into current workspace
+    load('myData.mat')
+
+Cell Arrays
+  Variables have data types associated with them.
+  Rule: Every element in a variable has to have the same datatype
+  Can we get around this rule?
+  Put specific datatypes within cells, then have an array of cells
+
+  {["hello"]} {["bubbles"]}
+     {[12]}     {[3.14]}
+
+  Can do this with cell Arrays
+
+  Cell Arrays - Syntax
+  {} curly braces
+  Create a cell Array
+
+    myCell ={"Hello",'B',3.14,uint8(4)};
+
+  will create a 1x4 cell array
+  create an empty cell Array
+
+    c=cell(x,y)
+
+  b = myCell(1,1) % Return cell TYPE at index 1,1
+  b = myCell{1,1} % Return cell CONTENTS at index 1,1
+
+EX:
+% Call a function that takes in 4 arguments and returns them in
+% a single 2x2 cell array
+
+myCell = cellExample("Billy","Sara",70,92)
+
+%Extract entire cell of element 1,1
+nameCell = myCell(1,1);
+
+%Extract the contents of element 1,1
+name = myCell{1,1};
+----------
+function myCell = cellExample(st1,st2,d1,d2)
+  myCell = cell(2,2);
+  myCell{1,1} = st1;
+  myCell{1,2} = st2;
+  mycell{2,1} = d1;
+  mycell{2,2} = d2;
+
+end

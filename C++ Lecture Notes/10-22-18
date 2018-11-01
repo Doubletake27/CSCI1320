@@ -1,0 +1,46 @@
+CSCI - Lecture 23 - 10/22/2018
+
+C++ is an object oriented language with classes in objects
+  different from C
+
+Compiler turns source code into executable
+We will have to learn command line
+  Compile C++ Programs
+  Run compiled Programs
+  Delete / move / create / rename files and directories
+
+Use windows powershell
+mkdir
+  makes a directory
+cd
+  changes directory
+cd..
+  backs out of directory
+touch
+  create a new file
+ls
+  lists all items in a directory
+rm
+  delete files
+rm -r-
+  remove directory
+g++
+  compile c++
+.out / .exe
+  will run file
+---------------------------
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  // this is how we comment in C++
+  count << "Hello World!" << endl;
+  return 0;
+}
+----------------------------
+# include - indicates libraries to be included in the program
+'#' indicates pre-processor directive
+io stream - in put/output streaming
+using namespace - tells the compiler to use standard set of symbols
+

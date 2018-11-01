@@ -1,0 +1,118 @@
+CSCI - Lecture 13 - 9/26/2018
+
+Announcements
+  EC Credit Quiz
+  MidTerm - October 17 in Lecture
+  Practicum - Same week in recitation
+    Send Email
+
+If
+  Example
+    if (value < 0)
+      errors('incorrect value');
+    end
+
+  General format
+    if(condition)
+      action
+    end
+
+  if / else
+    chooses between two actions
+
+    Example:
+      if (userAge >= 21)
+        enter
+      else
+        error
+      end
+
+    Example 2:
+      if (userAge >= 21)
+        enter
+      else
+        if (userAge >= 18)
+          check country of origin
+        else
+          block entry
+        end
+      end
+
+    oOOR
+
+      if (userAge >= 21)
+        enter
+      elseif (userAge >= 18)
+        check country
+      else
+        block entry
+      end
+
+    *only one end keyword is needed with the elseif clause
+    *if else statement is included - guarantees one path will be taken
+
+Quiz Grade Program Example
+  %Quiz Grade Program Example
+  %Henry Meyerson
+  %9/26/2018
+
+  clc
+  clear
+
+  score = input('Please enter quiz score ');
+
+  grade = 'err';
+
+  if score >= 90
+      grade = 'A';
+  elseif score >= 80
+      grade = 'B';
+  elseif score >= 70
+      grade = 'C';
+  elseif score >= 60
+      grade = 'D';
+  elseif score < 60
+      grade = 'F';
+  else
+      error('Please input a number between 0 and 100');
+  end
+
+  fprintf('A quiz score of %.1f is a grade of %c\n',score,grade)
+
+Switch!
+  switch switch_expression
+    case case_expression_1
+      action1
+    case case_expression_2
+      action2
+    case case_expression_3
+      action3
+    %there can be many of these
+    otherwise % This functions much else but for swithc
+      action4
+    end
+
+    %Example
+    % preform trig calculation based on user input
+      % sin / cos / tangent
+      % 1 / 2 / 3
+      %Trig Selector Example
+      %9/26/2018
+
+      clear all
+      close all
+      clc
+
+      angle = input('Enter Angle: ');
+      trig = input('1)Sin 2)Cosine 3)Tangent: ');
+
+      switch trig
+          case 1
+              fprintf('The sin of %.2f radians is %f\n',angle,sin(angle))
+          case 2
+              fprintf('The cosine of %.2f radians is %f\n',angle,cos(angle))
+          case 3
+              fprintf('The tangent of %.2f radians is %.2f\n',angle,tan(angle))
+          otherwise
+              disp('Incorrect Choice')
+      end

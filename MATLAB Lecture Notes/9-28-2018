@@ -1,0 +1,86 @@
+CSCI - Lecture 14 - 9/28/2018
+
+Assignments
+  quiz
+  Extra Credit quiz
+  Lab
+
+Moving onto C++ after the midterm (OCT 17th)
+
+Today
+  Recap Branching
+  The For Loop
+  Example: Grade Entry Program
+
+Branching Statements
+  Allows design of programs w/ specific logic
+  Certain programs do not get executed
+
+  if - Allows for a side branch of code to get executed
+  if-else - ensures that
+  Switch -
+
+For Loop
+  Counted Loop
+  Repeats an action a specified # of times
+
+  An iterator takes n each value of the range vector, for iterator
+
+  for iterator = range vector
+
+  Example
+----------------------
+    vec = [1,3,2,0];
+
+    for i = vec;
+      disp(i)
+    end
+------------------------------
+    for iterator = range vector
+      action
+    end
+--------------------------
+    vec = zeros(1,4); -> [0,0,0,0]
+
+    for i = 1:4
+      vec(i)=input('enter value: ');
+    end
+--------------------------
+Alternative
+
+  vecLength = 4;
+  vec = zeros (1,vecLength);
+  for i=1:vecLength
+    vec(i) = input('enter value: ');
+  end
+--------------------------
+  vec = zeros(1,4)
+  for i = 1:length(vec);
+    vec(i) = input('enter value: ');
+  end
+-------------------------
+MATLAB allows us to "grow a vector"
+
+  for i = 1:3
+    vec(i) = rand;
+  end
+--------------------------
+Better Approach
+  N = 3;
+  vec = zeros(1,N);
+  for i = 1:N
+    vec(i) = rand;
+  end
+------------------------
+pre-allocating sets asside enough memory for a vector to be stored
+  for numericals use zeros(), ones()
+  for character arrays use blanks()
+  for string vectors use string()
+-----------------
+Specs
+  User selects number of students
+  for each student, prompts
+    name
+    score
+  Program should assign letter grades
+  once all names are stored, print out array

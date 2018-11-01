@@ -1,0 +1,560 @@
+#
+# Hashtag lines are optional comments
+#
+
+# state 0 with nothing N: go one step N
+0 x*** -> N 0
+
+# state 0 with something to the N: go W + into st 1
+# ** This will crash if picobot has a wall to the W! **
+0 N*** -> W 1
+
+
+# state 1 with nothing to the S: go one step S
+1 ***x -> S 1
+
+# state 1 with something to the S: stay put + into state 0
+1 ***S -> X 0
+
+
+https://www.cs.hmc.edu/~dodds/IS313/HW/cguhw0pr3.html
+
+
+Arranged in order NEWS
+StateNow   Surroundings   ->   MoveDirection   NewState
+
+
+Step 1)
+  Understand Controls
+
+Step 2)
+  Generate Navigation Plan
+
+Step 3)
+  Execute Plan
+
+Step 4)
+  First Try (No Plan)
+    0 xx** -> N 0
+    0 Nx** -> E 1
+    1 ***x -> S 1
+    1 *x*S -> E 2
+    2 x**S -> N 0
+    0 *E** -> W 3
+    3 **x* -> W 3
+    3 **W* -> N 0
+
+Step 5)
+  Actual Plan
+  Head North if possible Then Head South if possible
+  If as far as possible south, move east
+  If unable to move east switch into west movement loop.
+  If unable to move west switch it east movement loop
+
+Step 6)
+  It ain't pretty but it works (for the open box)
+    # East Loop
+    0 x*** -> N 0
+    0 N*** -> S 1
+    1 ***x -> S 1
+    1 *x*S -> E 0
+
+    #Switch West
+    1 *E*S -> W 2
+
+    # West Loop
+    2 x*** -> N 2
+    2 N*** -> S 3
+    3 ***x -> S 3
+    3 **xS -> W 2
+
+    #Switch East
+    3 **WS -> E 0
+
+Step 7)
+  Stress Testing:
+    Works in all 4 corners
+    Breaks when attempting maze.
+    Breaks when surrounded on xEWS
+    Since only moves East or west at the bottom. breaks when block placed in middle
+
+Step 8)
+  Maze Solving Algorithm(?)
+  Hug one wall?
+  First try to figure out way right
+  Then head left
+
+  Try N Repeat until cannot
+  Try E Repeat until cannot
+  Try W Repeat until cannot
+  Try S Repeat until cannot
+
+ Return to north after each successful
+
+Step 9)
+  0 x*** -> N 0
+  0 Nx** -> E 0
+  0 NEx* -> W 0
+  0 NEWx -> S 0
+
+Breaks after it is no longer able to go North
+need to independently loop through each of the directions
+
+Step 10)
+  #North Return
+  0 x*** -> N 0
+  0 Nx** -> E 1
+  0 NEx* -> W 2
+  0 NEWx -> S 3
+
+  #East Return
+  1 *x** -> E 1
+  1 *Ex* -> W 2
+  1 *EWx -> S 3
+  1 xEWS -> N 0
+
+  #West Return
+  2 **x* -> W 2
+  2 **Wx -> S 3
+  2 x*WS -> N 0
+  2 NxWS -> E 1
+
+  #South Return
+  3 ***x -> S 3
+  3 x**S -> N 0
+  3 Nx*S -> E 1
+  3 NExS -> W 2
+
+Getting somewhere(?), this now appears to lead to ping poinging around corners back and forth
+
+Step 11)
+  Issue is steming from the circular movement
+  After looping through current direction return to north cycle
+
+Step 12)
+  #North Return
+  0 x*** -> N 0
+  0 Nx** -> E 1
+  0 NEx* -> W 2
+  0 NEWx -> S 3
+
+  #East Return
+  1 *x** -> E 1
+  1 *E** -> N 0
+
+  #West Return
+  2 **x* -> W 2
+  2 **W* -> N 0
+
+  #South Return
+  3 ***x -> S 3
+  3 ***S -> N 0
+
+  Cycle breaks when it's not possible to head north.
+
+ Then cycle back through posibilities
+ This may be easier if there is an option not to move
+
+Step 13)
+  As it turns out there is:
+
+  #North Loop 3
+  0 x*** -> N 0
+  0 Nx** -> E 1
+  0 NEx* -> W 2
+  0 NEWx -> S 3
+
+  #East Loop
+  1 *x** -> E 1
+  1 *E** -> X 0
+
+  #West Loop
+  2 **x* -> W 2
+  2 **W* -> X 0
+
+  #South Loop
+  3 ***x -> S 3
+  3 ***S -> X 0
+
+  While this gets margionally farther on the maze, it gets stuck going east west back and forth.
+
+Step 14)
+  Maze Specific Algorithm?
+  4, 3, 2, or 1 side open at any given time
+  If 1 side open, go towards that direction, and continue in that direction
+  Try North and West on two sides open
+  If that Fails try South, East
+
+Step 15)
+  Diamond Algorithm?
+  Modify box algorithm to deal with when trapped in bottom square.
+  Now Just gets trapped in center
+
+  # East Expansion
+  0 x*** -> N 0
+  0 N*** -> S 1
+  1 ***x -> S 1
+  1 *x*S -> E 0
+
+  # Switch West EX
+  1 *ExS -> W 2
+
+  # West Expansion
+  2 x*** -> N 2
+  2 N*** -> S 3
+  3 ***x -> S 3
+  3 **xS -> W 2
+
+  # Switch East EX
+  3 *xWS -> E 0
+
+  # Unstick from bottom and Switch Ex/Cont
+  1 xEWS -> N 4
+  3 xEWS -> N 8
+
+  # East Contraction
+  4 xxxx -> E 5
+  5 x*** -> N 5
+  5 N**x -> S 6
+  6 ***x -> S 6
+  6 xE*S -> N 4
+
+  # West Contraction
+  8 xxxx -> W 9
+  9 x*** -> N 9
+  9 N**x -> S 10
+  10 ***x -> S 10
+  10 x*WS -> N 8
+
+  # Unstick from Sides
+  5 NExS -> W 2
+  9 NxWS -> E 0
+
+  Just took a little bit of trial and error but it solves dimond now.
+
+Step 16)
+  Maze?
+  Those programs only work with open spaces, Need something more complicated for the maze
+  How can I make it hug the right wall?
+  4 different states 0, 1, 2, 3, 4, these will indicate where the cube is facing?
+  If met with a dead end will "Rotate"
+
+  North Facing = State 0
+  East Facing = State 1
+  West Facing = State 2
+  South Facing = State 3
+
+  If there is something to the right of the direction facing,
+      move in the direction that it is facing.
+  If there isnt anything to the right of direction facing,
+    Turn "right" that direction and move "Forward"
+    N -> E -> S -> W -> N
+
+  #North Facing (E = Right)
+  0 xE** -> N 0
+  0 *x** -> E 1
+
+  #East Facing (S = Right)
+  1 *x*S -> E 1
+  1 ***x -> S 3
+
+  #West Facing (N = Right)
+  2 N*x* -> W 2
+  2 x*** -> N 0
+
+  #South Facing (W = Right)
+  3 **Wx -> S 3
+  3 **x* -> W 2
+
+  Didn't work (too good to be true)
+  Breaks when something at both the directions
+
+Step 17)
+  Hopefully fixed it by forcing it to turn.
+
+  #North Facing (E = Right)
+  0 xE** -> N 0
+  0 *x** -> E 1
+  0 NE** -> X 1
+
+  #East Facing (S = Right)
+  1 *x*S -> E 1
+  1 ***x -> S 3
+  1 *E*S -> X 3
+
+  #West Facing (N = Right)
+  2 N*x* -> W 2
+  2 x*** -> N 0
+  2 N*W* -> X 0
+
+  #South Facing (W = Right)
+  3 **Wx -> S 3
+  3 **x* -> W 2
+  3 **WS -> X 2
+
+Ok Now it oscilates but it can turn corners?
+
+Step 18)
+  The extra step throwing it off?
+  #North Facing (E = Right)
+  0 xE** -> N 0
+  0 *x** -> X 1
+  0 NE** -> X 1
+
+  #East Facing (S = Right)
+  1 *x*S -> E 1
+  1 ***x -> X 3
+  1 *E*S -> X 3
+
+  #West Facing (N = Right)
+  2 N*x* -> W 2
+  2 x*** -> X 0
+  2 N*W* -> X 0
+
+  #South Facing (W = Right)
+  3 **Wx -> S 3
+  3 **x* -> X 2
+  3 **WS -> X 2
+
+Step 19)
+  Has to turn right then move forward or else it will no longer cling to the wall
+  Should turn left if north and east are blocked
+
+  #North Facing (E = Right)
+  0 xE** -> N 0
+  0 *x** -> E 1
+  0 NE** -> X 2
+
+  #East Facing (S = Right)
+  1 *x*S -> E 1
+  1 ***x -> S 3
+  1 *E*S -> X 0
+
+  #West Facing (N = Right)
+  2 N*x* -> W 2
+  2 x*** -> N 0
+  2 N*W* -> X 3
+
+  #South Facing (W = Right)
+  3 **Wx -> S 3
+  3 **x* -> W 2
+  3 **WS -> X 1
+
+  Solves the maze!
+
+Step 20)
+  Reduce Number of lines for solving diamond to ~11? (Currently at 24)
+  Need different approach. Starting with big square.
+
+  Start in North West Corner
+
+  Head North until cannot
+  Move south till cannot
+  Move East one square
+
+  Repeat
+
+  0 **x* -> W 0
+  0 **W* -> X 1
+
+  1 x*** -> N 1
+  1 Nx** -> X 2
+  2 ***x -> S 2
+  2 *x*S -> E 1
+
+  Ok that works and its way more efficient
+
+Step 21)
+  Now Diamond Time
+
+  0 x*** -> N 0
+  0 N*** -> X 1
+  1 ***x -> S 1
+  1 *x*S -> E 0
+  1 *E*S -> N 2
+  2 *x** -> E 0
+
+  Will move in one direction
+
+  Could easily double it with one extra line, for west bound, but that's 13 lines
+  I feel like I can do better if I re-use the basic up and down movements
+
+  Actually I can just move all the way to the west then just restart
+
+Step 22)
+  9 Lines of actual code:
+
+  #Basic East Loop
+  0 x*** -> N 0
+  0 N*** -> X 1
+  1 ***x -> S 1
+  1 *x*S -> E 0
+
+  #Re factors for going up
+  1 XE*S -> N 2
+  2 *x** -> E 0
+
+  #West Return
+  1 NExS -> W 3
+  3 **x* -> W 3
+
+  #Restart
+  3 **W* -> E 0
+
+  Works like a charm
+
+Step 23)
+  Others?
+  Maybe the basic ish looking map
+
+  0 *x** -> E 0
+  0 *E** -> X 1
+  1 **x* -> W 1
+  1 **W* -> X 2
+  2 x*** -> N 0
+  2 N*** -> E 3
+  3 *x** -> E 3
+  3 xE** -> X 2
+  3 NE** -> S 4
+
+
+
+  4 x*** -> N 4
+  4 N*** -> X 5
+  5 ***x -> S 5
+  5 **xS -> W 4
+  5 **WS -> X 0
+
+Looks gross and it doesn't work
+
+That makes sense though because there's no thought behind it, its just bootstrapped.
+
+Step 24)
+  Random Blocks
+  Cycle from every angle?
+  -
+  Locate NW corners
+  Cycle East and move South when far east
+  --
+  #Move All The Way West
+  0 **x* -> W 0
+  0 **W* -> X 1
+
+  #Move All The Way North
+  1 x*** -> N 1
+  1 N*W* -> E 2
+  1 N*x* -> X 0
+  2 x*** -> N 0
+  2 N*** -> W 3
+
+  #Beginning the Program
+  3
+  --
+  #Move All The Way West
+  0 **x* -> W 0
+  0 **W* -> X 1
+
+  #Move All The Way North
+  1 x*** -> N 1
+  1 N*W* -> E 2
+  1 N*x* -> X 0
+  2 x*** -> N 0
+  2 N*** -> W 3
+
+  #Beginning the Program
+  3 *x** -> E 3
+  3 *E*x -> S 4
+  4 **x* -> W 4
+  4 **Wx -> S 3
+
+  #Unstick
+  3 *E*S -> N 5
+  5 *E** -> W 5
+  5 xxxx -> S 4
+
+  #Hits Bottom in State 4
+  4 **WS -> X 7
+
+  #Going Up
+  7 *x** -> E 7
+  7 xE** -> N 6
+  6 **x* -> W 6
+  6 x*W* -> N 7
+
+  #Unstick Up
+  6 NxWx -> S 8
+  8 *xW* -> E 8
+  8 xxxx -> N 7
+
+  #Final Lap
+  7 NExx -> S 10
+  10 ***x -> S 10
+  10 ***S -> W 9
+  9 x*** -> N 9
+  9 N*** -> X 10
+
+  It aint pretty but it works
+  Solves the random objects one every time.
+
+Step 25)
+  Gotta get all that EC
+  Now to solve the one that Im calling "random bumps"
+  -
+  Find South East corner of whatever location
+    Only 3 South East corners so that will help
+  Cycle East West, only moving north on the East side
+
+  #Locate South East Corner
+  0 *x** -> E 0
+  0 *E** -> X 1
+  1 ***x -> S 1
+  1 ***S -> X 0
+--------
+  Add in something to break the loop
+  # Locate South East Corner of subdivision (3 Options)
+  0 *x** -> E 0
+  0 *E** -> X 1
+  1 ***x -> S 1
+  1 *x*S -> X 0
+
+  #Move to cycle
+  1 *E*S -> X 2
+
+  #West-East Cycle
+  2 **x* -> W 2
+  2 **W* -> X 3
+  3 *x** -> E 3
+  3 xE** -> N 2
+----- Breaks in the North East Corner (2 Options)
+  More messing around later
+  # Locate South East Corner of subdivision (3 Options)
+  0 *x** -> E 0
+  0 *E** -> X 1
+  1 ***x -> S 1
+  1 *x*S -> X 0
+
+  #Move to cycle
+  1 *E*S -> X 2
+
+  #West-East Cycle
+  2 **x* -> W 2
+  2 **W* -> X 3
+  3 *x** -> E 3
+  3 xE** -> N 2
+
+  # Fix Break 1
+  3 NExx -> X 4
+  4 N*x* -> W 4
+  4 x*** -> N 5
+  5 **x* -> W 6
+  6 x*** -> N 6
+  6 N*** -> X 0
+
+  #Break 2
+  4 NxWx -> S 7
+  7 xxxx -> W 7
+  7 **Wx -> S 7
+  7 N*x* -> W 7
+  7 **WS -> N 8
+  8 x*** -> N 8
+  8 N*** -> X 0

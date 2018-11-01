@@ -1,0 +1,53 @@
+CSCI - Lecture 3 - 8/31/2018
+
+No Recitation Next week
+Install MATLAB - No Toolboxes
+
+Office Hours on moodle
+Finish up picobot
+
+Find Scheduler for recitation -Saturday
+  Interview Grading?
+
+Steps
+  1) Analyze Problem
+  2) Determine specifications
+  3) Create Designing
+  4) Implement Design
+  5) Test and Debug Program
+
+Psudocode for Picobot algorithm
+
+
+MATLAB Introduction
+  Environment
+  Variables
+  Assignment Statements
+
+MATLAB - Matrix Laboratories
+  Created by Mathematicians
+  IDE - Integrated Development Environment
+  High Level Language
+    Requires an interpreter
+    Not complied like C++
+  Optimized for matrix Math
+  Tons of built-in functions and Toolboxes
+    Simulink, Image processing....
+
+  Can be used interactively
+    >>>
+    Enter commands at prompt
+    MATLAB will respond with a result
+    Big Fancy Calculator
+
+  Can be used as a scripted Language
+    -
+    -
+    -
+
+  Type a command into the command window then hit enter to execute the commands
+  Variable appears in your "Workspace"
+
+  Names are given to variables: These are called "identifiers"
+
+Variables are like boxes for values

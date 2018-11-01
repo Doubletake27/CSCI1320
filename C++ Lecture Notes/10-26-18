@@ -1,0 +1,92 @@
+CSCI - Lecture 25 - 10/26/2018
+
+'g++' compiles c++ files
+run executable
+
+Todays Objectives
+  variables
+  Constants
+  assignment short-hands
+  string class
+  typecasting
+
+Declaring Variables is require in C++
+  int x; <- Declaration
+    variable will be initialized
+  x = 3; <- Initialization
+    if not initialized, unpredictable behavior
+  -------------
+  can be combined into one step
+    int x = 3;
+  ---------
+  also can make a variable a Constants
+    const int x = 12
+
+    with const, must initialize when declaring
+    a const cannot be written to except for during initialization.
+    typically used for a value that we know should stay constant during program execution
+  ------
+Shorthand Operators
+  ++ increment by 1
+  -- decreent by 1
+  += increment by some value
+  -= decrement by some values
+  /= divide by some value
+  %=
+---
+Pre and Post increments
+  int x, y = 3;
+  x = 2 * (y++);
+
+    2 multiplies the value stored in y and assigns the result to x
+    then y gets incremented
+
+  int x, y = 3;
+  x = 2 * (++y)
+    y gets incremented (before it gets used)
+    2 multiplies y (which has been incremented)
+
+Variable types
+  short
+  int
+  long
+  float
+  double
+  long double
+  char
+  bool
+
+String Class
+  No primitive type for storing multiple characters
+    #include <string>
+    string myWord;
+    myWord = "hello"
+
+Type typecasting
+  double x;
+  x = 1/2; // what will be written to x?
+  // results in 0 because 1 and 2 are integers
+
+  when we write "w" the compiler interprets it as an int type
+  integer divided by integer results in division but only keeping the integer part.
+
+Two Ways to cast: implicit, explicit
+  // Implicit
+  double x;
+  x = 1.0 / 2;
+  or
+  x = 1 / 2.0;
+  or
+  x = 1.0 / 2.0;
+
+  // Explicit
+  double x;
+  x = double(1)/2;
+    returns 0.5
+  x = double(1/2)
+    returns 0 still
+  ________________
+  double x = 3;
+  x = int(x); // what will this result in?
+
+  CANNOT REDECLARE DATA TYPE

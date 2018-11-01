@@ -1,0 +1,68 @@
+%Cheat Sheet
+
+%Henry Meyerson
+%CSCI 1320 - 235
+%109190761
+%Assignment # - Name
+%MM/DD/2018
+
+%Variable types
+  %ype Casting
+
+%Logical Operatiors
+
+%Clearing the Screen
+  clc         %Clears the Command Window
+  Clear All   %Clears All variables from Workspace
+  Close All   %Closes All Figures
+
+%Basic Rounding
+  round(x) %Rounds x to the nearest whole number
+  fix(x)   %Drops all decimal places off x
+  floor(x) %Rounds DOWN, to the nearest whole number
+  ceil(x)  %Rounds UP, to the nearest whole number
+
+%Vector Math
+  %concatenate
+
+%Random Generation
+
+
+%Printing
+
+
+%Plotting
+
+
+%Conditional
+  %IF Statements
+
+  %Switch Statements
+  switch switch_expression
+    case case_expression_1
+      action1
+    case case_expression_2
+      action2
+    case case_expression_3
+      action3
+    %there can be many of these
+    otherwise % This functions much else but for swithc
+      action4
+    end
+
+%LOOOOOPS!
+  %For Loop
+  for i = rangeVec %Range vec will likey take the form of 1:length(x),
+    code
+  end
+
+  %While Loop
+  while Condition
+    code
+  end
+
+%GUI
+
+%Other / Random
+    format short g %Returns only crucial decimals (not 0s)
+    %Single quotes vs double quotes

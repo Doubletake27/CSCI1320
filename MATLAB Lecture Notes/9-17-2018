@@ -1,0 +1,122 @@
+CSCI - Lecture 9 - 9/17/2018
+
+Announcements
+  Assignment 3
+  Quiz
+
+Recap
+  Scripts vs Functions
+    Scripts
+      Own M File
+      Executed Sequentially
+      Cannot Take in / return variables
+      Cannot be called
+      variables stored in workspace
+
+    Functions
+      Own M File
+      Executed Sequentially
+      Can Take in / return variables
+      Can be called
+      variables stored locally
+
+  Functions: calling functions, stack, Scope
+    Functions can be called from a script - not Vice Versa
+    Combination of script and Functions or just script is a program
+
+    Script.m
+      Get Inputs
+      Preform Calculation
+      Print Results
+
+      Can be small program with no function calls.
+
+    function out = fn(in)
+    out = value based on in;
+    end
+
+    functions can call other functions.
+
+    Stacks are the order / dependencies of the different parts of the program (functions vs scripts)
+
+    Variable Scope:
+      Where the variables live
+      A function has its own workspace
+        A variable is local within a function
+
+  Vectors intro
+      We can put multiple values in a variable
+        call it a vector
+        eg. row vector with n elements is 1xn
+        eg. column vector with m elements is mx1
+
+      Each individual value is called an elements
+        eg. 1x4 vector has 4 elements
+
+      A vector element still has a datatype
+      All elements of a vector are of the same data type
+
+
+
+Today
+    More Vector Examples
+      Any time sequence of data
+        Temperature Samples
+        heart rate over time
+        sound amplitude across a frequency spectrum
+        sound amplitude as a function of time
+
+    Creating vectors
+      Direct Method:
+        Row Vector
+          v = [1 2 3 4] = [1,2,3,4]
+        Column Vector
+          v = [1;2;3;4]
+
+      Colon Operator
+        v = first:step:last
+        eg.
+          5:14:14 -> [5 8 11 14]
+        If no step is specified defaults to step size of 1
+        Can go in reverse with negative step size
+        v = 9:-2:1 = [9 7 5 3 1]
+
+    Indexing Vectors
+      To access individual elements of a vector, we index into it
+      Indexing starts with 1
+
+      Ex:
+      >> vec = [9,7,5,3,1];
+      >> x = vec(2);
+      >> x -> 7
+
+      >> x = 10;
+      >> vec(2) = x;
+      >> vec -> [9,10,5,3,1]
+
+      >> vecSmall = vec([1,3,5]);
+      >> vecSmall -> [9,5,1]
+
+    Concatenation
+      v = 3:5
+      x = [33, 11, 2]
+      w =[v,x]
+      w -> [2 3 4 5 33 11 2]
+
+      concatenates Sequentially
+      newV = [v 44]
+      newV -> [2 3 4 5 44]
+
+    Vectors example: Audio Compress
+      Read audio file 'talkie.wav'
+      Implement a crude compression by removing every other data point
+      play a sound sample of the original sound data and the compressed sound data
+
+    Example.m
+      clear
+      clc
+
+      % Read in audio File
+
+      [audioread,Fs] = audioread('talkieMono.wav');
+      sound(audioVec,Fs);

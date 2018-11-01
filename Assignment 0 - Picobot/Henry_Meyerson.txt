@@ -1,0 +1,163 @@
+Assignment 0 - Picobot
+Henry Meyerson
+109190761
+
+Zagrodzki - CSCI 1320
+----
+----
+# Square Algorithm (6 Lines)
+
+#Finds Far West Wall
+0 **x* -> W 0
+0 **W* -> X 1
+
+#Cycles all the way North
+1 x*** -> N 1
+#When it can no longer move North, move into the south State
+1 Nx** -> X 2
+#Cycle all the way South
+2 ***x -> S 2
+2 *x*S -> E 1
+
+
+----
+----
+# Diamond Algorithm (9 Lines)
+
+#Basic Code ------
+#Basic East Loop
+0 x*** -> N 0
+0 N*** -> X 1
+1 ***x -> S 1
+1 *x*S -> E 0
+
+#Re factors for going up
+1 XE*S -> N 2
+2 *x** -> E 0
+
+#West Return
+1 NExS -> W 3
+3 **x* -> W 3
+
+#Restart
+3 **W* -> E 0
+-----------------
+#Fully Documented Diamond Algorithm
+
+#Basic East Loop
+#while in state 0 Moves North when possible
+0 x*** -> N 0
+#if cannot move north, switches to state 1 (south movement)
+0 N*** -> X 1
+#Moves South until no longer possible
+1 ***x -> S 1
+#if cannot move south but can move east, move East
+#this is how I determine whether it is moving up or down the diamond
+1 *x*S -> E 0
+
+#Re factors for going up
+# If the East and South is blocked but the north is clear moves north then moves to state 2
+1 XE*S -> N 2
+# This them move it east
+2 *x** -> E 0
+
+#West Return
+#When it is in the farthest East corner, move towards the west corner
+1 NExS -> W 3
+#Cycle moving west until in the far west corner
+3 **x* -> W 3
+
+#Restart
+#Once in the far west corner, restart the north, south cycling.
+3 **W* -> E 0
+
+----
+----
+#Random Objects algorithm
+
+#This algorithm basically works by moving to the north West Corner
+#then it cycles East and West, moving south on both sides.
+#Once on the Bottom cycles East and West moving north on both Sides
+#Finally Cycles north-south, moving west on the south side.
+
+
+#Move All The Way West
+0 **x* -> W 0
+0 **W* -> X 1
+
+#Move All The Way North
+1 x*** -> N 1
+1 N*W* -> E 2
+1 N*x* -> X 0
+2 x*** -> N 0
+2 N*** -> W 3
+
+#Beginning the Program
+3 *x** -> E 3
+3 *E*x -> S 4
+4 **x* -> W 4
+4 **Wx -> S 3
+
+#Unstick
+3 *E*S -> N 5
+5 *E** -> W 5
+5 xxxx -> S 4
+
+#Hits Bottom in State 4
+4 **WS -> X 7
+
+#Going Up
+7 *x** -> E 7
+7 xE** -> N 6
+6 **x* -> W 6
+6 x*W* -> N 7
+
+#Unstick Up
+6 NxWx -> S 8
+8 *xW* -> E 8
+8 xxxx -> N 7
+
+#Final Lap
+7 NExx -> S 10
+10 ***x -> S 10
+10 ***S -> W 9
+9 x*** -> N 9
+9 N*** -> X 10
+
+----
+----
+# Maze Algorithm (12 Lines)
+
+#Solves the Maze by hugging the right wall the entire time.
+#Each of the states in this maze, represent the cube "facing" a different direction
+#State 0=North, 1=East, 2=West, 3=South
+#This allows the program to know which direction is the direction to the Right
+#Each state is broken into 3 basic Steps
+
+#If there is something to the right but noting in front of it, move straight
+#If there is nothing to the right, turn to the right and move Forward
+#If there is something to the front and the right, turn left.
+
+
+#North Facing (E = Right)
+0 xE** -> N 0
+0 *x** -> E 1
+0 NE** -> X 2
+
+#East Facing (S = Right)
+1 *x*S -> E 1
+1 ***x -> S 3
+1 *E*S -> X 0
+
+#West Facing (N = Right)
+2 N*x* -> W 2
+2 x*** -> N 0
+2 N*W* -> X 3
+
+#South Facing (W = Right)
+3 **Wx -> S 3
+3 **x* -> W 2
+3 **WS -> X 1
+
+----
+# Other Algorithm

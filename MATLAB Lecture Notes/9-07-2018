@@ -1,0 +1,79 @@
+CSCI - Lecture 5 - 9/7/2018
+
+Read Textbook Chapter 1
+
+Recap:
+  Types
+  Relational Expressions
+
+New:
+  Logical Expressions
+  Scripts
+
+Types:
+  Single/double; Real Numbers
+  Char: Vector of Characters
+    Use single quotes to define
+  String: Series of Letters of word
+    Use double quotes to define
+  Logical: True/False (1/0)
+  Integer Types: Int8, int16,int32,int64, uint8, uint16, uint32, uint64
+    int8, etc...
+      signed integers (+/-)
+      listed with how many bits
+    uint8, etc...
+      unsigned integer (+ only, 0 ok)
+
+  Default type: double
+
+  Improve performance by efficiently selecting datatype
+
+Relational Expressions:
+  > Greater than
+  < Less than
+  >= greater than or equals
+  <= less than or equals
+  == equality
+  ~= inequality
+
+Useful commands
+  clear - Clears variables
+  clc - clears command window (not variables though)
+  close all - closes all windows (graphing and otherwise)
+  Up arrow - recalls commands
+  ; at end of command - suppresses output
+
+Logical Expressions
+  a || b - OR statement, true if a or b is true
+  a && b - AND statement, true if a and b are both True
+  ~a - NOT statement, returns opposite value
+  xor(a,b) - exclusive or, returns true iff a or b is true, not both
+    This is actually a function
+
+  Truth tables - yay!
+
+Variable Names
+  Can seperate by underscore
+    var_1 is valid
+  Cannot place number infront of letters
+    2var is not valid
+  Cannot get around by using _
+    3_var is not valid
+  letters following is ok
+    var4 is valid
+  Can mix letters and numbers, starting with letters
+    var5test is valid
+
+Scripts
+  Files have .m extension
+  Name Scripts meaningfully
+    probably camel case
+  Execute script by entering name into the command prompt
+  Script file must be in CurrentFolder
+  % is comment
+
+Random numbers
+  Section in textbook chapter 1
+  variable = rand;
+    creates random value between 0 and 0 and 1
+  randi([])

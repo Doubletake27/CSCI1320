@@ -1,0 +1,99 @@
+CSCI - Lecture 6 - 9/10/2018
+
+Lab Due Friday
+Interview Grading Schedule Saturday
+Homework 2 Due Sunday
+
+Recap:
+  Relational Expressions
+  Logical Expressions
+  Scripts
+
+Question from Quiz 1
+  3 < x < 7
+    Math: States that x is greater than 3 and less than 7
+    MATLAB: 3 < x : can be 0 or 1
+            Due to comparison will cast to double datatype
+            0 or 1 < 7 : 1 (True)
+    Essentially checks whether x is less than 3,
+      Then compares the value of the result to check if less than 7
+
+Logical Expressions
+  a||b OR
+  a&&b AND
+  ~a NOT
+  XOR(a,b) XOR
+
+Truth Tables are used to list outputs given all possible combinations of inputs.
+
+Scripts
+  Stored with .m extension
+  Click "New Script" under the HOME tab; this opens the editor
+  save by giving it a meaningful Name
+  Execute by entering name into prompt
+  >> tempCheck
+  Don't need extension
+  Can also hit Green Play Button
+
+Temp Check Problem:
+  Psudeocode
+    1) Set current temp to 150
+        currentTemp = 150;
+    2) Set target temp to 151
+        targetTemp = 151;
+    3) Set max temp to 160
+        maxTemp = 160;
+    4) Check if currentTemp is equal to target temp, write result to VAR A
+        A = currentTemp == targetTemp
+    5) Check if currentTemp is less than max temp, write result to VAR B
+        B = currentTemp < maxTemp
+    6) Write true to isTarget if Var A and B are both true
+        isTarget = (A==1)&&(B==1)
+
+Program Inputs
+  The input() function does two things
+    1)
+    2)
+  General form for reading in a number:
+    >> variableName = input('prompt string')
+  Always used in assignment Statement
+  Takes a string as input argument
+
+Replace hardcoded currentTemp value with user input.
+
+Display functions
+  disp('hello')
+  or
+  varA = 'hello';
+  disp(varA)
+
+  Not used in assignment statements
+
+  fprintf()
+    Allows for more Statements
+
+  stu=396;
+  fprintf('There are %d students \n',stu)
+
+  Pass in variable that stores value
+  Escape Sequence + variable
+
+
+  %d integer
+  %f float (real numbers)
+  %c character (one character)
+  %s string of character
+  \n new line
+
+User-Defined functions
+  Specialized code module
+    input, do something, output
+  stored in m-file (like script)
+    gets its own file
+    looks different inside that file
+  behaves just like built-in functions
+    call the function by using its Name
+    pass arguments
+    functions returns the result
+
+  Scripts dont return results, functions do

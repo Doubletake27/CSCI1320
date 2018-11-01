@@ -1,0 +1,34 @@
+Henry Meyerson
+CSCI 1320 - 235
+109190761
+Clock Function - MODULARIZED!
+
+1) function get inputs
+    takes no inputs
+    asks user to input hours (h), minutes, (m) and seconds (s)
+    asks user to input time format (12/24)
+    if time format is 12 then ask whether its AM or PM
+
+    checks to ensure all inputs are with valid ranges
+      else returns error message
+
+2) conversion function
+    if original format is 12 and time is 'pm'
+      add 12 to the value for hours
+    if original format is 24
+      if h>= 13 and h<24
+        subtract 12 hours
+        set time to pm
+      else
+        set time to 'am'
+        if h = 0
+          add 12 hours
+        elseif h - 24
+          subtract 12 hours
+
+3) display function
+    if intial time format is 12
+      print out time in 24 hour format
+    if initial time format is 24
+      print out time in 12 hour format
+        this step is necessary because of the addition of AM / PM

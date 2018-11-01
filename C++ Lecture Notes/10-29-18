@@ -1,0 +1,61 @@
+CSCI - Lecture 26 - 10/29/2018
+
+Type Casting is important
+
+Input using cin
+  cin >> num;
+  waits for the user to enter value
+  once user hits enter, value gets assigned to variable (num)
+  >>  Points where the data flows
+
+Example: calculate dog age in human years
+  #include <iostream>
+  #include <string> // allows us to use strings
+  using namespace std;
+
+  int main()
+  {
+    string dogName;
+    const double D2H_FACTOR = 7.4;
+    int actualAge;
+    double humanAge;
+
+    cout << "How many years old is your dog? " << endl;
+    cin >> actualAge;
+    humanAge = actualAge*D2D2H_FACTOR;
+
+    cout << "What is you dog's name? "
+    cin >> dogName;
+
+    cout << dogName << "'s age is approximately equivalent to a " << humanAge << year old human." << endl;
+
+    return 0;
+  }
+
+Relational Expressions
+  Equal to ==
+  Not Equal !=  *** different than matlab ***
+  less than <
+  Greater than >
+  less than or equal to <=
+  greater than or equal to >=
+
+  Just like MATLAB, the result is binary (0 or 1, False or True)
+    type boolean
+
+  ! NOT
+  && AND
+  || OR
+
+Branching: if, if-else, if-else if, else statements
+
+if(Boolean_Expression){
+  statement 1;
+  statement 2;
+} else if {
+statement 3;
+} else {
+  more statements;
+}
+
+curly braces only needed if two or lines of code happen within each statement

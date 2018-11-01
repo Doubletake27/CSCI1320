@@ -1,0 +1,95 @@
+CSCI - Lecture 24 - 10/24/2018
+
+Extra Quiz 6 Due Friday (MATLAB)
+Go figure out office hours to argue grade on practicum
+
+Scripting language
+  Can execute program by running the Script
+  Executes as its Compiled
+  Can be used interactively
+Compiled Language
+  Cannot execute your source code (.cpp File)
+  Sourced code needs to be compiled into an executable
+  Cannot be used interactively
+  The Executable is the end product
+
+  Rookie Mistake:
+    Forgetting to compile and running old executable
+
+Terminal commands are in bash language
+
+For Io objects cin and cout
+  must include
+  #include (iostream)
+
+  What can be out putted
+    any data can be outputted to display screen
+      variables
+      literals
+
+    int a = 7;
+    cout << a;
+    cout << "hello";
+    cout << 12;
+
+    Basically the equivilant of display in MATLAB
+
+    Cascading : multiple values in one Cout
+
+    cout << numberOfGames << "Games Played";
+
+    cout << "Hello World\n";
+    cout << "Hello World" << endl;
+
+Variables and Assignment Statements
+  Must declare variables before using
+      specify data type ( No Default )
+
+    int a; // declared a as interger type
+
+  Can declare multiple variables of one type, in a single line
+
+    int a, b; // a and b declared as integer types
+
+  Once declared, can assign data to vars
+
+      a = 3; // semicolon IS required
+             // If not -> will not compile
+
+  Cannot place value of one type into variable of another
+
+    b = 3.2 // only 3 will be assigned to b
+
+  More on type casting later
+
+
+Variable types
+  int
+  long int
+  double
+  char
+  bool
+
+Arithmatic Operators
+  +
+  -
+  *
+  /
+  % (Modulo)
+
+  no ^ operator - will need to use POW in the cmath library include (cmath)
+
+  int a = 1, b = 2;
+  double x;
+  x = a/b;
+
+  result is 0 because you are trying to divide two integers
+  a and b should be Double or float types
+
+  cout << 17/5 << endl // What will be displayed
+
+    due to automatic typecasting they are int itll just display 3
+
+ asdf
+
+Open file with vi

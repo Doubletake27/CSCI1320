@@ -1,0 +1,16 @@
+CSCI - Lecture 22 - 10/19/2018
+MATLAB vs C++
+  Matlab
+    Scripting Language
+    No compiler
+  C++
+    Compiled Language
+    Turns it into an executable file - that is actually run on our program
+      No longer contains our written code. It is a very efficient machine Language
+      (Not Human Readable)
+    Not very easy to reverse engineer from executable to origional code.
+
+Getting started
+  Two Essentials
+    Editor to create source files (.cpp)
+    Compiler

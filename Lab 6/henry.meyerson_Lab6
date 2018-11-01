@@ -1,0 +1,36 @@
+Henry Meyerson
+109190761
+CSCI 1320 - 112
+Lab 6
+
+1)
+  Open Terminal by clicking the icon labeled "Terminal"
+  In terminal type "mkdir myCPP" [Enter]
+  Confirm new directory has been created by typing "ls" [Enter]
+2)
+  Enter newly created directory with "cd myCPP" [Enter]
+  Create new file with "touch CPPctst" [Enter]
+3)
+  Create new directories for lab 6 and assignment 6 by typing
+    "mkdir lab6" [Enter]
+    "mkdir assignment6" [Enter]
+4)
+  Create new file with "touch hello.cpp" [Enter]
+5)
+  Remove file with "rm hello.cpp" [Enter]
+6)
+  Change directory to lab6 with "cd lab6" [Enter]
+  Create file with "touch meyersonLab6.cpp" [Enter]
+7)
+  Confirm file exists with "ls" [Enter]
+8)
+  Open file by double clicking meyersonLab6 under the files tab
+  Write to file the script desired and save
+9)
+  write "g++ meyersonLab6.cpp" [Enter] this will compile the program
+10)
+  write "./a.out" [Enter] and confirm print statement is correct
+11)
+  write "zip meyeronLab6.zip meyersonLab6.cpp" [Enter] to zip file
+12)
+  in the file menu right click on the .zip file and click download in order to download onto your computer.

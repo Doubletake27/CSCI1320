@@ -1,0 +1,73 @@
+CSCI - Lecture 20 - 10/12/2018
+
+Cell Array Recap
+  Create Cell Array
+    myCell = {"hello",3.14,uint8(4)}
+
+  Extracted from a cell Array
+    newCell = myCell(1,1)
+      type will be cell
+    newCell = myCell{1,1};
+      type will be string
+
+    write a cellto a cell Array
+    myCell(1,2) = {27}
+
+Reading from excel Files
+
+  xlxread() %Reads in an excel spread Spreadsheets
+
+  [nums, txt, raw] = xlsread('sheet.xlsx')
+  - nums - matrix of numerical data
+  - txt - string data in a cell array type
+  - raw - entire contents os spreadsheet, in cell array
+
+  ------- Clean XLS data ------
+  %based on spreadsheet in the shared drive
+  %Remove First row
+  %Remove row of seller's comments
+
+  filename='saleItems.xlsx';
+  [nums,txt,raw] = xlsread(filename);
+  [~,~,raw] = xlsread(filename); %Just grabs the parts I want
+
+  % Remove 1st row
+  cleanData = raw(2:end,1:end-1);
+
+  save('cleanData.mat','cleanData')
+
+  ------ Loads Clean Data -------
+  %Calculate total cost of all items
+  %Print total
+
+  Psuedocode
+  1) load cleaned datatype
+  2) get size of cell Array
+  3) set cost available = 0
+  4) loop over rows of cell array
+      check if item is available
+      true:
+        add cost to costAvailable
+        disp item name
+      false:
+        do nothing
+  5) display total cost of available
+  ------
+  Clear
+  Clc
+
+  load cleanData.mat
+
+  [rows,cols] = size(cleanData);
+
+  disp('Available items: ')
+
+  costAvailable=0;
+  for i = 1:rows
+    if strcmp(cleanData{i,3},'yes')
+      costAvailable = costAvailable + cleanData{i,2};
+      disp(cleanData(i,1))
+    end
+  end
+
+  fprintf('Total cost of all available items is $%.2f \n',costAvailable)

@@ -1,0 +1,71 @@
+CSCI - Lecture 27 - 10/31/2018
+
+Boolean Expressions
+! Not
+&& AND
+|| OR
+(A&&!B)||(!A&&B) XOR
+
+if(Boolean_Expression){
+  Statement1;
+  Statement 2;
+}elseif(Boolean_Expresssion){
+  Statement 3;
+  Statement 4;
+}else{
+  Statement 5;
+}
+
+Example: ----------------------
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main(){
+
+  float fb, volume, radius, weight;
+  const float gamma = 62.4; //lb ft
+
+  //cout << M_PI << endl;
+
+  cout <<"Please enter weight and radius of sphere:"
+  cin >> weight >> radius;
+
+  //Calculate Volume
+  volume = (4.0/3.0)*M_PI*pow(radius,3);
+
+  cout << "sphere volume " << volume << endl;
+
+  // calculate force
+  fb = volume * gamma;
+
+  cout << "buoyancy force: " << fb << endl;
+
+  return 0;
+}
+-------------
+int i
+for (i = 0; i<3, i++){
+  //block of code
+}
+// Counted loop
+--------------------------
+We will use for-loops with arrays in C++
+----------
+for(initialization; Boolean; incement){
+  //code
+}
+----------------- Do While
+do
+{
+  cout <<"HI";
+  count++
+}while(count<3); // loop Condition
+---------------------
+short int max = 127
+127 + 1 -> -128
+This is an overflow error
+-----------------
+short x = 0, xNext = 1;
+x = xNext // x = 1
+xNext++;

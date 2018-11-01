@@ -1,0 +1,29 @@
+CSCI - Lecture 15 - 10/1/2018
+
+Tic-Toc
+  Time your code
+
+Recap For Loops
+
+Tic - Starts the Stop Watch
+Toc - Reads the time from the stop watch.
+
+Engineering notation is valid (1e6)
+
+Growing a vector
+  for i = i:3
+    vec(i) = i^2;
+  end
+
+  Better - Reallocate memory
+
+  N = 3;
+  vec = zeros(1,N);
+  for i = 1:N
+    vec(i) = i^2;
+  end
+
+While Loops
+  While Condition
+    action
+  end

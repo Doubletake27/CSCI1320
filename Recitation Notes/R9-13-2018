@@ -1,0 +1,18 @@
+CSCI - Recitation 2 - 9/13/2018
+
+How to Learn MATLAB
+  Lecture Notes
+  Type: "help" <function name>
+  Google online: lots of tutorials
+  YouTube: good videos
+
+Section 112
+  Grade Taruni
+  email: tamu0375@colorado.edu
+
+Useful commands
+  quit - leaves MATLAB
+  clc - clears screen
+  whos - shows list of Variables
+  clear - clears Variables
+  clear all - clears all the things

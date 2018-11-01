@@ -1,0 +1,102 @@
+CSCI - Lecture 7 - 9/12/2018
+
+Announcements
+  New Quiz 2 Due Sunday Sept 16 by EOD
+  Assignment 1 Interview Grading (today)
+  Assignment 2 Due Sunday 6PM to moodle
+
+  Figure out office liscences - need Excel
+
+Recap
+  input/output
+today
+  User defined functions
+  Scripts vs function
+  variable scope
+
+Input() function
+  prompts User
+  reads value
+  variableName = input('prompt string')
+
+  x = input('something ','s')
+    adding the 2nd argument we specify that we are expecting a String
+
+disp() function
+  takes in an argument and displays it to the command window
+  disp('hello')
+  or
+  myWord=('hello');
+  disp(myWord)
+
+  would have to use a seperate concatenation function to concatenate
+
+fprintf()
+  allows more complex outputs by mixing strings and Variables
+
+  stu=396;
+  fprintf('There are %d students \n', stu)
+
+  %d integer
+  %f float (real numbers)
+    %a.bf
+      where a is the width that will remain constant
+      where b is the number of decimal places
+    does not need to accept float type variable
+      can be double
+  %c character (one character)
+  %s string of Characters
+  \n new line
+
+  fprintf('There are %d students, %d seats. \n',300,400)
+  fprintf('My int = %d, my character = %c \n', 12, 'c')
+  fprintf('Value of pi is %.2f \n', pi)
+
+User-Defined Functions
+  Serves as a specialized code module
+    Input, do somethings, output
+  Stored in m-file (like scripts)
+
+  Behaves just like a built-in function (eg sin(pi))
+    call the function by using the name
+    pass arguments(s)
+    function returns the result
+
+  "Overloaded" if you can call with 1 vs 2+ arguments and it will preform differently
+
+  For now 1 argument, 1 return value
+
+General Form of Function Definition
+  Function Header
+    function output = fnName(input arguments)
+    %Keyword | output argument = function name, should be same name as the m-file | input arguments
+    %dont suppress this line
+  Function Body
+    %beginning of function Body
+    % block comment
+
+    % Suppress all statements inside this part of the Function
+
+    % always need 'end' Keyword
+
+    output = 12; %some value
+    end %end of function body (do not suppress, no ';')
+
+Kinetic Energy Function (example)
+  given mass and velocity
+    hardcode mass=1
+  function takes in velocity (floating point)
+  function returns kinetic energy
+  k=0.5 m v^2
+  ----
+  function output = kineticEnergy(velocity)
+  mass = 1;
+  k = 0.5 * mass * velocity ^ 2;
+  output = k;
+  end
+  ----
+  function k = calcKE(v)
+  m = 1;
+  k = 0.5 * m * v ^ 2;
+  end
+  ----

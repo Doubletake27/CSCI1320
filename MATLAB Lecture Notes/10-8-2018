@@ -1,0 +1,88 @@
+CSCI - Lecture 18 - 10/8/2018
+
+Practice problems have been posted - do them.
+The assignment will be a bit tricky - start early
+
+Menu function
+  choice = menu('message', 'choice 1', 'choice 2')
+
+  Will return 1, 2.. etc depending on which button is clicked
+  hitting the x button willl write 0 to choice variable.
+-----------
+  %Basic menu example
+  clear
+  clc
+
+  choice = menu('check out my menu','first choice','second choice');
+
+  switch choice
+      case 1
+          % do somthing based on 1st button
+      case 2
+          % do somthing based on 2nd button
+      otherwise
+          % probably not necessary
+  end
+--------------------
+  %Trig Selector Example
+  %10/8/2018
+
+  clear all
+  close all
+  clc
+
+  angle = input('Enter Angle: ');
+  %trig = input('1)Sin 2)Cosine 3)Tangent: ');
+  trig = menu('Choose Trig Function','SIN','COS','TAN');
+  switch trig
+      case 1
+          fprintf('The sin of %.2f radians is %f\n',angle,sin(angle))
+      case 2
+          fprintf('The cosine of %.2f radians is %f\n',angle,cos(angle))
+      case 3
+          fprintf('The tangent of %.2f radians is %.2f\n',angle,tan(angle))
+      otherwise
+          disp('Incorrect Choice')
+  end
+---------------
+Sub Plots
+    can create multiple plots in single Figures
+    think of breaking down the figure into a matrix
+    all the same syntax for regular plots (bar graphs, pie charts, etc)
+
+    for a 2x2 subplot use the following syntax
+    subplot(2,2,1)
+    % use standard plot, bar etc. commands here
+    subplot(2,2,2)
+    % use standard plot, bar etc. commands here
+---------
+% examples with subplots
+clear
+clc
+close all
+
+% number of sub-plots
+nPlots = 2;
+l = 4;
+% create a time vector
+t = linspace(0,l*pi(),1000);
+
+% creates a sine vector
+sinVec = sin(t);
+cosVec = cos(t);
+
+%concat
+twoVecs=[sinVec;cosVec];
+titleStrings = ["sine(t)";"cosine(t)"];
+
+figure
+
+for i = 1:nPlots
+    subplot(2,1,i)
+    plot(t,twoVecs(i,:))
+
+    xlabel('time (sec)')
+    ylabel('amplitude')
+    title(titleStings(i))
+end
+---------

@@ -1,0 +1,68 @@
+CSCI - Lecture 2 - 8/29/2018
+
+Install Matlab by next week
+sign up for piazza forum
+
+Scheduling for interview grading opens Saturday
+  Use Scheduler for section #
+
+What is CS?
+  Telling the computer what you want it to do
+  Designing algorithms inputs to outputs
+  The study of the fundamental functions of a computer
+  Trys to understand computers? / programs
+    Computers are mostly understood by now
+
+  Roots:
+    Cognitive Science
+    Math
+    Engineering
+
+"Computers are to CS are what telescopes are to astronomy" - E Dijkstra
+
+What is a program?
+  Sequence of instructions: tell a computer what to do
+    List of specific instructions for preforming a specific task
+    Need to be written a language that is understood by computers
+    Unambiguous
+    Terminating
+
+    Must Haves:
+      Execute statements sequentially, in the order written by the programmer
+      Branching options based on decisions
+        IF, ELIF, SWITCH
+      Repeat a chunk of statements
+        FOR, WHILE
+
+What is a programing language
+  Exact and Unambiguous
+  Precise Form (Syntax)
+
+  High-Level Languages
+    have English like commands
+    Portable
+    C, C++, Java, Python, Pearl, PHP, MATLAB
+
+  Low-Level Languages
+    Written for particular machine processer
+    Not very Portable
+    Not great for reading for humans
+    Typically what happens after high level is compiled.
+
+Approach to writing a computer program
+  Analyze the Problem:
+    What will it do?
+  Determine specifications
+    What will it accomplish
+    Inputs / Outputs & how will they relate
+  Created Design
+    algorithm
+    Ordered instructions
+    Needs to meet specs
+  Implement Design
+    Translate into programing Language
+  Test and Debug Program
+    Fix Errors
+
+Intro to Picobot
+  No need to take notes here

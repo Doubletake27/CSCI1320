@@ -1,0 +1,99 @@
+CSCI - Lecture 10 - 9/19/2018
+
+Announcements
+  Assignment 2
+    Interview Grading this week
+  Assignment 3
+    Due Sunday Sept. 23 by 600pm
+    Quiz #3
+    Lab 2 Due Friday
+    Interview Grading
+      Next week
+
+Recap:
+  Creating and Indexing Vectors
+Today
+  Vector Example: Audio Compress
+  Matrices
+  Scalar and Array operations on vectors and matrices.
+
+Indexing Vectors Practice
+    Create a row vector with some values
+    >> vec = [1,3,2,0,2,0,1,7];
+    Overwrite the 8th value with value 8
+    >> vec(8) = 8
+        [1,3,2,0,2,0,1,8]
+    Now take the first element of the variable and write it to new variable x
+    >> x = vec(1)
+        x = 1
+    Now take the last 4 elements and write them to a new variable, call it subVec
+    >> subVec = vec([5:8])
+        subVec = [2,0,1,8]
+
+          or
+
+    >> indexVec = [5:8];
+    >> subVec = vec(indexVec)
+        subVec = [2,0,1,8]
+    Concatenate subVec with a set of values from 1 to 5
+    >> subvec = [subVec,1:5]
+        subvec = [2,0,1,8,1,2,3,4,5]
+    Concatenate subVec with itself and write to subVec Repeat
+    >> subVec = [subVec,subVec]
+        subvec = [2,0,1,8,1,2,3,4,5,2,0,1,8,1,2,3,4,5]
+
+
+Vectors example: Audio Compress - Continued
+  Read audio file 'talkie.wav'
+  Implement a crude compression by removing every other data point
+  Play a sound sample of the original sound data and the compressed sound data
+
+  PsuedoCode
+    Read in Audio file
+      Assume Mono Chanel
+      Store data in a row vector variable
+      Retrieve sampling frequency and store in a variable (scalar)
+    Retrieve all odd-indeed elements from vector and write to a new Vector
+      Remember how indexing works
+      new vector should be half the length of original
+      v([1,3,5,..,vLength])
+    Write new vector (compressed) out to a new file
+      be sure to update sampling frequency
+
+    audioEG.m
+      clear
+      clc
+
+      % Read in audio file
+
+      [audioVec,Fs] = audioread('talkieMono.wav');
+
+      % sound(audioVec,Fs)
+
+      % Check the Length of audioVec
+      lengthAudio = length(audioVec);
+
+      compRatio = 2;
+
+      indexVec = (1:compRatio:lengthAudio)';
+      % Single Quote Mark Will transpose row vector to column vector
+
+      compressedAudioVec = indexVec(compVec);
+
+      sound(compressedAudioVec,Fs/compRatio)
+
+      audiowrite('talkieCompressed.wav',compressedAudioVec, round(Fs/compRatio))
+
+    What if I want to store data for 2 audio channels
+      Use a Matrix
+        1st row contains left channel
+        2nd row contains right channel
+
+      Matrix (2x3)
+        [9 6 3
+         5 7 2]
+`       Used to store values of same data type
+        Looks like a table
+        A matrix with m rows and n columns is mxn
+          These are called dimensions
+        Semi-Colon indicate new row

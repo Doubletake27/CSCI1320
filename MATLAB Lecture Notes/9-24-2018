@@ -1,0 +1,107 @@
+CSCI - Lecture 12 - 9/24/2018
+
+Announcements
+  Lab 3 Due Friday
+  Quiz 4 Due this week
+  MidTerm October 17 - in Lecture
+  Practicum - Week of October 15 in recitation
+
+Today
+  Review Plot()
+  Finish Freefall Problem
+  The if Statement
+
+Plot(x,y)
+  Takes in 2 variables
+  x and y have to be the same length
+  typically used w/ vectors (can be used with matrices)
+  plot x along horizontal
+  plot y along vertical
+
+Example
+  % Plotting Example 9/24/18
+  clear all
+  close all
+  clc
+
+  ang = 0:0.01:2*pi;
+  sinVec = sin(ang);
+  cosVec = cos(ang);
+  xAxis = zeros(length(ang));
+
+  figure,plot(ang,sinVec,'--',ang,cosVec,ang,xAxis,'-k');
+  %figure,plot(ang,sinVec,'--',ang,cosVec,ang,xAxis,'-k');
+
+  axis([min(ang),max(ang),1.5*min(sinVec),1.5]*max(sinVec));
+
+  %labeling
+  xticks(0:pi/2:2*pi);
+  xlabel('angle (radians)')
+  ylabel('amplitude')
+
+  legend('sine','cosine')
+
+See documentation/help for help understanding functions
+
+Example 2
+  % 9/21/2018
+  % In class practice
+
+  % Freefall
+
+  % Constants
+  g = 9.8; % m/s/s
+  t = linspace(0,5,1000);
+
+  % Inputs
+  h = input('Initial Height: ');
+
+  % Calculations
+  d = h - g/2 * t.^2;
+  xAxis = zeros(length(t));
+  gt = t(d<0);
+  gd = d(d<0);
+  gt = gt(1);
+
+  % Print4
+  fprintf('Ball hits the ground at t = %.4f seconds\n',gt)
+
+  % Plotting
+  plot(t,d,'b',t,xAxis,'k--')
+  xlabel('Time (seconds)')
+  ylabel('Height (meters)')
+  title('FreeFall')
+  axis([0,5,-5,h+5])
+
+The IF statement!!!!!
+  Sometime we want our code to be executed only in certain situations.
+    Example:
+      check to see if user inputted value is negative, if true, disp err msg
+      if value < 0
+        error('404 Brain not Found')
+      end
+  if condition
+    action
+  end
+
+  condition - any relational or logical expression
+
+  if userAge >= 21
+    enter webite
+  end
+  if userAge < 21
+    block website entry
+  end
+  ---
+  if userAge >= 21
+    enter website
+  else
+    block website entry
+  end
+  ---
+  Only One action will ever be executed, never both
+  ---
+  theres also else-if
+  --
+  write a program that prompts user for two values and writes them to variables a and b
+  if a > b, swap a's and b's values

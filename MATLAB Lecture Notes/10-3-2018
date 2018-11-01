@@ -1,0 +1,50 @@
+CSCI - Lecture 16 - 10/3/2018
+
+Today
+  MATLAB Debugger
+  While Loop
+  Nested Loops
+
+Debugging in MATLAB
+  A bug can cause an incorrect result or can cause an error
+  Sometimes it is useful to know variable values at specific locations in program execution.
+
+  Can USE MATLAB debugger to "step through code"
+
+  Place a "Breakpoint" to indicate where to halt the program execution
+
+  Basically click on the side of the code.
+
+  Mess around with breakpoints and stepping
+
+
+%% Sections code into something called a live script - can start runningit from that line
+
+While Loops
+  while true
+    do
+  end
+
+  %Scripty Example
+
+  number = input('Enter positive number ')
+  while number < 0
+    number = input('entered number not positive, enter positive number ');
+  end
+  %continues on with the program
+
+  %calculate the sine of a user input value
+  clear
+  clc
+  angle = input('Enter angle in degrees')
+  count = 0;
+
+  %% Calculate the sine of a user input
+
+  while angle ~= -1
+    fprintf('Sine of %.2 is %.2f\n',angle,sind(angle))
+    angle = input('Enter Angle in Degrees (-1 to exit) ');
+    count = count + 1;
+  end
+
+  fprintf('Thank you for your %d times patronage',count)
