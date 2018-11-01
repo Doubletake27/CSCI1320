@@ -3,22 +3,22 @@
 
 
 #include <iostream>
-#include <string>
+//#include <string>
 
 using namespace std;
 
-int main( )
+int main()
 {
-	int d;
-	const int g = 9.8;
-	const int t = 10;
+	float d;
+	const float g = 9.8;
+	float t;
 
-	cout << "enter time: " << endl; 
+	cout << "enter time: " << endl;
+	cin >> t;
 
-	d = 1/2 * g * t; 
+	d = 0.5 * g * t * t;
 
 	cout << "distance = " << d << endl;
-
 
 	return 0;
 }
