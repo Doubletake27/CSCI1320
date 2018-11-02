@@ -13,12 +13,12 @@ int main()
 	const float g = 9.8;
 	float t;
 
-	cout << "enter time: " << endl;
+	cout << "enter time: ";
 	cin >> t;
 
 	d = 0.5 * g * t * t;
 
-	cout << "distance = " << d << endl;
+	cout << "distance = " << d << " meters" << endl;
 
 	return 0;
 }

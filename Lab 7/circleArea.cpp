@@ -11,7 +11,7 @@ int main()
 	const double pi = 3.14;
 	double radius = 4;
 
-	cout << "Please enter radius: " << endl;
+	cout << "Please enter radius: ";
 	cin >> radius;
 
 	area = pi * radius * radius;
