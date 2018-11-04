@@ -1,1 +1,41 @@
 CSCI - Lecture 28 - 11/2/2018
+
+Functions in C++ can ether return a value or not
+  Only one variable can be returned by a c++ function.
+  A function that returns nothing is called a void function.
+  A function can take in any number or variables of any type
+
+  result = pow(x,y); // returns a double type
+  result = abs(x); // returns int type
+
+  Pre- defined functions
+    sqrt
+    pow
+    abs
+    labs
+    fabs
+    ceil
+    floor
+    exit
+    rand
+    srand
+
+  Write a program that generates a dozen random integers between 0 and 3
+    Pre-defined function rand() generates rand integers
+    rand() outputs a random number b/w 0 and some large constant
+    How do we control the range?
+    rand() outputs a value b/w 0 and (say... 20)
+      [20,11,3,0]
+      20/3 = 6, 11/3 = 3, 3/3 = 1, 17/3 = 5, 0/3 = 0
+      Modulo
+      20%3 = 2, 11%3 = 2, 3%3 = 0, 17%3 = 2, 0%3 = 0
+      d = 3
+      min possible output = 0
+      max possible output = 2
+    Algorithm
+      max range value d = 3;
+      rand()modulo(n+1)
+      repeat step 2 a dozen times
+  randGen.cpp
+
+      //cout << time(NULL) << " seconds has passed since 00:00:00 GMT, Jan 1 1970" << endl;
