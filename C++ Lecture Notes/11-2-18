@@ -5,7 +5,7 @@ Functions in C++ can ether return a value or not
   A function that returns nothing is called a void function.
   A function can take in any number or variables of any type
 
-  result = pow(x,y); // returns a double type
+  result = pow(x,y); // returns a dsouble type
   result = abs(x); // returns int type
 
   Pre- defined functions

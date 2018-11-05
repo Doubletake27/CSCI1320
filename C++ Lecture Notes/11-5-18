@@ -1,0 +1,91 @@
+CSCI - Lecture 29 - 11/5/2018
+
+Functions
+  Useful for Modularization
+  Void functions return nothing
+
+  To use a function you need three things
+    1) Function Declaration (prototype)
+        tells the compiler the function exists
+    2) Function Call. Passes control to the function
+    3) Function definition
+
+Function Declarations
+  int myFunctionA(int a);
+  void myFunctionB( bool a); // returns nothing
+  double myFunctionC (int a);
+  bool myFunctionD( double a);
+  int myFunctionE(int a, double b)
+  int myfunctionF();
+
+  Can only return variable
+  must specify the type being returned
+  no 'function' keyword
+  Must specify type of arguments being passed
+
+Function Call
+  out1 = myFunctionA(x);
+  myFunctionB(y);
+  out3 = myFunctionC(x);
+  out4 = myfunctionD(z);
+  out2 = myFunctionE(x,y);
+  out4 = myFunctionF();
+
+  Make sure you know what type is being returned and use the correct type var in assignment statement
+  Calling user defined functions is the same as calling pre-defined functions
+  Don't include data type when calling the function
+  No need for assignment statement when calling a void function
+
+Function definition
+  int myFunctionA( int a ) // function header same except for semicolon as function declaration
+  {
+    int myLocal;
+    myLocal = a + a;
+    return myLocal
+  }
+
+  void myFunctionB( bool a )
+  {
+    int myLocal = 3
+    if(a)
+      cout << "My local: " << myLocal << endl;
+    else
+      cout << "Sweet Dreams" << endl;
+  }
+
+  Function header should be identitcal to function declaration minus the semicolon
+  Use the return keyword w/ non-void functions
+  Definitions can go in the same .cpp file as main() in a seperate file.
+----------------------------------
+#include <iostream>
+using namespace std;
+
+int myfunction( int a);
+
+int main()
+{
+  int myVar;
+  myVar = myFunction(5);
+  return 0
+}
+
+int myFunction (int a)
+{
+  int x;
+  x = a + 2;
+  return x;
+}
+----------------------------
+  Definitions come after main Definition
+  Can call one function from another
+  (not just from main)
+
+Variable Scope
+  Same concept as in MATLAB
+  Vars declared within functions are local
+  Local vars can only be used with the scope of where they are declared
+----------
+#include <iostream>
+using namespace std;
+
+int 
