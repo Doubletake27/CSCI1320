@@ -11,20 +11,22 @@ bool loopGame(int g);
 // Function Definitions
 // main function
 int main(){
-  //Input max game points (g)
-  //Call Loop Game
-  //roll();
-  int g;
+  srand(time(NULL));   // Seed Random
+  int g;   //Input max game points (g)
   cout << "Play to what value: ";
   cin >> g;
-  loopGame(g);
+  //Call Loop Game
+  if (loopGame(g)==0){
+    cout << "CONGRATS YOU WIN!" << endl;
+  }else{
+    cout << "YOU LOSE!" << endl;
+  }
 }
 
 // roll function
 int roll(){
   //Return Random Int 1-6;
   //Dont forget to seed random
-  srand(time(NULL));
   int r = rand()%6 + 1;
   cout << "Rolled a " << r << endl;
   return r;
@@ -32,20 +34,38 @@ int roll(){
 
 // one turn function
 int oneTurn(bool t){
-  int s; // Turn score
-  int r;
-  if(t = 0){
+  int s = 0; // Turn score
+  int r; // Dice Roll
+  bool c; // User choice
+  //int i = 0; // This is for my winning strategy
+  if(t == 0){
     //Human Turn
-    while (){
-      r = roll();
+    while ((r!=3)&&(c!=1)){ // did not roll a 3 or elect to hold // Make Do While
+      cout << "Would you Like to Roll or Hold(0/1)? ";
+      cin >> c;
+      r = roll(); // Rolls
+      s = s+r;
     }
-    return s;
+    if(r==3){
+      return 3;
+    }else{
+      return s;
+    }
   }else{
-    // Computer score
-    while(){
-        // Computer Logic
+    // Computer TURN
+    // With a little probability / game theory it seems that best move is to try to roll 3x and then hold
+    // This works better than adding up to a number
+    //while(r!=3 && i++<3){
+    // Reccomended while loop:
+    while(r!=3 && s<=10){ //Keeps rolling until turn score is greater than or equal to 10
+      r = roll(); //Rolls
+      s = s+r;
     }
-    return s;
+    if(r==3){
+      return 3;
+    }else{
+      return s;
+    }
   }
   // If Human (0)
     // While loop
@@ -61,30 +81,38 @@ int oneTurn(bool t){
 bool loopGame(int g){
   int h = 100;
   int c = 100;
-  int t = rand(time(NULL))%2; //Generates a 0 or a 1
+  int d = 0;
+  int t = rand()%2; //Generates a 0 or a 1
 
   // While loop Until someone wins
   while ((h < g) && (c < g)){//Conditon = Nobody has won
-    if (t = 0) // Human
+    if (t == 0) // Human
     {
       cout << "---  START OF HUMAN TURN  ---" << endl;
-      h = h + oneTurn(0);
+      d = oneTurn(0);
+      h = h + d;
+      c = c - d;
       cout << "---   END of HUMAN TURN   ---" << endl;
       t = 1; // Switches to Computer Turn
     }
     else // Computer
     {
       cout << "--- START OF COMPUTER TURN ---" << endl;
-      c = c + oneTurn(1);
+      d = oneTurn(1);
+      c = c + d;
+      h = h - d;
       cout << "---  END of COMPUTER TURN  ---" << endl;
+      cout << "------------------------------" << endl;
       t = 0; // Switches to Human Turn
     }
+    cout << "------------------------------" << endl;
     cout << "Your Score: " << h << endl;
     cout << "Comp Score: " << c << endl;
+    cout << "------------------------------" << endl;
   }
   //If statement to figutr out who won;
-  if (h >= g)
+  if (h >= g) // Human Win
     return 0;
-  else
+  else // Computer Win
     return 1;
 }

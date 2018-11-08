@@ -1,1 +1,28 @@
 CSCI - Lecture 30 - 11/7/2018
+
+Write a program for the user to guess a number between 1 and 20
+count number of tries
+
+see program guessGame.cpp
+
+Variable scope is a thing
+local variables cannot be used across functions
+
+Variables live in the memory
+  each variable has a place in the moemory
+  each memory has a location called a pointer
+
+  use the & symbol to get addresses
+
+--- AddressSandbox.cpp ----------
+#include <iostream>
+using namespaces std;
+
+int main(){
+  int x = 3;
+  cout << "x" = << x << endl;
+  cout << "address of x = " << &x << endl;
+
+  return 0;
+}
+---------
