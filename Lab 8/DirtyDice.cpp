@@ -40,12 +40,12 @@ int oneTurn(bool t){
   //int i = 0; // This is for my winning strategy
   if(t == 0){
     //Human Turn
-    while ((r!=3)&&(c!=1)){ // did not roll a 3 or elect to hold // Make Do While
-      cout << "Would you Like to Roll or Hold(0/1)? ";
-      cin >> c;
+    do{ // did not roll a 3 or elect to hold // Make Do While
       r = roll(); // Rolls
       s = s+r;
-    }
+      cout << "Would you Like to Roll or Hold(0/1)? ";
+      cin >> c;
+    }while ((r!=3)&&(c!=1));
     if(r==3){
       return 3;
     }else{

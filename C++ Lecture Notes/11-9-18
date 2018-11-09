@@ -78,4 +78,36 @@ Arrays
     int myArray[] = {2,0,1,8};
     ---DOES NOT WORK: ---
     int myArray[4];
-    myArray{2,0,1,8}
+    myArray{2,0,1,8};
+
+  Indexing starts at 0 (Unlike MATLAB vectors)
+    Array: {2,0,1,8}
+    Index:  0,1,2,3
+
+  Access using Index
+    myArray[3] = 95;
+    cout << myArray[3];
+    // basically just use square brackets
+
+  Two uses of square brackets
+    in declaration, specifies SIZE
+    anywhere else, specifies index
+
+For loops with Arrays
+  A counted loop
+  just like w/ MATLAB vectors, good way to parse an array.
+  ---
+  for(int i = 0; i < 4; i++)
+    cout << myArray[i];
+  ---
+
+Write a program that takes 5 user scores (integers), finds the max, and prints the max to console.
+  Declare an array to hold 5 integers
+  Ask user to enter values
+  Print the 5 scores back to the User
+  Assume first element is array holds the max value and assign to a variable(max)
+  compare each consecutive element of array to check if greater than max
+  if found, update max w/ new value
+  Disp value of max
+
+---- arrayEG.cpp ----
