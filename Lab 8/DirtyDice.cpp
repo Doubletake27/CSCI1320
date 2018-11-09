@@ -102,7 +102,7 @@ bool loopGame(int g){
       c = c + d;
       h = h - d;
       cout << "---  END of COMPUTER TURN  ---" << endl;
-      cout << "------------------------------" << endl;
+      // cout << "------------------------------" << endl;
       t = 0; // Switches to Human Turn
     }
     cout << "------------------------------" << endl;
@@ -110,7 +110,7 @@ bool loopGame(int g){
     cout << "Comp Score: " << c << endl;
     cout << "------------------------------" << endl;
   }
-  //If statement to figutr out who won;
+  //If statement to figure out who won;
   if (h >= g) // Human Win
     return 0;
   else // Computer Win

@@ -1,0 +1,81 @@
+CSCI - Lecture 31 - 11/9/2018
+
+0x0000 - the 0x represents hexidecimal
+Addresses are typically hexadecimal
+
+Call-by-value
+  CHeck the slide notes
+call-by-reference
+  used to privide access to caller's actual argument
+  caller's data can be modified by called function
+  eg user-input function
+  the & is used in function declaration and Definitions
+
+-----
+void foo(int &x);
+int main()
+{
+  int x = 3;
+  foo(x);
+  cout << x << endl;
+  return 0;
+}
+
+void foo(int &x)
+{
+  x = x + 2;
+}
+
+// will return a 5
+-------
+  A "reference " back to caller's original variable
+  Refers to memory location of actual argument
+  The address is a unique number referring to distinct place in computer's memory
+
+Write a function that swaps the values of two Variables
+Then write a driver program to test the function
+  driver program -
+  from main(), prompt the user to enter 2 values and assign them to variables x and y
+  show values of x and y
+  swap the values of x and y
+  show the post swap values
+
+---
+#include <iostream>
+using namespace std;
+
+void swapValues(int var1, int var2);
+
+int main()
+{
+  int x,y;
+  cout << "values for x and y";
+  cin >> x >> y;
+
+  // call swap function
+  swapValues(x,y);
+
+  cout << "pre-swap: x = " << x << " y = " << y << endl;
+  return 0l
+}
+
+void swapValues(int var1,int var2)
+{
+  var1 = var2;
+  var2 = var1;
+}
+----
+Arrays
+  collection of data of same type
+  A grouping of a single data type (ie: int, double, string...)
+  used for lists of like items (eg. test scores, temps, names)
+  similar to vectors in MATLAB but significant differences
+
+  like regular vars, arrays as to be declared prior to using
+
+  Declaring arrays // Allocates memory to store the specified amount of data
+    int myArray[4];
+    int myArray[] = {2,0,1,8};
+    ---DOES NOT WORK: ---
+    int myArray[4];
+    myArray{2,0,1,8}
