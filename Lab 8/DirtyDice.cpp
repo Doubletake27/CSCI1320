@@ -41,16 +41,20 @@ int oneTurn(bool t){
   if(t == 0){
     //Human Turn
     do{ // did not roll a 3 or elect to hold // Make Do While
-      r = roll(); // Rolls
-      s = s+r;
       cout << "Would you Like to Roll or Hold(0/1)? ";
       cin >> c;
+      if(c== 0){
+        r = roll(); // Rolls
+        s = s+r;
+      }
     }while ((r!=3)&&(c!=1));
+
     if(r==3){
       return 3;
     }else{
       return s;
     }
+
   }else{
     // Computer TURN
     // With a little probability / game theory it seems that best move is to try to roll 3x and then hold
