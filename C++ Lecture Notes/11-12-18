@@ -1,0 +1,28 @@
+CSCI - Lecture 32 - 11/12/2018
+
+4 Different incremental algorithms
+
+Statically Defined Arrays
+  Need loops to copy, element wise
+  Indices start at 0
+  Cannot grow arrays dynamically
+    int myArray[4];
+    myArray[5] = 12;; // THIS DOES NOT WORK
+
+  Use a for loop
+    for(int i = 0; i < 4; i++)
+      cout << myArray[i];
+
+--- arrayEg.cpp ---
+
+Arrays as function arguments
+  functions can be defined to take in arrays as an argument.
+    Works much differently than vectors in MATLAB
+    A pass-by-array parameter behaves like a pass-by-reference
+    The ADDRESS of the first array element is what's actually getting passed.
+
+    ex:
+      void foo(int myArray[],int size); // The function doesn't actually know where the array ends w/o the size
+
+    Theres no need to return arrays because we are directly editing where they are stored
+    Actually CANNOT return arrays

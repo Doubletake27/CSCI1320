@@ -34,7 +34,7 @@ int roll(){
 
 // one turn function
 int oneTurn(bool t){
-  int s = 0; // Turn score
+  int s = 0; // Turn total
   int r; // Dice Roll
   bool c; // User choice
   //int i = 0; // This is for my winning strategy
@@ -83,9 +83,9 @@ int oneTurn(bool t){
 
 // loop function
 bool loopGame(int g){
-  int h = 100;
-  int c = 100;
-  int d = 0;
+  int h = 100; // Human Score
+  int c = 100; // Computer Score
+  int d = 0;   // Turn Total
   int t = rand()%2; //Generates a 0 or a 1
 
   // While loop Until someone wins
