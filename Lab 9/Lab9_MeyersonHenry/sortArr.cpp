@@ -1,29 +1,29 @@
-//RandArrays Driver
+// SortArr Driver
 
 #include <iostream>
 #include <ctime>
 using namespace std;
 
-void randArrays(int arr[], int len); // Initialize randArrays Function
+void sortArr(int arr[], int len); // Initialize sortArr Function
 void dispArray(int arr[], int len); // Initialize dispArray Function
 
 int main(){
-  srand(time(NULL)); // Seed Random generation of values
-  const int n = 10; // This can later be changed to a cin
+  const int n = 5; // This can later be changed to a cin
 
-  int ArrA[n];
-  int ArrB[n];
-
+  int ArrA[] = {0, 4, 90, 3, 253};
+  int ArrB[] = {95, 2, 56, 65, 1};
   // Call Rand Arrays for n values
-  randArrays(ArrA,n); // Fills Array A with random numbers
+
+  sortArr(ArrA,n); // Sorts Array A
   dispArray(ArrA,n); // Displays Array A
 
-  randArrays(ArrB,n); // Fills Array B with random numbers
+  sortArr(ArrB,n); // Sorts Array B
   dispArray(ArrB,n); // Displays Array B
 
 }
 
-void randArrays(int arr[], int len){
+void sortArr(int arr[], int len){
+  // Function Stub, just fills a matrix with random numbers for right now
   for(int i= 0; i < len;i++){
     arr[i] = rand()%1001; // Fills all values of matrix with rand numbers b/w 0-1000
   }
