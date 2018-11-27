@@ -1,1 +1,43 @@
 CSCI - Lecture 34 - 11/26/2018
+
+Pass By Value
+  Address does not get passed, merely the value of the variable.
+  Function does not alter the caller's variable.
+
+  void foo(int myArray);
+
+Pass By Reference
+  Address IS passed
+  Function can alter caller's variable
+
+  void foo (int &myArray)
+
+Pass By Array
+  Address of first element is passed
+  You should actually also pass in the size
+
+  void foo(int myArray[], int size)
+
+String variable types
+  Include string library to allow for string variables
+  When we declare a variable of string type, we are actually instantiating an object of the string class
+
+Objects, unlike primitive types (int, double, char, ...)
+  can have functions associated with them
+  Called member functions (or methods)
+
+string class in pratice
+  string str1, str2; //
+  str1 = str2; // assigns value of str2 to str1
+  str1 < str2; // Lexicographic comparison (alphabetical)
+  str1.length() // Returns the number of characters in the string
+  str1.empty() // Returns a Boolean true if string is empty
+
+Reading files in C++
+  #include <fstream> //   We use something called a stream object
+  ifstream inputStream; //   Declare objects of the if stream class
+  inputStream.open("filename.txt"); // Connecting an external file
+  string myVar; // Create some form of variable to store data into, in this case string
+  inputStream >> myVar; // Stores values from inputStream into myVar
+  // Uses white space delimiters, incrementing
+  outputStream.close();
