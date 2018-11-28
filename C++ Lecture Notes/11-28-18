@@ -1,0 +1,72 @@
+CSCI - Lecture 35 - 11/28/2018
+
+File I/O
+  #include <iostream>
+  ifstream inputStream;
+  inputStream.open("filename.txt")
+
+  string myVar;
+  inputStream >> myVar;
+  inputStream.close();
+
+  // Default delimiter is a space
+  // custom delimiters can be set but won't be covered in class
+
+String classes
+  string s = "cupcake";
+  cout << s[0] << s[1] << endl; // Would display "cu"
+
+  string sA[] = {"cupcake","brownie"};
+  cout << sA[0] << sA[1] << endl; // would display "cupcakebrownie"
+
+Structures Intro
+  Variable that stores various types of data
+
+  struct AnimalPatient
+  {
+    string name;
+    string species;
+    string breed;
+    int age;
+    double weight;
+    bool nutered;
+  };
+
+  AnimalPatient animal0;
+  animal0.name = "Bean";
+  animal0.species = "cat";
+  animal0.breed = "Tabby";
+
+  ------------------------
+  #include <iostream>
+  #include <string>
+  using namespace std;
+
+  struct AnimalPatient // struct definitions typically come after headders
+  {
+    string name;
+    string species;
+    string breed;
+    int age;
+    double weight;
+    bool nutered;
+  };
+
+  void displayAnimal(animal Patient a0);
+
+  int main(){
+    AnimalPatient animal0;
+    animal0.name = "Bean";
+    animal0.species = "cat";
+    animal0.breed = "Tabby";
+
+    displayAnimal(animal0);
+
+  }
+
+  void displayAnimal(animal Patient a0){
+    cout << name << a0.name << endl;
+  }
+  -----------------------------
+  see structsExample.cpp
+  -------------------
