@@ -1,0 +1,48 @@
+CSCI - Lecture 37 - 12/3/2018
+
+// 2Darray.cpp
+
+// -----
+// Intro to Classes in C++
+//   Similarly as with structs, classes allow us to group multiple types of data in a single variable.
+//   classes go way beyond structs in that they allow member functions to be defined .operator()
+// ----
+class Student{
+public:
+  string studentName;
+  int idNumber;
+
+  void dispInfo(){
+    cout << "name: " << studentName << "id#:" << idNumber << endl;
+  }
+private:
+
+};
+// - very simple example ^
+// Members can either be public or private
+      // Public - can be accesed outside of class (ex: .length())
+      // Private - can only be accessed within the class itself
+    // NOT to be confused with local / global scope
+    // Member functions can access any class member
+// -----
+class Student{
+public:
+  string studentName;
+  int idNumber;
+private:
+  string major;
+};
+
+int main(){
+  Student s1;
+  s1.studentName = "pat";
+  s1.idNumber = 1929;
+  s1.major = "mechanical"; // THis will not work because major is private
+}
+// // -----
+// Why have private members?
+//   encapsulation - keep data "safe" within its own class/object
+//   actually, all data members should be private. How?
+//   Have public member functions that interact with the data
+
+classSandbox.cpp

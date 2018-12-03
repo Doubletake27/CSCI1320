@@ -10,22 +10,31 @@ struct WordLetters
 {
   string word; // word
   int nlet; // number or letters
-}
+};
+
+void readFile(string fileName, int numWords, WordLetters arr[]);
 
 int main(){
   const int N = 17;
 
   string fileName = "lab10test.txt";
-
-  ifstream inStream;
-
   WordLetters a[N];
 
-  inStream.open(fileName);
+  readFile(fileName,N,a);
 
   for(int i = 0; i < N; i++){
-    inStream >> a[i].word;
-    a[i].nlet = a[i].word.length();
+    cout << a[i].word << " " << a[i].nlet<<endl;
   }
 
+  return 0;
+}
+
+void readFile(string fileName, int numWords, WordLetters arr[]){
+  ifstream inStream;
+  inStream.open(fileName);
+  for(int i = 0; i < numWords; i++){
+    inStream >> arr[i].word;
+    arr[i].nlet = arr[i].word.length(); // Same as .size()
+  }
+  inStream.close();
 }

@@ -1,0 +1,67 @@
+CSCI - Lecture 36 - 11/30/2018
+
+Structs File Example
+  struct AnimalPatient
+  {
+  string name;
+  string species;
+  string breed;
+  int age;
+  double weight;
+  bool nutered;
+  }
+
+void displayAnimal(AnimalPatient a0);
+
+int main(){
+  AnimalPatient animal0;
+  animal0.name "Bean";
+  animal0.species ="cat";
+  animal0.breed = "short hair"
+
+  displayAnimal(animal0);
+
+  return 0;
+}
+
+void displayAnimal(AnimalPatint a0){
+  cout << "name: " << a0.name << endl;
+}
+-------------------------------------
+What if a struct member is an object and we want to access one of its members?
+  AnimalPatient animal0;
+  animal0.name = "Bean";
+
+  int x = animal0.name.size();
+_______________________-
+structsExample.cpp
+_______________________-
+Global Variables
+  opposite of a local variable
+  typically try to avoid
+  can be accessed anywhere
+  can be tempting
+  we don't actually want to access most variables from anywhere
+  variables should have smallest scope possible
+
+  declared at top of file, typically as constants
+
+Multi Dimensional Arrays C++
+  2D array declaration:
+    int N = 2, M = 3;
+    int arr2d[N][M]; // Two dimensional
+
+  Use nested for loops
+
+  What about passing multi-dimensional arrays as function arguments?
+  //// void foo(int arr[][]) //// WRONG!!!
+
+  For mD arrays, any dimension after the first one has to have the size specified
+    void foo(int arr[][N]);
+
+    This forces N to be a global variable
+
+-----------------------------
+//Write a function that takes in a 2D array (MxN and fills it with random integers between 0 and 10)
+  // Fill one row of the array by iterating over the second dimension
+  // Advance to next row by incrementing 1st dimension iterator

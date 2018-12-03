@@ -1,0 +1,7 @@
+C:\Users\Randy\Documents\2018-2019\CSCI\C++ Lecture Notes\classSandbox.cpp: In function 'int main()':
+C:\Users\Randy\Documents\2018-2019\CSCI\C++ Lecture Notes\classSandbox.cpp:22:6: error: 'std::__cxx11::string Student::major' is private within this context
+   s1.major = "aero";
+      ^~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\C++ Lecture Notes\classSandbox.cpp:13:12: note: declared private here
+     string major;
+            ^~~~~
