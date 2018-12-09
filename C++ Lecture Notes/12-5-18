@@ -1,0 +1,63 @@
+CSCI - Lecture 38 - 12/5/2018
+
+// Class Review
+  // Classes are important
+
+// ----
+class Student
+{
+public:
+  void setIdNumber(int x){
+    idNumber = x;
+  }
+private:
+  int idNumber;
+}
+
+int main(){
+  Student s1;
+  s1.setIdNumber(69420);
+  return 0;
+}
+// ----
+// The only way to access member data is to go through a member function
+// Function can have various fail-safes built in
+
+// --- Mutator Example
+  void setIdNumber(int x){
+    id(x<0)
+      idnumber = x;
+    else
+      cout << "Your are a terrible person and ID must be positive" << endl;
+  }
+// Very commmon type of member Function
+  // called a mutator or setter function
+  // can be used outside of the Class
+  // can be reused within the Class
+
+// What if we want to readx private data?
+  // cannot read private data directly
+  // need an accessor function
+  int getData(){
+    return idNumber;
+  }
+
+
+// Class Sandbox.cpp
+// timeEg.cpp
+
+// The Constructor
+  // A special kind of member function that is called every time a new object is created
+  // Allocates the space for all member variables
+  // Can be user defined to take in arguments
+  // gets the same name as the class
+  // Doesnt have a varialbe type
+
+  class Time12{
+    public:
+      Time12(){
+        hour = 12;
+        minute = 59;
+        mer = "AM"
+      }
+  }

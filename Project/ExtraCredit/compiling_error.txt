@@ -1,0 +1,66 @@
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:17:14: error: variable or field 'sortArr' declared void
+ void sortArr(wordPairs arr[][M], long int len); // Initalizing Sort function
+              ^~~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:17:14: error: 'wordPairs' was not declared in this scope
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:17:34: error: expected primary-expression before 'long'
+ void sortArr(wordPairs arr[][M], long int len); // Initalizing Sort function
+                                  ^~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:18:14: error: 'wordPairs' was not declared in this scope
+ int isUnique(wordPairs list[][M], long int len, string word1, string word2); // This needs to be a pass by reference
+              ^~~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:18:35: error: expected primary-expression before 'long'
+ int isUnique(wordPairs list[][M], long int len, string word1, string word2); // This needs to be a pass by reference
+                                   ^~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:18:56: error: expected primary-expression before 'word1'
+ int isUnique(wordPairs list[][M], long int len, string word1, string word2); // This needs to be a pass by reference
+                                                        ^~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:18:70: error: expected primary-expression before 'word2'
+ int isUnique(wordPairs list[][M], long int len, string word1, string word2); // This needs to be a pass by reference
+                                                                      ^~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:18:75: error: expression list treated as compound expression in initializer [-fpermissive]
+ int isUnique(wordPairs list[][M], long int len, string word1, string word2); // This needs to be a pass by reference
+                                                                           ^
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp: In function 'int main()':
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:28:32: error: 'numWords' was not declared in this scope
+   long int len = numWords(fname); // this is a long int such that it runs well when fname ="HungerGames.txt"
+                                ^
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:37:3: error: 'wordBank2D' was not declared in this scope
+   wordBank2D[][]; // Line 1 will be the first word, Line
+   ^~~~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:37:14: error: expected primary-expression before ']' token
+   wordBank2D[][]; // Line 1 will be the first word, Line
+              ^
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:37:16: error: expected primary-expression before ']' token
+   wordBank2D[][]; // Line 1 will be the first word, Line
+                ^
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:47:20: error: 'wordBank' was not declared in this scope
+     pos = isUnique(wordBank,j,word1,word2); // Calls isUnique on each word
+                    ^~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:47:42: error: 'isUnique' cannot be used as a function
+     pos = isUnique(wordBank,j,word1,word2); // Calls isUnique on each word
+                                          ^
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:62:11: error: 'wordBank' was not declared in this scope
+   sortArr(wordBank,j);
+           ^~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:62:21: error: 'sortArr' was not declared in this scope
+   sortArr(wordBank,j);
+                     ^
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp: At global scope:
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:80:14: error: redefinition of 'int isUnique'
+ int isUnique(wordPairs list[], long int len, string word1, string word2){ // Switch to pass by reference
+              ^~~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:18:5: note: 'int isUnique' previously defined here
+ int isUnique(wordPairs list[][M], long int len, string word1, string word2); // This needs to be a pass by reference
+     ^~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:80:14: error: 'wordPairs' was not declared in this scope
+ int isUnique(wordPairs list[], long int len, string word1, string word2){ // Switch to pass by reference
+              ^~~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:80:32: error: expected primary-expression before 'long'
+ int isUnique(wordPairs list[], long int len, string word1, string word2){ // Switch to pass by reference
+                                ^~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:80:53: error: expected primary-expression before 'word1'
+ int isUnique(wordPairs list[], long int len, string word1, string word2){ // Switch to pass by reference
+                                                     ^~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\Project\ExtraCredit\ProjHM.verE.cpp:80:67: error: expected primary-expression before 'word2'
+ int isUnique(wordPairs list[], long int len, string word1, string word2){ // Switch to pass by reference
+                                                                   ^~~~~
