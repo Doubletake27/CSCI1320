@@ -1,0 +1,5 @@
+Results:
+
+          | Sorted | Unsorted
+  Cleaned |   2s   |   8s
+   Whole  |   2s   |   12s

@@ -1,0 +1,74 @@
+CSCI - Lecture 41 - 12/20/2018
+
+Final Exam: 7:30PM, 90 minutes, in MUEN E050
+Multiple Choice
+1 Page of notes allowed (Front and Back)
+
+Final Study Guide
+  50/50 - MATLAB/C++
+
+  C++
+    Diferenced between scripted and compiled language
+    the two tools needed to create a program in C++
+    How to run C++
+    Console I/O
+    purpose of #include
+    the main function
+
+    Variables
+      Declaration and Initialization
+      scope
+      Type casting implicit bs explicit
+      statically typed vs dynamically typed (C++ vs MATLAB)
+      overflow (C++ vs Matlab)
+
+    Flow Control
+      Relational Expressions
+      Logical  (Boolean)
+      Branching (IF, Else If, else)
+      Loops (For, while, do while)
+
+    Functions in C++
+      What can be Returned?
+      3 things needed to use a Function
+      Difference between function declaration and definition
+      variable scope
+      call-by-value
+      call-by-reference
+      call-by-array
+
+    Arrays
+      Declaring
+      Initializing
+      Accessing elements (starts at 0)
+      Fixed size (unlike MATLAB vectors)
+      Comparing contents (==elementwise)
+      Passing array elements to a Function
+      Multi-Dimensional Arrays
+
+    Programming Techniques
+      Driver Programs
+      Functions Stubs
+
+    File IO
+      Opening and Closing and External File
+      Stream Objects
+      Detecting the end of a File
+
+    Structs and Classes
+      What can be but in a struct/Class
+      How to define struct/class?
+      Declaring objects (instances)
+      Accessing members (.operator)
+      Private vs public
+      Why make data private?
+      Mutator and accessor Functions
+      Constructor Functions
+      Function Overloading
+      Array of structs/Objects
+      Array as a member of and object
+      Member function definition / declaration (Scope resolution operator)
+
+What Comes after CSCI 1320
+  Data Structures
+  Study of dynamic Data Structures

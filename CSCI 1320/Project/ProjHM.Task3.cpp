@@ -22,7 +22,7 @@ int isUnique(UniqueWord list[], int len, string word); // This needs to be a pas
 
 int main(){
   long int t = time(NULL);
-  string fname = "HungerGames.txt"; // This can also be swithed out with cleanedText.txt
+  string fname = "CleanedText.txt"; // This can also be swithed out with cleanedText.txt
   string word;
   int j=0; // Will represent position in wordBank to place new unique words
   int pos;

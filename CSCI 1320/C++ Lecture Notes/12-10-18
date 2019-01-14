@@ -1,0 +1,16 @@
+CSCI - Lecture 40 - 12/10/2018
+
+There's a bunch of stuff about function overloading and stuff today
+I'm not quite sure I was finishing my COEN essay
+Read through the notes...
+
+
+
+Scope Resolution operator - Allows class functions to be defined after main
+// declaration inside of class def
+void printDate();
+
+// Definiton goes after main
+void Time12::printDate(){ // Time12 is the class name
+  cout << hours << ":" << minute << mer << endl;
+}
