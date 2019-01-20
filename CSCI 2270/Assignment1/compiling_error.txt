@@ -1,0 +1,7 @@
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Assignment1\A1_P2_HenryMeyerson.cpp: In function 'int main(int, char**)':
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Assignment1\A1_P2_HenryMeyerson.cpp:23:3: error: 'ifsteam' was not declared in this scope
+   ifsteam students;
+   ^~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Assignment1\A1_P2_HenryMeyerson.cpp:24:3: error: 'students' was not declared in this scope
+   students.open(fInName);
+   ^~~~~~~~

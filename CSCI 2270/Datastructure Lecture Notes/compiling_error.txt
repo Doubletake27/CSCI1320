@@ -1,0 +1,4 @@
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Datastructure Lecture Notes\ReadInText.cpp: In function 'int main(int, char**)':
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Datastructure Lecture Notes\ReadInText.cpp:18:3: error: expected ';' before '}' token
+   }else{
+   ^

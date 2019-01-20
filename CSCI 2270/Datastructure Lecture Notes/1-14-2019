@@ -36,9 +36,45 @@ Grading
   Project 10%
   Quizzes 10% (End of the Week)
   Midterms (x2) 20%
-    Must have a 65% average on the exams to get bette than a D+ in the class, Regardless of other grades.
+    Must have a 65% average on the exams to get better than a D+ in the class, Regardless of other grades.
   Final Exam (Optional) - Will replace your lowest midterm
 
 Coming from 1320
   Need to learn how to write command line arguments
   Esp. pointers
+
+What is data structures?
+  Data Abstractions
+    Computational Representations of the world
+    Abstract Meaningful details for Representation
+    Variables and Processes
+
+    Examples:
+      Objects
+      Queues
+        Add to Beginning, Remove from End
+      Trees
+        Binary Search Tree
+      Arrays
+      Stacks
+        Add and Remove from the Top
+      Linked Lists
+        Linked Object List, Each node knows the node in front of and behind it
+        Takes a number of operations to access inside
+        May also use a directory
+      Hash Tables
+      Graphs
+
+  Algorithm Design
+    Data Structure Selection
+    Design
+    Analysis
+
+    Sorting (O represents operational scaling)
+      Bubble Sort O(n^2)
+      Heap Sort O(nlog(n))
+
+    Complexity of Operations
+      Search
+      Insert
+      Delete

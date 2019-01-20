@@ -1,0 +1,85 @@
+CSCI 2270
+Lecture 2
+1/16/2019
+
+C++ Review
+
+Arrays
+  A contiguous set of memory locations that are reserved by the program to store N elements where N is a fixed number, all of the same particular data type.
+
+  Declaration:
+    int arr [4]; //Initializes an array called "arr" of length 4 to store 4 data types.
+
+  Usage:
+    arr[0] = 2270;
+    arr[1] = 1.9; // will store just 1 because its an int type.
+
+  Passing as Arguments:
+    void foo(int arr[]. int size); // passes in the address of the first element of the array, then passes in the size
+    {
+      arr[0] = 12; // Edits first element of the array at the actual memory location;
+      size = 6; // Just edits the local value of the variable Arrays
+    }
+
+Structs
+  A C++ struct allow us to store multiple variables within a single entity. It is a way to organize data.
+
+  Example:
+    Create a struct to store the veterinary patient info (Name, Species, Sex, Age, Weight)
+
+    struct AnimalPatient
+    {
+      string name;
+      string species;
+      char sex;
+      int age;
+      double weight;
+    };
+
+    All members of a struct by definition are public
+
+  Usage:
+    Once a custom struct is defined, declaration is needed.
+
+    int main(){
+      AnimalPatient p0;
+      p0.name = "Steve";
+      p0.species = "cat";
+      p0.age = 4;
+      ...etc...
+      return 0;
+    }
+
+Array of Structs
+  AnimalPatient animalArr[3]; // Creates array to store info for 3 patients
+  animalArr[0].name = "Bean";
+  animalArr[1].name = "Steve";
+  animalArr[0].age = 4;
+
+File Input
+  How to read in external data.
+
+  #include <fstream> // Include Library
+
+  int main(){
+    ifstream instream; // Declare stream object
+    instream.open()"filename.txt"); // Connect stream object to external file (Ensure it is on the same path)
+
+    int x;
+    while(!instream.eof()){ // while not at the end of the file
+      instream >> x; // Write each term to x
+      // Remember default delimiter is white space
+    }
+  }
+
+  Custom delimiters
+    use getline() function
+      part of the string library
+
+    Example:
+      string arr [10];
+      getline(instream, arr[0],','); //Array must be string type, Delimits on comma
+      getline(instream, arr[1],',');
+      getline(instream, arr[2],'\n'); // Delimits on new line (although the professor calls it carriage return)
+
+Coding Example:

@@ -1,0 +1,21 @@
+CSCI 2270
+Lecture 3
+1/18/2019
+
+First Homework Assignment due next Friday
+First Quiz Due Next Tuesday
+
+Coding Example - Reading in from a text file
+  Read in Text file
+  I/O
+    Input: Text file w/ varied delimiters
+    Output: Array of structs
+        (Print values to console for testing)
+  Approach
+    Define "Student" struct w/ members
+      ID
+      Name
+      Major
+    Declare an array of student struct with 10 elements
+    Define functiion to read file and write to array:
+      void readInFile(student arr[], int arrL,string filename)
