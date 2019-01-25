@@ -1,0 +1,60 @@
+CSCI 2270
+Lecture 5
+1/25/2019
+
+ Assignment 2 Posted Saturday -> Due next Sunday
+ Quiz 2 - posted Today, due Monday
+
+ Today
+   Pointers - to non-native data types (user defined)
+
+   Memory Allocation
+     Call stack vs heap
+     Automatic(local) vs dynamic variables
+
+ User Defined Types
+   -Pointer to a structs
+
+   eg.
+
+  struct Person{
+    string name;
+    int age;
+  }
+
+  Person p1; // instance of person
+  Person *ptr; // pointer to a Person type
+  ptr = &p1; // pointer to address of p1
+
+  // syntax for accessing members of struct via pointer
+
+    (*ptr).name = "Alaba" // Will access the name member of Person p1
+    (*ptr).age = 27; // Accesses the age member of Person p1
+
+      // Alternatively
+
+    ptr -> name = "Alaba"; // Exact same as above
+    ptr -> age = 27;
+
+      // Can be used inside a cout
+
+    cout << ptr->name << endl;
+
+Dynamically Allocated
+  Automatic variables get allocated on the stack
+  Automatic because the memory is automatically allocated
+
+  Dynamically allocated variables get allocated at run-time and use the heap (free-store)
+
+    "new" and " delete"
+
+  Have to use a pointer to allocated memory Dynamically
+
+    int *p1; // declare a Pointer
+    p1 = new int; // Grabs new memory from the heap and allocates enough of it to store an int;
+                  // new int is accessed through pointer exclusively
+                  // nameless variable
+
+    // Must also manually de-allocate memory
+    delete p1; // Frees up the memory
+    p1 = null; // Prevents you from accidentally accessing the no longer allocated space again;

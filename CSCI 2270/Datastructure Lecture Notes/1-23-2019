@@ -1,0 +1,86 @@
+CSCI 2270
+Lecture 4
+1/23/2019
+
+// POINTERS!
+//   A variable type for storing a memory address
+  // Syntax:
+    int* p; //Pointer "p" is now declared
+            //The int specifies what data type the pointer will be pointing to
+            //The * indicates the variable is a pointer
+            //p is the name of the Pointer
+
+  // Recall:
+    int x = 3;
+    cout << &x; //returns address of x (In Hexadecimal - ex: 0x7ffe0660)
+
+    p = &x; //Stores address of x into pointer p
+
+      // alternatively in one line of code:
+
+    int *p = &x;
+
+  // Where to place the *
+  //   1) int* p;
+  //   2) int *p;
+  //   3) int * p;
+    // all are valid
+
+  // Can declare both pointer and simple types in the same line of code
+    int x, *p1,y,*p2; // p1 and p2 will become pointers
+    int* x, p1,y,p2; //Here only x will be a Pointer
+
+    float y;
+    float *p2 = &y; // pointer p2 now has the address of float variable y
+
+  // How do we get the target value?
+    int *p = &x;
+
+    cout << x << endl;  // prints value of variable x
+
+    cout << *p << endl; // dereference operator
+                        // retrieves actual value the pointer points to
+
+    cout << p << endl;  // Displays address
+
+  //Pass by Reference
+    void myPassByRef(int &x);
+
+    int main(){
+      int a;
+      myPassByRef(a);
+    }
+
+    // Now whatever happens to x in myPassByRef will happen to a, because they are the same variable
+
+    //Pass By Pointer
+      void myPassByPointer(int *p);
+          //like w/ Pass-By-Reference
+          // Except now its expecting a pointer type
+
+      int main(){
+        int *myPtr;
+        myPassByPointer(myPtr);
+      }
+
+      or
+
+      int main(){
+        int x;
+        myPassByPointer(&x);
+      }
+
+    //Pointer Function Example
+      int *foo(){
+        int x = 3;
+        int 8p = &x;
+        return p;
+      }
+
+// Big Example
+  void foo(int x, float &y, int arr[], int *x){
+      // int x is a pass-by-value, caller gives value, caller calls w/ non-pointer type
+      // float &y is a pass-by-reference, caller gives access to original variable, caller calls w/ non-pointer type
+      // int arr[] is a pass-by-array, caller gives address of 1st array element, caller calls w/ array type  --- This is basically just a pointer
+      // int *x, is a pass by pointer. caller gives address, caller calls w/ pointer type
+  }
