@@ -1,0 +1,91 @@
+CSCI 2270
+Lecture 7
+1/30/2019
+
+Linked Lists
+  Motivation
+    Say we have an array w/ 1000 of its elements populated ( length 1001)
+    The array is sorted
+      [1,2,3,4,7,12, ... ,450] n = 1001
+
+    We want to insert an element, and keep array sorted.
+    Say new element value = 2
+    How many memory copy operations are needed?
+      (It would take 1000)
+      THIS IS VERY INEFFICENT
+
+  Linked List NODE
+    struct Node{
+      string key;
+      Node *next; //self referential pointer -> points to its own type
+    };
+
+    Recall that we can have a pointer to a struct type
+      Node *p1; // Points to struct Node
+
+    int main(){
+      Node *p1 = new Node; // Creates a pointer p1 that points to a new preallocated NODE
+      Node *p2 = new Node;
+      p1 -> key = "llama";
+      p2 -> key = "donkey";
+      p1 -> next = p2;
+      p2 = new Node;
+      cout << p1->next->key<<endl; // Will print "donkey"
+      cout << p1->key << endl; // Will print "llama"
+
+      //link up B and C
+      p1 -> next -> next = p2;
+
+      return 0;
+    }
+    // Singly linked list
+      // Each node only knows about next node
+
+      // First Pointer called "Head"
+      // Last Pointer called "Tail"
+
+    // Disadvantages
+      // Hard to Access far data
+      // Takes up twice as much data
+
+    // Advantages
+        Easy to insert new entries without re-copying everythhing
+        Don't have to copy (move) all the elements
+
+    The Linked List Class
+      Define a struct for a Node (singly linked)
+        two members 1) key (string for example)
+                    2) referetntial members
+
+      Define SLL class
+        private
+          1) Head
+          2) Tail
+
+        Public functions
+           constructor
+            no parameters
+            set pointers to null
+
+          destructor
+            gets called when object goes out scope
+            use it to des-allocate all the linked nodes
+
+          Search
+            node * search (string skey)
+              locate a node w/ given value
+              return pointer
+
+          append
+            void appendNode(string newItem)
+            Adds a new node to the end
+
+          insert(string afterMe, string newItem)
+            searches for after me, then repoints to new item,
+
+          void displayList()
+            start at the head (from private class)
+            traverse list and display every node key
+
+  LinkedList Example:
+    SLL.h

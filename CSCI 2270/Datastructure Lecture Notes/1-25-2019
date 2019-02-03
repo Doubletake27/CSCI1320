@@ -30,7 +30,7 @@ Lecture 5
 
     (*ptr).name = "Alaba" // Will access the name member of Person p1
     (*ptr).age = 27; // Accesses the age member of Person p1
-
+s
       // Alternatively
 
     ptr -> name = "Alaba"; // Exact same as above
@@ -58,3 +58,39 @@ Dynamically Allocated
     // Must also manually de-allocate memory
     delete p1; // Frees up the memory
     p1 = null; // Prevents you from accidentally accessing the no longer allocated space again;
+
+  Dynamically Allocated Array
+    eg length 5
+
+    int n;
+    int *ptr;
+    n = 5;
+    ptr = new int[n];
+    for(int i = 0; i<n; i++){
+      cin >> ptr[i];
+    }
+
+    delete [] ptr;  // deallocate entire array
+                    // No need to pass the length
+
+  Array Doubling Example
+    1) create N-length dynamic array
+    2) read in N values to fill array
+    3) "double" the array length, keeping the first N elements in place.
+
+  Approach
+    1) Declare N-length dynamic Array
+    2) Fill array
+    3) Create a new array of 2N length
+    4) copy over values from 1st array to 2nd Array
+
+      a->   [     ]N
+             |||||
+      temp->[          ]2N
+
+    5) Clean up
+      a) free up memory of "a"
+      b) make "a" point to the same address as "temp"
+      c) temp = NULL;
+
+    Bla

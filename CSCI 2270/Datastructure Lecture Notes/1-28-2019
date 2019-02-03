@@ -1,0 +1,111 @@
+CSCI 2270
+Lecture 6
+1/28/2019
+
+Dynamic Memory Basics
+  Have to manually allocate and deallocate in order to use it
+  Ex:
+    int *p1 = new int[n];
+    // int *p1: declares a pointer
+    // new: keyword to allocate the heap
+    // int[n]: n-length array of ints
+
+    DONT then do
+      p1 = &x
+      that will lose the memory on the heap
+
+    Accessing array elements
+      same as automatic arrays. use the pointer name
+      p1[i] = 27
+
+    When finished w/ dynamic array
+      delete [] p1; // de-allocates (Does not actually delete data in memory, just allows it to be overwritten)
+
+    Can re-use pointer (AFTER DEALLOCATION)
+
+Array Doubling
+  Because dynamic memory is allocated at runtime, an array can be "grown" as needed
+
+    we can't request contiguous memory space
+
+    [______] + -> _______] - CANNOT DO THIS
+
+    we can grab a new chunk of memory elsewhere on the heap.
+      arr  -> [ _ _ _ _ _ _ ]
+                | | | | | |
+      temp -> [ _ _ _ _ _ _ _ _ _ _ _ _ ]
+
+    Must to preform a copy operation
+      from arr to temp
+    Then DEALLOCATE A
+    Then make arr point to temp
+      arr = temp:
+
+    (Can also use vectors (but they work like this under the hood))
+
+Class Review C++
+  very similar to a struct, but has many more features
+  EX:
+
+    class Time{
+      private:
+        int hour;
+        int min;
+      public:
+        Time(int h, int m){
+          hour = h;
+          minute = m;
+        }
+        Time(){}
+        void printTime(){
+          cout << hour << ":" << minute << endl;
+        }
+        void setHour(int h){
+          if(h >=0 && h <= 12)d{
+            hour = h;
+          }
+        }
+        void setMinute(int m){
+          if(m >= 0 && m <= 60){
+            min = m;
+          }
+        }
+    }
+
+    // Getter / Setter / Mutator
+    // Accessor
+
+    //Example on moodle
+
+Multi-File Compilation
+  Usually, end up w/ at leats 3 files
+  1) Header File
+    - class definition
+        only prototypes
+    - Extension .h or .hpp
+        eg: time12.h
+  2) Implementation File
+    - All member function definitions
+    - extension .cpp
+        eg: time12.cpp
+    - need include header file
+        #include "time12.h"
+  3) Driver file
+    - main() goes here
+    - Title
+        ex: time12driver.cpp
+    - need to include header file
+        #include "time12.h"
+
+  Compilation
+    compile only
+      g++ -c Time12.cpp
+        (-c prevents compiling and linking)
+        will result in object file (.o extension)
+      g++ -c time12driver.cpp
+        results in another .o Extension
+      Link them
+        g++ time12.o time12driver.o -o time12prog.exe
+      run .exe
+
+    typically all these commands would get put in a file that would make them (prob batch file)

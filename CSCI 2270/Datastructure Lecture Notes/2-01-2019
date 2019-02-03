@@ -1,0 +1,32 @@
+CSCI 2270
+Lecture 8
+2/1/2019
+
+// Linked List Member functions
+//   Append
+//   Search
+//   Display
+//   Delete
+//   (Shitloads more)
+
+// Append
+  void append(string value):
+    // TWO cases
+      // A) An empty List
+        // Create a new node
+          // use head pointer
+        // Populate key with value
+        // Set head -> next = nullptr;
+        // set tail = heaadf
+      // B) A non empty list
+        // Create a new node
+        // Populate key with value
+        // Set next to nullptr
+        // make old tail -> next
+          // point to new node
+
+  void displayList()
+    // Set Pinter = Head
+    // print key or ptr
+    // set ptr = ptr-> next
+    // repeat 2&3 until ptr == null;
