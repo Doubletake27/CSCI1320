@@ -1,0 +1,44 @@
+CSCI 2270
+Lecture 9
+2/4/2019
+/*
+Continuation of editing SLL example
+
+Internship Fair
+  Tuesday, Feb 12
+  10AM - 3PM
+  Idea Forge Commons
+
+SLL Insert function
+  Find a node containing a given key (afterMe)
+  insert node containing new value (newValue)
+    directly after
+*/
+  void SLL::insert(string afterMe, string newItem){
+    search(afterMe)
+    // Possible Scenarios
+      // 1) After me is entry string, then make new node be the new head
+      // 2) After me is not found
+            // Display error message
+      // 3) afterMe is tail
+            // Can call append function
+      // 4) after me is in the middle
+            // Create new node
+            // write new value to key of new node
+            // re-link
+  }
+
+void SLL::deleteNode(string sKey){
+  // 3 Cases
+    // 1) sKey found in head
+      // make head.next = head;
+      // deallocate node
+    // 2) skey found in tail
+      // Keep track of last node while searching
+      // use last node to set new tail
+      // delete node
+    // 3) skey found in the middle
+      // keep track of last node
+      // use last node
+        // relink with temp.next
+}

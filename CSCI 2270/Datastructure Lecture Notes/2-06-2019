@@ -1,0 +1,81 @@
+CSCI 2270
+Lecture 10
+2/6/2019
+
+Finishing SLL Class
+
+Algorithms and Algorithmic complexity
+
+  Algorithm is a recipe given a certain input, what set of steps are needed to achieve the desired output.
+
+  input(s) -> |ALGOGITHM| -> Outputs()
+
+  Pre-Condition: what has to be true about the input for the algorithm to behave as advertised
+  Post-Condition: the expected output after the algorithm finishes execution.
+
+  Correctness: Algorithm must return correct result
+  Cost: Memory use and runtime (# of cycles being used)
+
+  Complexity:
+    Example code:
+      int N = 10; // 1 ms
+      myStruct a[N]; // 1 ms
+      pullData("data.txt",a) // 1000 ms
+      for(i=0; i < N-1; i++){
+        cout << a[i]; // 50ms
+      }
+
+    Time cost
+      If N = 10;
+      1+1+1000+50*10 = 1502ms
+
+      if N = 1000
+      1+1+1+1000+50*100 = 6002ms
+
+      if N = 1e6; 50000002ms
+
+    How much does the algorithm scale with input size?
+      what if?:
+        for(j = 0; j<N; j++){
+          for(i = 0; i < i<N; i++){
+            cout << a[i]*j; // 50 ms
+          }
+        }
+      // This now scales exponentially
+
+    This proportionality to N is called o
+      First Example  = O(N)
+      Second Example = O(N^2)
+
+    Can talk about complexity of array operations
+    Can talk about complexity of structure operations
+
+    Array:                    Access O(1)
+                              Search O(N)
+                              Insert O(N)
+                              Delete O(N)
+
+    Linked List:              Access O(N)
+                              Search O(N)
+                              Insert O(1)
+                              Delete O(1)
+
+    Binary Search Tree (BST): Access O(ln(N))
+                              Search O(ln(N))
+                              Insert O(ln(N))
+                              Delete O(ln(N))
+
+    Stack:                    Access O(N)
+                              Search O(N)
+                              Insert O(1)
+                              Insert O(1)
+
+Stack Data structure
+  Data structure that allows a specific order in which operations on its data can be performed.
+    Can only add to the top (push)
+    Can only remove from the top (pop)
+
+  Usage
+    call stack during program execution
+      currently active subroutines
+    
