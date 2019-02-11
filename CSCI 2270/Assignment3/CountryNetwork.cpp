@@ -6,6 +6,7 @@
 /*     represet communication paths between nations             */
 /****************************************************************/
 #include <iostream>
+#include <string>
 #include "CountryNetwork.hpp"
 
 using namespace std;
@@ -51,11 +52,15 @@ void CountryNetwork::insertCountry(Country* previous, string countryName)
     head -> name = countryName;
     head -> numberMessages = 0;
     head -> next = temp;
-
+    cout << "adding: " << countryName << " (HEAD)" << endl;
   }else{
     // Insert in the middle
     Country *temp = new Country;
-
+    temp -> next = previous -> next;
+    temp -> numberMessages =  0;
+    temp -> name = countryName;
+    previous -> next = temp;
+    cout << "adding: " << countryName << " (prev: " << previous -> name << ")" << endl;
   }
 }
 
@@ -68,10 +73,10 @@ void CountryNetwork::insertCountry(Country* previous, string countryName)
 void CountryNetwork::deleteCountry(string countryName)
 {
   Country *address = searchNetwork(countryName);
-  Country *temp = address -> next;
   if(address == nullptr){
     cout << "Country does not exist." << endl;
   }else{
+    Country *temp = address -> next;
     if(address == head){
       head = temp;
       delete address;
@@ -79,8 +84,9 @@ void CountryNetwork::deleteCountry(string countryName)
       bool found = false;
       // Locate Previous Node
       Country *prev = head;
-      while(!found && temp!=nullptr){
+      while(!found){
         if(prev -> next == address){
+          found = true;
           break;
         }else{
           prev = prev -> next;
@@ -89,9 +95,9 @@ void CountryNetwork::deleteCountry(string countryName)
       prev -> next = temp;
       delete address;
     }
+    address = nullptr;
+    temp = nullptr;
   }
-  address = nullptr;
-  temp = nullptr;
 }
 
 
@@ -139,7 +145,18 @@ void CountryNetwork::loadDefaultSetup()
  */
 Country* CountryNetwork::searchNetwork(string countryName)
 {
-
+  if(head!= nullptr){
+    Country *current = head;
+    while(current != nullptr){
+      if(current -> name == countryName){
+        break;
+      }
+      current = current -> next;
+    }
+    return current;
+  }else{
+    return nullptr;
+  }
 }
 
 
@@ -150,7 +167,14 @@ Country* CountryNetwork::searchNetwork(string countryName)
  */
 void CountryNetwork::deleteEntireNetwork()
 {
-
+  Country *address = head;
+  while(head != nullptr){
+    head = address ->next;
+    cout << "deleting: " << address -> name << endl;
+    delete address;
+    address = head;
+  }
+  cout << "Deleted network" << endl;
 }
 
 
@@ -162,9 +186,27 @@ void CountryNetwork::deleteEntireNetwork()
  * @param message the message to send to the receiver
  * @return none
  */
-void CountryNetwork::transmitMsg(string receiver, string message)
+void CountryNetwork::transmitMsg(string receiver, string msg)
 {
-
+  Country *address = searchNetwork(receiver);
+  if(address != nullptr){
+    bool sent = false;
+    Country *current = head;
+    while(!sent){
+      current -> message = msg;
+      current -> numberMessages++;
+      cout << current -> name << " [# messages received: " << current -> numberMessages << "] received: " << msg << endl;
+      if(current == address){
+        sent = true;
+      }else{
+        current = current -> next;
+      }
+    }
+    current = nullptr;
+  }else{
+    cout << "Empty List" << endl;
+  }
+  address = nullptr;
 }
 
 
@@ -174,12 +216,19 @@ void CountryNetwork::transmitMsg(string receiver, string message)
  */
 void CountryNetwork::printPath()
 {
-  Country *address = head;
-  cout << "== CURRENT PATH ==" << endl;
-  while(address -> next != nullptr){
-    cout << address -> key << " -> ";
+  if(head == nullptr){
+    cout << "== CURRENT PATH ==" << endl;
+    cout << "nothing in path" << endl;
+    cout << "===" << endl;
+  }else{
+    Country *address = head;
+    cout << "== CURRENT PATH ==" << endl;
+    while(address != nullptr){
+      cout << address -> name << " -> ";
+      address = address -> next;
+    }
+    cout << "NULL" << endl << "===" << endl;
   }
-  cout << "NULL" << endl << "===" << endl;
 }
 
 
@@ -193,16 +242,20 @@ void CountryNetwork::printPath()
 
 void CountryNetwork::reverseEntireNetwork()
 {
-  Country *previous = nullptr;
-  Country *current = head;
-  Country *following = current -> next;
-  while(following != nullptr){
+  if(head!= nullptr){
+    Country *previous = nullptr;
+    Country *current = head;
+    Country *following = current -> next;
+    while(following != nullptr){
+      current -> next = previous;
+      previous = current;
+      current = following;
+      following = current -> next;
+    }
     current -> next = previous;
-    previous = current;
-    current = following;
-    following = current -> next;
+    head = current;
+    previous = nullptr;
+    current = nullptr;
+    following = nullptr;
   }
-  // previous = nullptr;
-  // current = nullptr;
-  // following = nullptr;
 }

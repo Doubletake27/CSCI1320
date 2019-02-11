@@ -6,6 +6,7 @@
 
 #pragma once
 #include <iostream>
+#include <string>
 
 // Country: node struct that will be stored in the CountryNetwork
 //   linked-list

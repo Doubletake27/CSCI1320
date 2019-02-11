@@ -87,7 +87,7 @@ void SLL::insert(string afterMe, string newValue){
 
 void SLL::deleteNode(string sKey){
   Node *tmp;
-  if(head -> key = skey){
+  if(head -> key == sKey){
     // IF at the head
     tmp = head;
     head = tmp -> next;
@@ -98,7 +98,7 @@ void SLL::deleteNode(string sKey){
     Node *last = head;
     tmp = head-> next;
     while(!found && tmp!=nullptr){
-      if(tmp->key == skey){
+      if(tmp->key == sKey){
         found = true;
       }else{
         last = tmp;
@@ -106,13 +106,13 @@ void SLL::deleteNode(string sKey){
       }
     }
     if(found){
-      if(tmp-> next == nulllptr){
+      if(tmp-> next == nullptr){
         // If deleting tail
         last -> next = nullptr;
         tail = last -> next;
       }else{
         // If in the middle
-        last -> next = t,p-> next;
+        last -> next = tmp-> next;
       }
       delete tmp;
       tmp = nullptr;

@@ -1,0 +1,117 @@
+CSCI 2270
+Lecture 11
+2/8/2019
+
+Stack Implementations
+  Can be implemented as either an array or a linked list.
+  Two Operations
+    Push
+    Pop
+
+  Stack Abstract Data Type
+    ex:
+      private:
+        top
+        maxSize
+        count
+      public:
+        isFull() //only applicable if count and maxSize (optional)
+        isEmpty() // Determines if there is information in the stack
+        push(item) //Adds to the top of the stack
+        item = pop() // Returns top value of the Stack
+        display() // Prints stack
+
+  SLL Stack Implementation
+    A special case of SLL
+    dont have to set max_size
+    "top" is a pointer to a Node type
+    stack is empty if "top" is null
+    "push" adds new nodes to the stack
+    "pop" removes node from top and returns node (could be defined differently)
+
+    bool isEmpty
+      if top is null
+        true
+      else
+        false
+
+    push(item)
+      1) create new node (temp ->), add item
+      2) if(isEmpty) // starting with an empty stack
+            point top to new node
+            set top -> next to NULL
+      3) else
+          temp -> next = top;
+          top = temp;
+          temp = null;
+
+    Node *pop(){
+      if(!isEmpty()){
+        temp = top;
+        top = top-> next;
+        return temp;
+      }else{
+        return -1;
+      }
+    }
+
+  Array Implementation
+    const int MAXSIZE = 69;
+    private:
+      int top; // index of next available empty slot (0 if empty)
+      int count;
+      string a[MAXSIZE];
+    public:
+      bool isFull(){
+        if(top == MAXSIZE){
+          return true;
+        }else{
+          return false;
+        }
+      }
+
+      bool isEmpty(){
+        if(top == 0){
+          return true;
+        }else{
+          return false;
+        }
+      }
+
+      void push(new item){
+        if (!isFull()){
+          a[top++] = newItem;
+        }else{
+          cout << "stack overflow" << endl;
+        }
+      }
+
+      void pop(){
+        if(!isEmpty()){
+          out = a[top--];
+        }else{
+          cout << "stack is empty" << endl;
+        }
+      }
+
+Queues
+  Similar to Stack
+  Again allows for specific order of operations on your structure
+  Head is front, tail is last used index
+
+  enque:
+    to add new element
+    always add @ tail
+
+  deque:
+    remove the element
+    always remove @ head
+
+  FIFO structure (First In First Out)
+    stack - LIFO structure (Last In First Out)
+
+  Implementations
+  1) Linked List
+  2) Array
+    1) Simple linear
+    2) Circular Array

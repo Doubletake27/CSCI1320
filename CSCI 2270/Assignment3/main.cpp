@@ -4,6 +4,7 @@
 /* TODO: Implement menu options as described in the writeup     */
 /****************************************************************/
 #include <iostream>
+#include <string>
 #include "CountryNetwork.hpp"
 // you may include more libraries as needed
 
@@ -13,85 +14,108 @@ void displayMenu();
 
 int main(int argc, char* argv[])
 {
+  CountryNetwork h;
+
+  string location;
+  string name;
+  string previous;
+  string note;
+  bool exists;
+
+  Country *address = nullptr;
+
   int choice = 0;
   while(choice != 8){
     displayMenu();
     cin >> choice;
     switch(choice){
-      case 0; // This is for Resetting Questions
+      case 0: // This is for Resetting Questions
         break;
 
       case 1: // Build Network
-        loadDefautSetup();
-        printPath();
+        h.loadDefaultSetup();
+        h.printPath();
         break;
 
       case 2: // Print Network Path
-        printPath();
+        h.printPath();
         break;
 
       case 3: // Transmit Message
-        string message,location;
-        cout << "Enter the name of the country to receive the message: " << endl
-        cin >> location;
+
+        cout << "Enter name of the country to receive the message: " << endl;
+        cin.ignore();
+        getline(cin,location);
+
         cout << "Enter the message to send: " << endl;
-        cin >> message;
-        transmitMsg(location, message);
+        getline(cin,note);
+        h.transmitMsg(location, note);
         break;
 
       case 4: // Add Country
-        string name, previous;
-        Country *address = nullptr;
-        do{
-          cout << "Enter a new country name: " << endl;
-          cin >> name;
-          cout >> "Enter the previous country name (or First)" >> endl;
-          cin >> previous;
-          address = searchNetwork(previous);
-          if(address != nullptr){
-            if(previous != "First"){
-              // Create New Entry
-              insertCountry(address,name);
-            }else{
-              // Create new first entry (including updating head)
-              insertCountry(nullptr,name);
-            }
+
+        cout << "Enter a new country name: " << endl;
+        cin.ignore();
+        getline(cin,name);
+
+        exists = false;
+
+        cout << "Enter the previous country name (or First):" << endl;
+
+        while(!exists){
+          // cin.ignore();
+          getline(cin,previous);
+
+          if(previous == "First"){
+            exists = true;
+            address = nullptr;
           }else{
-            cout << "Invalid country...Please enter a VALID previous country name: " << endl;
+            address = h.searchNetwork(previous);
+            if(address!=nullptr){
+              exists = true;
+            }else{
+              cout << "INVALID country...Please enter a VALID previous country name: " << endl;
+              // cin.ignore();
+            }
           }
-        }while(address == nullptr) // This is basically in case they enter not a country
-        printPath();
+        }
+        h.insertCountry(address,name);
+
+        h.printPath();
         break;
 
       case 5: // Delete Country
-        cout << "Enter the name of the country to delete: " << endl;
+        cout << "Enter a country name: " << endl;
         cin >> location;
-        address = searchNetwork(location);
-
-
-        printPath();
+        h.deleteCountry(location);
+        h.printPath();
         break;
 
       case 6: // Reverse Network
-
+        h.reverseEntireNetwork();
+        h.printPath();
         break;
 
       case 7: // Clear Network
-
+        h.deleteEntireNetwork();
         break;
 
       case 8: // Quit
-        printPath();
-        deletEntireNetwork();
-        if(isEmpty){
+        cout << "Quitting... cleaning up path:"<< endl;
+        h.printPath();
+        if(!h.isEmpty()){
+          h.deleteEntireNetwork();
+        }
+        if(h.isEmpty()){
           cout << "Path cleaned" << endl;
-          cout << "GoodBye!" << endl;
+          cout << "Goodbye!" << endl;
         }else{
           cout << "Error: Path NOT cleaned" << endl;
           choice = 0;
         }
         break;
     }
+    cout << endl;
   }
   return 0;
 }
@@ -101,7 +125,7 @@ int main(int argc, char* argv[])
  */
 void displayMenu()
 {
-    cout << endl;
+    // cout << endl;
     cout << "Select a numerical option:" << endl;
     cout << "+=====Main Menu=========+" << endl;
     cout << " 1. Build Network " << endl;
