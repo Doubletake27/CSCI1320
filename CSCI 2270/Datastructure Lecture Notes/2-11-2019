@@ -1,0 +1,57 @@
+CSCI 2270
+Lecture 12
+2/11/2019
+
+Binary Trees
+  node
+  parent-child relationships
+  root, leaf
+  subtrees
+
+Binary Search Tree (BST)
+
+Queues
+  Similar to stack
+  again, allows for specific order of operations on your structure
+  enque:  to add new element
+          always add at tail
+  deque:  remove the element
+          always remove from head
+          First in first out
+
+Circular Array Queue
+  Allow for both head and tail to shift when enqueueing and dequeuing
+
+    [__ __ __ __]
+
+    Starts with head and tail pointing to the first position
+    q.enQ(A)  ->  [A __ __ __] h = 0, t = 0
+    q.enQ(B)  ->  [A  B __ __] h = 0, t = 1
+    q.enc(C)  ->  [A  B  C __] h = 0, t = 2
+    q.deQ()   ->  [__ B  C __] h = 1, t = 2
+    q.enQ(D)  ->  [__ B  C  D] h = 1, t = 3
+    q.enQ(E)  ->  [E  B  C  D] h = 1, t = 0
+
+    Keep count to tell if queue is full
+
+(Binary) Trees
+  Properties
+    Each node has a parent
+    Topmost node is called the root
+    Root's parent is NULL
+    Each node has a key that identifies it
+    Each node has exactly 2 children
+    If one of the children is non-existent
+      child is null
+    If both children are null
+      node is called a leaf
+    Self-similarity
+      A tree is composed of smaller sub-trees
+    Singly linked list
+      Cant go in reverse
+
+    BST - Binary Search Tree
+      Special case of binary tree
+      Great for being searched!
+      Simple rules
+      Left child (LC) always has smaller key value than right child (RC)

@@ -1,0 +1,107 @@
+CSCI 2270
+Lecture 14
+2/15/2019
+
+Midterm
+  Friday Feb. 22 5-7 pm
+    cheat sheet
+    local code allowed
+    exam info will go up this weekend
+
+Assignment 4 due Sunday Feb. 17
+  Note a slightly different circular q
+
+Binary Search Tree
+  Special case of a binary tree
+  Ordered Structure
+  Any node in the tree
+    All nodes in the left sub-tree (of that node) are less than note node value
+    All nodes in right sub tree are greater than (or equal to) the node value
+
+             4
+          /     \
+         2       7
+        / \     / \
+       1   3   5   8
+
+            7           | 0
+          /   \
+         4     9        | 1
+        / \     \
+       2   5     10     | 2
+                  \
+                   11   | 3
+
+ Building BST
+  if(newKey < currentKey)
+    go Left
+  else
+    go Right
+
+  [4,2,3,6,0,9,5] (For Practice)
+  [2,4,5,6,0,9,5] (for practice) - Not height balanced tree
+  First item will always be the root
+
+  Various balancing algorithms exist
+    self-balancing tree
+      red black tree
+      avl tree
+      ...
+    balancing methods as well
+
+  Assume a perfect (balanced) tree
+
+  e.g. search (10) - > number of operations = 3; height 3
+
+        height = worst case # of operations:
+
+        N = 2^(h+1) - 1 ; equation for max nodes in a perfect tree
+
+    Solve for h
+      n+1 = 2^(h+1)
+      h = log(base 2)(N+1) -1 ~~ log(base 2)(N)
+      example:
+        in a perfectly balanced tree of N 100,000
+          max number of operations ~~ 17s
+
+  Node
+    struct Node{
+      int key;
+      Node *parent;
+      Node *LC; // Left Child
+      Node *RC; // Right Child
+    };
+
+  BST ADT
+    private:
+      root
+      searchRecursive(node, value)
+    public:
+      search(value)
+      init()
+      insert(value)
+      disp() // ?
+      delete(value)
+      deleteTree // Destructo
+
+  insert()
+    given an existing tree, insert a node w/ key 3
+    1) create new node (n) and assign key (3)
+    2) Two pointers for traversal
+        temp = root;
+        prev = null;
+    3) Drill down to find next available empty spot
+        while(temp! = nullptr){ // While not at bottom of tree
+          prev = temp
+          if(n -> key > temp -> key){
+            temp = temp -> leftChild;
+          }else{
+            temp = temp -> rightChild;
+          }
+        }
+        // found new node
+    4)
+
+  insert(value){
+
+  }
