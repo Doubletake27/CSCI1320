@@ -1,0 +1,49 @@
+Number of Test Cases: 5
+---------------
+Case 1
+Number of Values: 4
+Value 1: 7
+Value 2: 4
+Value 3: 6
+Value 4: 2
+
+Linked List:
+7 -> 4 -> 6 -> 2 -> Null
+
+Even Sum = 12
+---------------
+Case 2
+Number of Values: 3
+Value 1: 9
+Value 2: 2
+Value 3: 3
+
+Linked List:
+9 -> 2 -> 3 -> Null
+
+Even Sum = 2
+---------------
+Case 3
+Number of Values: 0
+
+Linked List:
+empty
+
+Even Sum = 0
+---------------
+Case 4
+Number of Values: -1
+Number of values must be greater than or equal to 0
+---------------
+Case 5
+Number of Values: 5
+Value 1: 0
+Value 2: 999999
+Value 3: -2
+Value 4: 4
+Value 5: 1
+
+Linked List:
+0 -> 999999 -> -2 -> 4 -> 1 -> Null
+
+Even Sum = 2

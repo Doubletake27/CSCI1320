@@ -1,0 +1,13 @@
+//Henry Meyerson
+//Problem 2 Explanation
+
+Compiling the Program:
+g++ MidTerm1_Problem1_HenryMeyerson.cpp
+
+1) Program will prompt you for how many test cases you want
+2) Program will then prompt you for how many values you want to input into the linked list
+    This can be any number greater than or equal to 0
+3) Program will then prompt you to input values
+    Feel free to try the values chosen in the P2_Outputs.txt file
+4) Program will print the initial list, the even list, then the odd list
+Program will repeat steps 2-4 for however many test cases you told it to try

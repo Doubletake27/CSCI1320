@@ -1,0 +1,78 @@
+Number of Test Cases: 5
+---------------
+Case 1
+Number of Values: 6
+Value 1: 6
+Value 2: 5
+Value 3: 4
+Value 4: 3
+Value 5: 2
+Value 6: 1
+Initial List:
+6 -> 5 -> 4 -> 3 -> 2 -> 1 -> Null
+
+Even List:
+6 -> 4 -> 2 -> Null
+
+Odd List:
+5 -> 3 -> 1 -> Null
+
+---------------
+Case 2
+Number of Values: 5
+Value 1: -1
+Value 2: 0
+Value 3: 2
+Value 4: -6
+Value 5: 765
+Initial List:
+-1 -> 0 -> 2 -> -6 -> 765 -> Null
+
+Even List:
+0 -> 2 -> -6 -> Null
+
+Odd List:
+-1 -> 765 -> Null
+
+---------------
+Case 3
+Number of Values: 0
+Initial List:
+empty
+
+Even List:
+empty
+
+Odd List:
+empty
+
+---------------
+Case 4
+Number of Values: -1
+Number of values must be greater than or equal to 0
+---------------
+Case 5
+Number of Values: 15
+Value 1: 9
+Value 2: 8
+Value 3: 7
+Value 4: 6
+Value 5: 5
+Value 6: 4
+Value 7: 3
+Value 8: 2
+Value 9: 1
+Value 10: 11
+Value 11: 56
+Value 12: 38
+Value 13: 9864
+Value 14: 1234567
+Value 15: 0
+Initial List:
+9 -> 8 -> 7 -> 6 -> 5 -> 4 -> 3 -> 2 -> 1 -> 11 -> 56 -> 38 -> 9864 -> 1234567 -> 0 -> Null
+
+Even List:
+8 -> 6 -> 4 -> 2 -> 56 -> 38 -> 9864 -> 0 -> Null
+
+Odd List:
+9 -> 7 -> 5 -> 3 -> 1 -> 11 -> 1234567 -> Null

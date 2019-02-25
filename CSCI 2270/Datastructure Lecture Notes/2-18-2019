@@ -1,0 +1,90 @@
+CSCI 2270
+Lecture 15
+2/18/2019
+
+Tree Review
+  Insert()
+    Given an existing tree, insert a node with key = 3
+      Create new node and assign key (3)
+      Two Pointers for traversal
+        temp = root
+        prev = null
+      Drill down to find next available empty spot
+      while(temp!=NULL)
+        prev = temp
+        // check which way to traverse
+        if(n-> key < temp -> key)
+          temp = temp -> left child
+        else
+          temp = temp -> right child
+      Add New node to correct place
+        if prev == NULL
+          tree was empty
+          while loop ran 0 times
+          make new node root
+        elseif(n-> key < prev -> key)
+
+        else key is >= parent key
+
+
+Traversals:
+  How do we decide about the order
+    3 Conventions
+      Pre-Order
+        Root, left, right
+      in-order
+        left, root, right
+      Post-order
+        left, right, root
+
+        4
+      /   \
+     2     7
+          / \
+         5   9
+
+   Pre-Order: 4,2,7,5,9
+   In-Order: 2,4,5,7,9
+   Post-Order: 2,5,9,7,4
+
+Recursion
+  C++ allows a function to call another instance of itself.
+    int foo(int x){
+      return foo(x);
+    }
+    // This will run forever and result in a stack overflow
+
+  For any recursive algorithm, a base case needs to be defined.
+    Once base case is reached (must be reachable), no more recursive calls are made.
+
+  EG
+    N! n-factorial recursive function
+
+    int f(int n){
+      if n<= 1
+        return 1; // base case
+      else
+        return n * f(n-1);
+    }
+
+    main
+      eg
+        cout << f(4);
+    // f(4) = 4*f(3)
+    // f(4) = 3*f(2)
+    // f(2) = 2*f(1)
+    // f(1) = 1
+    // f(4) = 4 * 3 * 2 * 1
+
+  Tree Traversals
+    Example: In-order
+      f(node)
+        1) Drill down to left most leaf (smallest value) and display value
+            if(node.LL = NULL)
+                f(node.lc)
+        2) Display key
+            cout << node -> key
+        3) Drill down to right most leaf
+            if(node.RC!=null)
+                f(node.RC)
+        4) Finish Execution of current instance of f()
