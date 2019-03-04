@@ -1,0 +1,14 @@
+CSCI 2270
+Lecture 18
+2/76/2019
+
+public: search(int value)
+  calls recursive functino with root + value
+private:
+  Node* searchRecursive(node, int skey)
+    check if key is found
+      return node
+        if skey < n->key
+          go left
+        else
+          go right

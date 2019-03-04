@@ -13,9 +13,9 @@ int main(){
 	bst0.insert( 7 );
 	bst0.insert( 0 );
 
-/*  
+/*
         9
-       /  \ 
+       /  \
       2   10
      / \    \
     0   7   10
@@ -24,9 +24,10 @@ int main(){
 	cout << "display in-order: " << endl;
 	bst0.disp("in-order");
 
-	
+	Node *sNode = bst0.search(7);
+	if(sNode != nullptr){
+		cout << "sKey: " << sNode -> key << endl;
+	}
 
 	return 0;
 }
-
-

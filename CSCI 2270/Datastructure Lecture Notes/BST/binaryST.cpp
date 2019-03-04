@@ -78,12 +78,25 @@ void BinaryST::dispInOrd( Node *n )
 
 Node* BinaryST::search( int value )
 {
-	return nullptr;
+	return searchRecur(root,value);
 }
 
 Node* BinaryST::searchRecur( Node *n , int searchKey )
 {
-	return nullptr;
+	if(n!= nullptr){
+		cout << "Node Visited: " << n-> key << endl;
+		if(n->key == searchKey){
+			return n;
+		}else{
+			if(n->key > searchKey){
+				return searchRecur(n->leftChild,searchKey);
+			}else{
+				return searchRecur(n->rightChild,searchKey);
+			}
+		}
+	}else{
+		return nullptr;
+	}
 }
 
 Node* BinaryST::findMin()
@@ -93,12 +106,91 @@ Node* BinaryST::findMin()
 
 Node* BinaryST::getMin( Node *n )
 {
+	//Iterate down to left most node
+	while(n-> leftChild!=nullptr){
+		n = n-> leftChild;
+	}
 	return nullptr;
-
 }
 
 
 void BinaryST::deleteNode( int value )
 {
+	Node *n = search(value);
+	// Non-Root Case
+	if(n!=root){
+		// I) The Leaf Case (N is a leaf Node)
+		if(n->leftChild== nullptr && rightChild == nullptr){
+			// Need to go up to the parent node and update the correct child prointer
+			// Check n's relationship to its parents
+			// is n the lefft child?
+			if(n==n-> parent -> leftChild){
+				n-> parent ->leftChild = nullptr;
+			}else{
+				n-> parent -> rightChild = nullptr;
+			}
+		}else{ // II) The 2-children case
+			if(n-> leftChild != nullptr && n-> rightChild!=nullptr){
+				// Find the min of the right sub-tree to replace the deleted node
+				Node *min = getMin(n-> rightChild);
+				// if min IS the right Child of n
+				if(min == n-> rightChild){
+					// make parent point ot the min
+					// check if node is left child
+					if(n== n-> parent -> leftChild){
+						n-> parent -> leftChild = min;
+					}else{ // otherwise it is the right child
+						n-> parent -> rightChild = min;
+					}
+					// Make min point to the parent
+					min -> parent = n-> parent;
+					// make min point to n's old child
+					min -> leftChild = n-> leftChild;
+					// make old LC point to min
+					min -> leftChild -> parent = min;
+				}else{ // otherwise, min is not the RC of n, meaning it's somewhere in the right subtree
+					// min's old right child takes min's spot
+					min-> parent -> leftChild = min-> rightChild;
+					// new node needs to point back up to min's former parent
+					if(min-> rightChild !=nullptr){
+						min-> rightChild -> parent = min->parent;
+					}
+					if(n==n-> parent -> leftChild){
+						n-> parent-> leftChild = min;
+					}else{
+						n-> parent -> rightChild = min;
+					}
+
+					min-> parent = n-> parent;
+					min-> leftChild = n-> leftChild;
+					min-> leftChild -> parent = min;
+					min-> rightChild=n -> rightChild;
+					min-> rightChild-> parent = min;
+				}
+
+			}else{ // III) The one child case
+				// 1) the one child is a left child
+				if(n->leftChild != nullptr){
+					n-> leftChild -> parent = n-> parent;
+					if(n==n-> parent->leftChild){
+						n-> parent -> leftChild = n -> leftChild;
+					}else{
+						n-> parent -> rightChild = n-> leftChild;
+					}
+				}else{ // child is right child
+					n->rightChild -> parent  = n-> parent;
+					// check if node is left child
+					if(n==n-> parent->leftChild){
+						n-> parent -> leftChild = n -> rightChild;
+					}else{
+						n-> parent -> rightChild = n-> rightChild;
+					}
+				}
+
+			}
+		}
+	}else{ // The Root Case
+
+	}
 
 }

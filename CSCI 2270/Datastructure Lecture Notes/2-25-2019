@@ -1,0 +1,117 @@
+CSCI 2270
+Lecture 17
+2/25/2019
+
+BSTs continued
+  recap: Insert and in-order-traversal
+  today: deleteNode();
+         search();
+         findMin();
+
+         9
+        / \
+       2   10
+      / \
+     1   7
+        /
+       5
+        \
+         6
+
+
+Delete a node from a BST. More Specifically:
+  1) Remove node in a way that preserves BST order (99% of work)
+  2) Deallocate node's memory (simple)
+        delete keyword in C++
+
+
+  Algo:
+    1) Find Node (Need search)
+    2) Remove n from tree
+        Based on where n is in the tree, different actions need to be taken
+          Root?
+          # of childeren?
+          Relationship to parent?
+            LC, RC, Root?
+
+          I)   No children
+          II)  1 children
+          III) 2 Children
+_________________________________ NO Children
+          9
+         / \
+       (2)   15
+       / \
+      1   7
+           \
+            8
+
+         Becomes:
+
+         9
+        / \
+       7   15
+      / \
+     1   8
+
+_________________________________ Two Children
+        9
+       / \
+     (2)   15
+     / \
+    1   7
+       / \
+      5    8
+       \
+        6
+
+        BECOMES:
+
+        9
+       / \
+      7   15
+     / \
+    5   8
+   / \
+  1   6
+_________________________________
+Generalize
+1) Find min node of right subtree
+2) replace n with min-Node
+    if min is the right child, just "slide node into place"
+
+_________________________________ One Child
+  Replace N with root of sub-subtree (left or right child)
+  No need to find min
+
+          9
+         /
+       (5)
+       /
+      3
+
+      becomes
+
+          9
+         /
+        3
+_________________________________
+Recap I,II,II are considerations based on the children
+  Additional considerations:
+    N is a left or right child
+    N is Root
+
+https://visualgo.net/bn/bst
+_________________________________
+Search: O(log2(n)) -> For a balanced linked list
+  Public:
+    search(int value)
+      calls recursive function with root and value
+  Private:
+    searchRecursive(Node, int sKey)
+      check if key is found
+        return node
+        if sKey< n->key
+          go left
+        else
+          go right

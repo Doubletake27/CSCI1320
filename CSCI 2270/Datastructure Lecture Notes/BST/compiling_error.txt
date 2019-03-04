@@ -1,0 +1,7 @@
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Datastructure Lecture Notes\BST\binaryST.cpp: In member function 'void BinaryST::deleteNode(int)':
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Datastructure Lecture Notes\BST\binaryST.cpp:122:32: error: 'rightChild' was not declared in this scope
+   if(n->leftChild== nullptr && rightChild == nullptr){
+                                ^~~~~~~~~~
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Datastructure Lecture Notes\BST\binaryST.cpp:166:34: error: 'mine' was not declared in this scope
+      min-> rightChild-> parent = mine
+                                  ^~~~

@@ -16,7 +16,7 @@ file = uigetfile('*.wav');
 while m ~= 0
     %Cleaning
     clc
-    close all
+    %close all
     
     %GUI
     m = menu('Sound Edit Options','Echo','Compress','fftBar','Select File','Play File');
