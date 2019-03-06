@@ -1,3 +1,48 @@
 CSCI 2270
 Lecture 20
 3/4/2019
+
+Super Tree
+  Movie List Alphabetical
+
+Hash Table
+  Hash table is a data structure that uses mapping to assign a "record" to a unique index of an array
+  Say, you want to store the name and SID of a group of students
+
+  Key: name
+  value: SID
+
+  hashFunction("Anna") -> generates unique index -> 2
+              ("Bryan") -> 1
+  Two components:
+    1. array for storing records
+    2. hash function for generating the unique code for a Key
+        hash function is repeatable
+          hash ("Billy") -> 7
+          will always get a 7
+        hash is used as array index
+
+    Hash Functions ( Hashing a key that is string type)
+      One of the simplest:
+        sum values in a string
+        then mod(%) by array length
+
+      hashSum(key, keyLength, table size){
+        sum = 0;
+        for(int i = 0; i < keyLength; i++){
+          sum += key[i];
+        }
+        return (sum%tableSize);
+      }
+
+    Store Records in a hash table
+      Calculate Index Value (hash the key)
+      Write the data to hash table at the index
+
+    Retrieve Records
+      use search key to calculate index
+
+    What is the cost of store / retrive  - > O(1)
+
+Each array location can only store a single record but if there are two trying to occupy one location
+  n(k1) = n(k2)
