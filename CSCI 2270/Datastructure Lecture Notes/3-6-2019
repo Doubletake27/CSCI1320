@@ -1,0 +1,73 @@
+CSCI 2270
+Lecture 21
+3/6/2019
+
+
+Basic Hash Algorithm
+  m=table size, k is key
+  h(k) = sum(k)%m
+
+  Potential bias:
+    Example: data set with all sums results in even values
+            h(k) will only generate even or odd values
+
+  Multiplication Method
+    Calculate sum of all ASCII values in key (k)
+    Multiply by a constant A, where 0<A<1
+                                    k*A -> A can be derived heuristically
+                                    A commonly (13/32)
+    Keep the fractional part of kA
+    Scale kA fractional by table size m
+    Take the floor of the result to get integer index
+
+    Hash value of string w/ 5 As
+    1) k = 325
+    2) ka = 325* (13/32) = 132.0312
+    3) fract = 0.0312
+    4) floor(fract * m) = 0.0312 * 1024 = 32
+
+  Advantages of multiplication over sum modulo
+    1) Choosing m, less likely to cause a bias
+    2) multiplication is less expensive than %
+
+  Coding Q:
+    How to get fractional portion of a value? fract(132.0312)
+
+  Say, want tor store SID #s for 100 students, that happen to be sequential
+    1050608900
+           901
+           902
+           ...
+           999
+    x = SID%100; 0<=x<=99 (array length = 100)
+    Perfect hash function
+      all records are assigned to the hash table w/o collisions or wasted space.
+
+    EG if SID #s not sequential but more random
+      105608900% 100 = 0
+      105708900% 100 = 0
+        What about larger table size?
+
+    Example: desing a hashing algorithm for given data:
+      possible key values:
+        2 letter strings
+        can contain uppercase letters from A to F
+      design choices:
+        hash function?
+          hash sum?
+        Table size?
+          AA -> FF
+          MIN = A+A = 65 + 65 = 130
+          MAX = F+F = 70 + 70 = 140
+          m = 11;
+
+        Takeaway: increasing table size above the possible range, will not decrease # of collisions
+
+      Collision Resolution
+      1) Add new record at next available location?
+
+      Another Method: Chaining
+        Every element is a pointer to the head of a linked list
+          given some k1 and k2 n(k1) = 2
+                               n(k2) = 2
+        Drops new record into a linked list
