@@ -1,0 +1,62 @@
+CSCI 2270
+Lecture 23
+3/11/2019
+
+Today
+  New data structure: Heap
+
+Open Addressing via Linear Probing
+  insertRecord(r)
+  -find hash value (index)
+  open addressing
+  -if slot is empty table([index])
+      -> add record
+  -else
+      -> iterate by incrementing the index one element at a time
+         until empty slot is found
+         (Watch out for array "roll-over")
+
+Searching Hash Table
+  search(key)
+  calculate hash value
+    go to given index
+    if key matches
+      retrieve record
+    else
+      iterate until record w/ matching key is found
+      (remember circular array)
+
+  Tweaks on Open Addressing:
+    In prior example, we used "linear probing"
+      -> if slot is occupied, index ++, and check.
+
+      if table[hash(key)] is occupied
+        check hash(key) + 1, +2, +3....
+
+      Problem w/ linear probing: clustering
+        elements get bunched up and performance goes down
+
+  Quadratic Probing
+    Instead of looking at next adjacent slot, skip over by i^2 (indices).
+      if table[hash(key)] is occupied
+        check hash(key) + 1^2
+        if that is full
+        check hash(key) + 2^2
+                        + 3^2
+
+  Hashing Algos Summary
+    A) Different hash functions can be used
+        Modulo
+        Multiplication
+        Division
+        DJB2 - one of the best gen. purpose hash functions
+          Will use it in the assignment this week
+    B) Collisions need to be handled somehow
+        Open Addressing
+          use the array to store all the records via linear or quadratic probing
+          usually faster under smaller loads
+          fixed size
+            dynamic array doubling can be used to mitigate this
+        Chaining
+          use an array to store linked list head pointers
+          conflicts resolved via adding to linked list nodes

@@ -1,0 +1,59 @@
+CSCI 2270
+Lecture 22
+3/8/2019
+
+Hash Tables:
+  Open Addressing
+    ADT
+    Coding example
+
+Assignment 6 24 hour extension
+Extra credit challenge
+
+abstract data type for hash table with open addressing
+
+private:
+  hashtable
+  tablesize
+  hashF(key)
+public
+  init() // constuuctor
+  insert(record)
+  search(key)
+  delete(key)
+  disp()
+
+void insertRecord()
+
+struct Record{
+  string key;
+  int data;
+}
+
+void InsertRecorD(record)
+  open addressing approach
+  1) get hash index based on r.key
+  2) if table[index] is empty
+        insert new record @ index
+     else
+        iterate table until next available slot is found
+      (w/ array,)
+
+Sample Problem:
+  create a hash table to store records. The record key is an ASCII string 2 letters long, where each letter can be an upper caps letter of the alphabet (A-Z)
+  struct Record{
+    string key;
+    // other data could go here
+  };
+
+Generate sample records to test code
+  1) create a insert() function w/ no collision resolution
+        experiment w/ table size
+  2) update insert to add collison resolution w/ open addressing
+
+      Range of possible values:
+        min = A+A = 130
+        max = Z+Z = 180
+        m = 50
+
+//
