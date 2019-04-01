@@ -1,0 +1,97 @@
+CSCI 2270
+Lecture 26
+3/20/2019
+
+Heap Sort Big-O
+  1) Building the Heap
+      - O(log(n)) is the cost for insert into almost full tree
+      - O(1) is the cost of insert into empty tree
+      ~ n*1/2 ln(n) - > O(n * log(n))
+  2) Removing all elements from healp
+  3) Total = O(n * log(n))
+
+
+
+  /\/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \/\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+  /\//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+  \//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+Graphs
+  Not Plots
+  Trees are Graphs
+  less restricted
+  more complex
+  more degrees of freedom
+
+  Edges cannot connect vertices
+  connected vertices are adjacent
+
+  Example:
+    Social Media Platform
+      called FaceSpace
+      Network of interconnected users
+      want to know how many degrees of
+       seperation exist between 2 users
+
+      Colette
+      |
+      Burl---Talfryn
+      |           |
+      Vern        |
+      |           |
+      Feniumore---|
+
+      Each user Profile corresponds to a vertex
+      A direct convention w/w two vertices is called an edge
+      Traversal is done by moving b/w adjacent vertices
+
+      G = {V,E}
+          V is a set of verticies
+            [v1, v2, v3, vk]
+          E is a set of edges
+            [e1, e2, ,e3 ...en]
+
+          n does not always equal k
+
+        Adjacency Matrix (Unweigthed)
+          2D Matrix
+          All verticies appear as rows and columns
+
+          table (v1 through vk) through (V)
+
+
+        Weighted Graph
+          Colette
+          2 |   7
+          Burl---Talfryn
+          10 |         |
+          Uern         | 6
+          6|           |
+          Feniumore----|
+
+        Adjacency List
+          V1      V2     V3       V4      v5
+          V21(2)  V12(2) V2,3

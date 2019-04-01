@@ -1,0 +1,42 @@
+CSCI 2270
+Lecture 25
+3/18/2019
+
+Today
+  Project Overview
+  Heaps
+  minHeapify()
+  Heap Sort
+  Coding Example
+
+Project
+  Solve a Problem
+  Groups of 2 or 3 (Can be from other sections)
+  Project Proposal (Make a presentation for recitation) ~ April 4
+
+  Interview Grading ~ April 15 - 19
+  Overall project Submission April 22
+  Final presentation April 23rd and 25th
+
+  2nd Midterm Date - April 12th
+
+HEaps
+  Less organized tree basically
+
+  int extractMin()
+    if(currentSize <= 0)
+      return error
+    if(current size == 1)
+      return heap[0]
+      current size --
+    x = heap[0]
+    move the last element of array into root position
+    call minHeapify (0)
+    return x
+
+  void minHeapify(int i)
+    //recursively heapify tree
+    1) Check which child is smallest, then swap with that child
+        need to ensure that child is valid
+          use current size
+    2) if swap was preformed, call minheapify with index of element that was swapped
