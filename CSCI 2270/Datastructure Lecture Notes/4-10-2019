@@ -1,0 +1,26 @@
+CSCI 2270
+Lecture 31
+4/10/2019
+
+Coloring Trees
+
+
+breadthFirstTraversal(keyStart)
+  vStart = find(keyStart);
+  set vStart.visited = true;
+  set vStart.color = "red"
+  create queue
+  enqueue vStart onto q
+
+  loop until q i empty
+    n = q.dequeue
+    loop across n's adjacency list(x)
+      if !n-> adj[x] -> visited{
+        mark n.adj = visited
+        disp(n->adj[x]->key)
+        enqueue onto q
+        if n is red
+          set n->adj to black
+        if n is black
+          set n->adj to red
+      }

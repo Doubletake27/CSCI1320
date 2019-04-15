@@ -1,0 +1,29 @@
+Henry Meyerson
+CSCI 2270 Exam 2
+Problem 1 Output
+
+Compiling the program:
+  g++ bstdriver.cpp BST.cpp
+
+Running the program (through windows command prompt):
+  a.exe
+
+Output:
+  Creating tree
+  New tree created with 9 as the root.
+  The Sum of the values between 8 and 12 is: 28
+
+  ----------------The Tree Is ---------------
+
+
+           16
+
+                     11
+
+  9
+
+                     8
+
+           7
+
+                     4

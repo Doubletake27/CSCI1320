@@ -1,0 +1,22 @@
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Recitation Stuff\Recitation 12\Graph.cpp: In member function 'int Graph::findMaxInDegree()':
+C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Recitation Stuff\Recitation 12\Graph.cpp:50:23: error: no match for 'operator=' (operand types are 'std::vector<int>' and 'int')
+           if(adj[i] = v){
+                       ^
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector:69:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Recitation Stuff\Recitation 12\Graph.hpp:2,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Recitation Stuff\Recitation 12\Graph.cpp:2:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc:167:5: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = int; _Alloc = std::allocator<int>]
+     vector<_Tp, _Alloc>::
+     ^~~~~~~~~~~~~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc:167:5: note:   no known conversion for argument 1 from 'int' to 'const std::vector<int>&'
+In file included from c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector:64:0,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Recitation Stuff\Recitation 12\Graph.hpp:2,
+                 from C:\Users\Randy\Documents\2018-2019\CSCI\CSCI 2270\Recitation Stuff\Recitation 12\Graph.cpp:2:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h:450:7: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = int; _Alloc = std::allocator<int>]
+       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h:450:7: note:   no known conversion for argument 1 from 'int' to 'std::vector<int>&&'
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h:471:7: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = int; _Alloc = std::allocator<int>]
+       operator=(initializer_list<value_type> __l)
+       ^~~~~~~~
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h:471:7: note:   no known conversion for argument 1 from 'int' to 'std::initializer_list<int>'

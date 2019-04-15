@@ -1,0 +1,74 @@
+CSCI 2270
+Lecture 28
+4/3/2019
+
+Graph Programing Example
+
+Breadth First Traverse
+  Say we are given a graph (unweighted, undirected).
+  We are asked to come up with a traversal algorithm.
+  Given a starting vertex (can think of it as a root),
+    visit all neighboring vertices, before moving on to the next depth level.
+
+  Example:
+          A -- E -- \
+          |         |
+          B -- F    |
+          |         |
+          C -- D    |
+          \ ------- /
+
+    Traverse(A):
+         1A
+         / \
+       2B  3E
+       / \
+     4C  5F
+     /
+   6D
+
+  BFT Implementation
+    Lets update our vertex struct so that we cna keep track of visited vertices:
+
+      struct vertex{
+        string key;
+        bool visited;
+        vector<adjVertex> adj;
+      }
+
+    Now the BFT algorithm:
+
+      void breadthFirstTraverse(keyStart)
+        find keyStart (can think of it as the root)
+        set vStart as "visited"
+        create queue (q)
+        Enqueue vStart onto q
+        loop until q is empty
+          n = q.dequeue (Remember queues are FIFO)
+          loop across n's adjacency list (x)
+            if !n->adj[x]-> visited
+              mark visited = true
+              disp (n-> adj[x]-> key)
+              enqueue onto q
+
+    BFS Algorithm
+    void breadthFirstSearch(keyStart,searchKey)
+      find keyStart (can think of it as the root)
+      set vStart as "visited"
+      set vStart distance = 0;
+      create queue (q)
+      Enqueue vStart onto q
+      loop until q is empty
+        n = q.dequeue (Remember queues are FIFO)
+        loop across n's adjacency list (x)
+          if !n->adj[x]-> visited
+
+            n-> adj[x].v -> distance = n-> distance + 1;
+            if n->adj[x].v -> key == searchKey;
+              return n-> adj[x].v;
+            else
+
+              mark visited = true
+              enqueue onto q
+
+      return null;

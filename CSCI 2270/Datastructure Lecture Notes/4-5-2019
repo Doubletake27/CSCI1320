@@ -1,0 +1,38 @@
+CSCI 2270
+Lecture 29
+4/5/2019
+
+Midterm 2, next friday April 12, 5-7OM
+
+BFT Example
+
+  LEts build the following graph then traverse it in breadth first order
+
+  update the vertex struct definition to include boolean "visited " member and integer "distance" member.
+
+    struct vertex{
+      std::string name;
+      bool visited;
+      int distance;
+      std::vector<adjVertex> adj;
+    }
+
+
+Depth First Traverse
+  Specify a starting vertex
+  keep visiting the first non-visited vertex in each adjacency list
+  Once adj list with 0 non-visited vertices is encountered, go back to last intersection and visit next vertex in adjacency list
+
+    depthFirstTraverse(value)
+      root = find(value);
+      disp(vertex key)
+      depthFirstRecursive(root)
+
+    depthFirstRecursive(vertex)
+      vertex.visited = true;
+      loop accross adjacency list of vertex
+        if(adj vertex NOT visited)
+          disp(adj vertex key)
+          depthFirstRecursive(x)
+
+          

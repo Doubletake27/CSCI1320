@@ -1,0 +1,44 @@
+Henry Meyerson
+CSCI 2270 Exam 2
+Problem 1 Output
+
+Compiling the Program:
+  g++ graphsDriver.cpp graphs.cpp
+
+Running the Program (On Windows Command Line):
+  a.exe
+
+Output:
+  --- Test Graph 1 -- Provided ---
+  Adding Vertex ID: 1
+  Adding Vertex ID: 2
+  Adding Vertex ID: 3
+  Adding Vertex ID: 4
+  Adding Vertex ID: 5
+
+  Adding Edge Between 1 and 4
+  Adding Edge Between 4 and 2
+  Adding Edge Between 4 and 5
+  Adding Edge Between 2 and 5
+  Adding Edge Between 5 and 3
+
+  TEST1.1: ID = 2, DIST = 1; Count = 2
+  TEST1.2: ID = 3, DIST = 2; Count = 2
+  TEST1.3: ID = 3, DIST = 3; Count = 1
+  TEST1.4: ID = 6, DIST = 1; Count = 0
+
+  --- Test Graph 2  -- Its a Circle ---
+  Adding Vertex ID: 1
+  Adding Vertex ID: 2
+  Adding Vertex ID: 3
+  Adding Vertex ID: 4
+  Adding Vertex ID: 5
+
+  Adding Edge Between 1 and 2
+  Adding Edge Between 2 and 3
+  Adding Edge Between 3 and 4
+  Adding Edge Between 4 and 5
+  Adding Edge Between 5 and 1
+
+  TEST2.1: ID = 1, DIST = 1; Count = 2
+  TEST2.2: ID = 3, DIST = 2; Count = 2

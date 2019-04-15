@@ -1,0 +1,14 @@
+Henry Meyerson
+109190761
+CSCI 2270 Exam 2
+Problem 3 Explanation
+
+  Definitely would have written the driver with loops and user inputs if I had more time
+
+  This program was built off of what I previously had built for graphs
+  Compilation instructions are in the output.txt file 
+
+I apologize for the lack of user inputs however the problem instructions do not call for them
+  so I saw no reason to add them.
+If for some reason you wish to test out different values, it should be fairly straight forward to edit the driver function
+S

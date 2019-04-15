@@ -1,0 +1,12 @@
+Henry Meyerson
+109190761
+CSCI 2270 Exam 2
+Problem 1 Explanation
+
+This was pretty straight forward to the point that I feel like we did this in class at some point or for some assignment.
+I basically just built this off of the BST code that I already had that worked with the given headers
+The Output text file (Problem1Output.txt) should have the information required to compile and run this program
+
+I apologize for the lack of places for user inputs however the problem instructions do not call for them
+  so I saw no reason to add them.
+If for some reason you wish to test out different values, it should be fairly straight forward to edit the driver function

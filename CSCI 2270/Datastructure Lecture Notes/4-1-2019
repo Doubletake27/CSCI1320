@@ -1,0 +1,75 @@
+CSCI 2270
+Lecture 27
+4/1/2019
+
+Graphs
+  We will use vectors to implement graphs
+
+  a collection of vertices connected by edges
+  G = {V,E}
+
+  each vertex contains a "key" and a list of edges (adjacent vertices)
+
+  List of edges is stored in an adjacency matrix or an adjacency list
+
+  unlike a BST, there are no set relationships b/w vertices
+
+  V0 ! -> V1
+
+  All relationships have to be explicitly set
+
+
+  ADT - Abstract Data Type
+    undirected
+    weighted
+
+    private
+      vertices
+    public
+      init()
+      insertVertex(value)
+      insertEdge(StartVertex, endVertex, weight)
+      deleteEdge(startValue, endValue)
+      printGraph()
+      search(value)
+
+    struct vertex{
+      string Key;
+      vector <adjVertex> adf;
+    };
+
+    struct adjVertex{
+      vertex *v ;
+      int weight;
+    }
+
+  STL Vectors - Standard Template Library
+    Include the vector library
+      #include <vector> //?
+    Allows to index into elements like an array
+    Can append and grow length where memory allocation happens automatically
+    can define container type to be either a primitive type or object (class or struct)
+
+  Insert vertex into graph
+    if using vectors
+      1) search to ensure no duplicate keys exist
+      2) append to the end (push_back(x))
+
+  Add Edge:
+    e.g. AddEdge("Boulder","Fairbanks",4)
+
+    goal: find two given vertices in graph and insert edge to both adjacency lists
+
+    loop across all vertices
+      if "Boulder" is found
+        loop across all vertices to find "Fairbanks"
+
+    1) Add an entry to boulder's adjacency list with a pointer to Fairbanks
+    2) Add an entry to Fairbank's adjacency list with a pointer to boulder
+
+Next up:
+  Displaying and searching graphs in various orders
+    breadth first
+      Visits all adjacent verticies first, then all their adjacent verticies and so on...
+    depth first
+      goes to very edge of path before returning to start to begin again
