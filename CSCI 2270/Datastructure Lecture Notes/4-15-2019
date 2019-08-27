@@ -1,0 +1,17 @@
+CSCI 2270
+Lecture 32
+4/15/2019
+
+Dijkstra's Algorithm
+  finds the shortest path from a starting node to all other nodes in a weighted graph
+
+  1) mark all nodes unvisited. Create a set of all the unvisited nodes
+  2) Mark infinite distance to each node
+  3) Consider all of current node's unvisited neighbors and calculate their tentative distances through the current node, update them if they are smaller
+  4) After considering all neighbors of current node, mark it visited
+  5) If destination node has been marked visited or smallest distance among unvisited nodes is infinity, stop.
+  6) Otherwise, select unvisited node with smallest distance, set as current node and go back to step 3
+
+  infinity:
+    #include <climits>
+      INT_MAX 

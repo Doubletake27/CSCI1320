@@ -1,0 +1,31 @@
+CSCI 2270
+Who Knows
+4/25/2019
+
+Trie
+
+kind of like a typically dictionary
+26 children per node
+
+series of nodes form words
+
+struct TrieNode{
+  // pointers to children nodes
+  TrieNode *children[ALPHABET_SIZE];
+  // a flag to indicate end of word
+  bool isEndOfWord
+}
+
+insert(key){
+  crawlPointer = root;
+  loop x = 0 to key.length-1
+    // inspect crawPointer's children for the given letter
+    if(node exists in list of children)
+      do nothing
+    else
+      create new node with key[x]
+    crawlPointer = crawlPointer -> children[index]
+
+  once loop finished
+    crawPointer -> isEndOfWord = true
+}
