@@ -1,0 +1,53 @@
+Error Analysis: Part 1
+
+Error
+  Random
+    Statistical Fluctuations
+    Either Direction (+ or -)
+    - > Precision (Archer Analogy)
+
+    Inevitable
+    Comes From:
+      Statistical Estimates
+        Parameter itself
+        Uncertainty associated with it
+      Many Measurements
+
+  Systematic
+    Reproducible Inaccuracy
+    Same Direction (Bias)
+    - > Accuracy (Archer Analogy)
+
+    Difficult to detect
+    Comes From:
+      Equipment
+      Improper tools to make measurements
+      Error you make
+
+Measurements
+  Mean - Average, best estimate of parameter
+    x - Notation for measurment
+    x (With a bar over it) = sigma x (sub i) / N
+      i represents each replicate
+      N represents total # of measurements taken
+
+  Standard Deviation - Best estimate of uncertainty in measurement
+    (How much variation is in data)
+    "sigma of x" = sqrt( (1/(N-1)) sigma(x sub i - x bar)^2 )
+                Bias Reduction ^        ^ Root Mean Square
+
+Example
+  Period of Oscillation of a Pendulum
+    Trial #  |   1   |   3   |   3   |   4   |   5   |
+    Measured |  3.9  |  3.5  |  3.7  |  3.4  |  3.5  |
+
+
+    Xbar = Sigma x sub \ N = ( 3.9 + 3.5 + 3.7 + 3.4 + 3.5 ) / 5
+    Xbar = 3.6 sec
+
+    Trial #   |   1   |   3   |   3   |   4   |   5   |
+    Xi - Xbar |  0.3  | -0.1  |  0.1  | -0.2  | -0.1  |
+
+    N = 5
+
+    "sigma of x" = sqrt((1/4) * 0.16) = 0.2

@@ -1,0 +1,14 @@
+Lecture Notes
+09-06-2019
+
+Round Uncertainty to a single significant figure
+  unless the uncertainty leads with a 1
+  unless the second significant figure is a 5
+
+  4.3 +/- 0.065 becomes 4.30 +/- 0.065
+
+Discrepancy
+  When the range of two sets of data doesn't overlap
+  OR STDEVS
+
+  

@@ -1,0 +1,107 @@
+9/05/2019
+Systems Lecture Notes
+Day 4
+
+Two's Complement Overflow
+  How to detect overflow?
+    If the sign of the operands are the same and the sum is the opposite sign, then there is overflow in two's complement signed addition
+    in both examples, both operands are + or - but the sum is the opposite sign
+
+    if sum >= 2^(w-1)
+      becomes Negative
+      at most once
+    if sum <-2^(w-1)
+      becomes positive
+      at most once
+
+    Checking for signed Overflow in C
+      Approach #1
+        Have the compiler insert checks every time a signed integer arithmetic operation is preformed
+        use gcc compiler with -ftrapv flag
+
+      Approach #2
+        Manually insert the checks yourself
+        Can use macros, eg. replace each + with a macro Add(A,B)
+          these macros essentially test the operands against the integer limits in the header file <limits.h> before doing the operation
+
+      Approach #3
+        Risk it
+
+    Unsigned and Signed Numeric Values
+      Casting Signed to Unsigned
+        short int            x  = 15213;
+        unsigned short int   ux = (unsigned short) x;
+        short int            y  = -15213;
+        unsigned short int   uy = (unsigned short) y;
+
+      Resulting Value
+        No change in bit representation
+          nonnegative values unchanged
+            ux = 15213
+          negative values change into (large) positive values
+            uy = 50323
+          because conversion between signed and unsigned is so confusing
+          languages like java only permit signed values
+
+          uy =| y         y >= 0
+              | y^2 + 2   y < 0
+
+      Constants
+        By default are considered to be signed integers
+        Unsigned if you have "U" as suffix
+
+        0U, 24249672590
+
+        Casting
+          int tx, ty;
+          unsigned int ux, uy;
+        // Explicit Casting
+          tx = (int) ux;
+          uy = (unsigned) ty;
+        // Implicit Casting
+          tx = ux;
+          uy = ty;
+
+        If mix unsigned and signed in single expression
+          signed values implicitly cast to unsigned
+          this includes comparison operations'
+
+      Why should I use Unsigned?
+        easy to make mistakes
+          unsigned int i;
+          for (i = cnt-2; i > -1; i--)
+            a[i] += a[i+1];
+
+          C compliers on some machines generate less efficient code
+            unsigned int i;
+            for(i = 1; i < cnt; i++)
+              a[i] += a[i-1];
+
+          Do Use in Limited Cases
+            When representing a set of Boolean flags with bits
+            When representing addresses (IP or memory, always >=0)
+            When preforming modular & multiprecision arithmetic, etc
+
+          Do use when Need Extra Bit's Worth of Range
+            Working right up to limit of word size
+
+          Sign Extension
+            Given a w-bit signed integer x
+            Convert it to a w+k-bit integer with the same value
+            Make copies of sign bit
+
+      Power of 2 Multiply with shift
+        u << k gives u * 2^k
+
+        Any integer can be expressed as a sum of powers of 2
+
+        A product of two integers can therefore be expressed as an integer times a sum of powers of 2
+
+        ex:
+          6* 37
+          = 6* 2^5 + 6* 2^2 + 6* 2^0
+          = 6<<5 + 6<<2 + 6
+
+
+10000000000000000000000000000000
+10000000000000000000000000000000

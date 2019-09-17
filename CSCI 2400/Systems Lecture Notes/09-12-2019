@@ -1,0 +1,92 @@
+9/12/2019
+Systems Lecture Notes
+Day 6
+
+Focusing on Intel x86 Processors
+  Totally dominate PC computer market
+  Complex instruction set computer (CISC)
+    Many different instructions with many different formats
+      But, only small subset encountered with Linux programs
+    Hard to match performance of Reduced Instruction Set (RICS)
+
+Assembly Language
+  Specific to a CPU
+  (What we learn will be specific to the x86 family of processors)
+  ARM Processors will have a different assembly language, etc
+  32bit processors will have different assembly language than 64 bit processors
+
+  Different styles for x86-64 assembly code
+    we will be using gcc/GNU-style assembly language
+    There is also the intel style of assembly language
+      Example: switches order of source and destination compared to gcc/GNU
+
+  Programmer-Visible State
+    EIO Program Counter
+      Address of next instruction
+    Register File
+      Heavily used program data
+    Condition Codes
+      Store status information about most recent arithmetic operation
+    Memory
+      Byte Addressable array
+      Code, user data, (some) OS Data
+      Includes call stack used to support procedures
+
+    Turning C into Object Code
+      Code files p1.c p2.c
+      Compile with gcc -0g p1.c p2.c -o p
+        Use basic optimizations (-Og) [New to recent versions of gcc]
+        Put Resulting binary in file p
+
+      Text - C Program (p1.c)
+        Compiler (gcc -Og -S)
+      Text - ASM program (p1.s)
+        Assembler (gcc or as)
+      Binary - Object program (p1.o)
+        Linker (gcc or ld)
+      Binary - Executable program (p) <- Static libraries (.a)
+
+    x86-64 Integer Registers
+      Can reference low order bytes (also low-order 1 & 2 bytes)
+
+    Moving Data
+      moveq Source, Dest
+        Move 8-byte ("quad") word from Source to dest
+        This is a copy operation, so a copy remains in the source
+      Operand Types
+        Immediate: Constand integer data
+          Example: $0x400, $-533
+
+    Moving different word sizes
+      moveq %rax, %rdx
+        move "quad" word (8 bytes) from register %rax to Register %rdx
+      movel %eax, %edx
+        move "long" word (4 bytes)
+      movew %ax, %dx
+        move a word (2 bytes)
+      moveb %adl, %dl
+        move byte
+
+      Lots of other mov instructions
+        movb, movw, movsbw, movsbl, movswl, movzbw, movzbl, movzwl
+
+        Does the width of a C 'long' int == an x86 assembly language 'long' word?
+          Yes, they're both 32 bits or 4 bytes on a 32 bit x86 machine
+          No, a C 'long' is 8 bytes wide on a 64 bit machine
+
+      Examples
+        Moving the value in one register to another
+        --
+        --
+
+    movq Operand Combinations
+                      Source | DEST | Src,DEst | C analog
+      movq Imm reg    movq $0x4, %rax     temp = 0x4;
+               mem    movq $-147,(%rax)   *p = -147;
+           Reg reg    movq %rax, rdx      temp2 = temp1;
+               mem    movq %rax,(%rdx)    *p = temp;
+           mem reg    movq (%rax),%rdx    temp = *p;
+
+      Cannot Do memory-memory transfers with single instruction
+        can't do : movq (%rax), (%rdx)    This bypasses the CPU and thereby doesn't work
+        

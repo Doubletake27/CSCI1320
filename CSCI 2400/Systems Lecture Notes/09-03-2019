@@ -1,0 +1,240 @@
+9/03/2019
+Systems Lecture Notes
+Day 2
+
+
+Bit Masking
+  0xF0
+
+  0x69 & 0x80 --> 0x00
+
+Logical vs Bitwise Operations in C
+  && (AND)
+  || (OR)
+  ! (NOT or "bang")
+
+  View 0 as "false"
+  Anything nonzero as "True"
+  Always return 0 or 1
+
+  Example
+    int x,y,z;
+    ....
+    if(!((x==0)&&(x>y)) || (z<256)){
+      ...
+      z = !(x&y) | z;
+    }
+
+    Logical
+      !0x41  --> 0x00
+        0x41 --> 0xBE
+        ~01000001 --> 10111110
+
+      !0x00  --> 0x01
+        0x00 --> 0xFF
+        ~00000000 --> 11111111
+
+      !!0x41 --> 0x01
+      0x69 && 0x55 --> 0x01
+      0x69 || 0x55 --> 0x01
+
+    Logical
+      if(p && *P) //Avoids null pointer access
+        dereferencing a null pointer causes an error in C
+        so use if() statements above to test if pointer is null before it is dereferenced
+        Shorthand for: if((p!==0)&&((*p)!=0)
+        evaluated left to right
+
+    Example code:
+      int x,y;
+
+      if(x){...do1();...}
+      if(!y){...do2();...}
+
+    Bit Shifting Operations
+      Useful for multiplication and division by powers of 2
+
+      Left shift:  x << y
+        x left shifted by y bits
+        throw away extra bits on left
+        fill with 0's on right
+
+        x = 0110 = 6
+        x<<1 = 1100 = 12 = 2*6
+                  ^0 is inserted on the end
+
+      Right shift:  x >> y
+        x right shifted by y bits
+        Logical shift
+          fill with 0's on the left
+        Arithmetic shift
+          replicate most significant bit on left
+          useful with two's complement integer representations
+
+        y >> 1.
+        y = 1100 = 12
+        y>>1 = 0110 = 6 = 12/2
+               ^insert 0 (logical sift)
+
+      Shift Operations in C
+        If your word x is signed, then it is not defined in C whether x>>y will do an arithmetic or logical right shift on x
+          However most implementations assume that a right shift on a signed quantity is an arithmetic right shift
+        If your word is unsigned, then x>>y will do a logical right shift on x
+          Example: if x is declared as an unsigned int, then x>>y will do a logical right shift on x by y bits
+
+        Essentially
+          int -> arithmetic right shift
+          unsingned int -> logical right shift
+
+    Encoding Integers
+      Signed and unsigned integers
+        Lets start with unsigned integers, assuming only 4 bits (16 values)
+        Standard binary numbers
+
+      Representing Negative integers
+        Simplest approach is to use the most significant bit as the sign
+          1 = negative, 0 = positive
+          example
+            0100 = +4
+            1100 = -4
+          This approach is called sign-magnitude
+          unfortunatley, this means we have both
+            a Positive zero (0000 = +0) AND
+            a Negative zero (1000 = -0)
+
+        Two's Complement
+          the Most significant bit instead is treated as (-2)^x
+            the rest are treated as positive
+          4 bit signed integers (-8 to +7)
+          4 bit unsigned integers (0 to 15)
+
+          Decimal b(sub w-1) * (-(2^(w-1))) + sum ________
+
+        C short 2 bytes long
+        Decimal  | Hex | Binary
+        15213     3B 6D  00111011 01101101
+        -15213    C4 93  11000100 10010011
+
+        Last digit is always the same
+        Negative x (2s complement)
+        -x = ~x + 1
+
+        Unsigned Values
+          Umin = 0
+          Umax = 2^W -1
+        Two's Complement Values
+          TMin = -2^(w-1)
+          TMax = 2^(w-1) - 1
+        Other Values
+          -1 = 1111....
+
+        W = 16
+          UMax = 65535
+          0-
+          0-
+
+    Unsigned integer addition
+      for example
+        4-bit addition
+          6 + 7
+          Decimal
+            1
+            0 6
+          + 0 7
+            ---
+            1 3
+
+          Unsigned Binary
+          1 1 0
+          0 1 1 0
+        + 0 1 1 1
+          -------
+          1 1 0 1
+
+          13 + 5
+          0
+          1 3
+          0 5
+          ---
+          1 8
+
+        1 1 0 1;lsadjfioasdjfas
+        aosdfpaosdjfia
+        fasdfa
+      ----------------
+      Check if the final carry bit is 1
+
+      S = UAdd(sub w)(U,v) = (u+v) mod 2^w
+
+      2s Compliment
+      -2
+      +3
+      --
+       1
+
+      1110
+       1110
+       0011
+      -----
+       0001
+
+       ^ Here there is a carry but it works out well because it got dropped
+
+       -5
+       +3
+       --
+       -2
+
+       011
+       1011
+       0011
+       ----
+       1110
+
+       ^ Works out well here too
+
+       -4
+       -3
+       --
+       -7
+
+       1100
+        1100
+        1101
+        ----
+        1001
+
+        ^ Still works
+
+       6
+      +3
+      --
+       9
+
+       110 (Carry)
+       0110
+       0011
+       ----
+       1001 =-7
+
+       _____________-
+
+       -7
+       -3
+       --
+       10
+
+       1001
+        1001
+        1101
+        ----
+        0110 < BAD
+
+      ________
+
+      Rule for 2s Compliment overflow
+         if the sign of the operands are the same and the sum is the opposite sign...
+
+      TAdd and UAdd have Identical Bit-Level Behavior
+
+      Wraps around 

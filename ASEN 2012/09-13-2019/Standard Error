@@ -1,0 +1,12 @@
+Standard Error of the mean and weighted Sums
+  SEM of sigma x
+  =XBar / sqrt(N) - This is for class
+    16.0 +/- 0.7971x10^-20
+
+Weighted Average
+  sum (Wi * xi )/sigma(Wi)
+    
+
+
+Error Uncertainty Propagation
+  Calculate uncertainty from plane problem

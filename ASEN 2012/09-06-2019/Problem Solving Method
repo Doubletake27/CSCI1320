@@ -1,0 +1,43 @@
+Ten Steps
+  1)  Understand the Purpose of the problem
+  2)  Collect the information you know
+  3)  Determine what you are required to find
+  4)  Simplify the problem by making appropriate assumptions
+  5)  Draw a sketch of the problem and label any necessary variables
+  6)  Determine which fundamental principles can be applied to the problem
+  7)  Consider alternate approaches that may also be applied before deciding on how to proceed
+  8)  Develop a step-by-step process to solve the problem
+  9)  If you are using a computer program, you should check if it functions properly with hand calculations and/or simpler versions of the problem
+  10) Perform a "reality check" on the solution (i.e. does the solution make sense?)
+
+Bisection Method for Root Finding
+  1) Purpose: Locate the Root of a Line
+  2) Given:
+     Equation of the Line
+     Starting interval values
+  3) Find: x value for which y = 0
+  4) Assume:
+     There is only 1 root
+     You need to be within a precision of 0.1x
+     The line is continuous
+  5) Sketch a rough idea of the line
+  6) Equations / Fundamental Principles
+     If a line is continuous with only one root and
+        two x values both return positive y values
+          Then the root does not lie between them
+        two x values both return negative y values
+          Then the root does not lie between them
+        two x values return a negative and a positive y value
+          Then the root DOES lie between them
+  7) You could also set the equation equal to 0 and solve
+  8) Starting with the end points as points A and B
+      Find the x midpoint (m)
+      Determine the corresponding y the value of the midpoint
+      If the y value has the same sign as Point B
+        Replace B with m and repeat
+      If the y value has the opposite sign as Point B
+        Replace A with m and repeat
+      Else if the y value is 0
+        You are done
+  9) Plug in your final answer to the equation by hand to verify it was correct
+  10) Does the solution fall between starting points A and B?

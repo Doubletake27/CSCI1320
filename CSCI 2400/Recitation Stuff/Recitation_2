@@ -1,0 +1,57 @@
+9/4/2019
+Recitation 2
+Do the fucking data lab
+
+2) getByte
+*getByte - Extract byet n from word x
+*Bytes numbered from 0(LSB) to 3 (MSB)
+Examples: getByte(0x12345678,1) = 0x56
+Legal ops: ! ~ & ^ | + << >>
+Max Ops: 6
+Rating: 2
+
+Hint:
+
+Define imask, what is mask? How to set it? Ex: if you want number to be a byte then mask is 0xff, if you want number to be 16 bits, then mask 0xffff.
+0xf-> 1111 hence it should give you same number
+
+>>/<< should help you to get byte to a location
+  << shift means multiply
+    and
+  >> shift means divide
+
+3) Logical Shift
+/*
+* logicalShift - shift x to the right by n, using a logical shift
+
+4) bitCount
+  bitCount - Returns count of number of 1's in word
+
+6) tmin
+  tmin - return minimum two's complement integer
+  in a 32 bit system theleast number is -2(pow) 31
+
+7) FitsBits
+  FitsBits - return 1 if x can be represented as an n-bit, wo's complement integer
+  1<=n<=32
+
+  Hint- Obtain the given n bits rom the x using shift operators and set the rest bits to zero
+        you must use ^ to check if any two numbers are the same or not
+8) Divpwr2
+  divpwr2- compute x/(2^n) for 0<=n<=30
+
+9) Negate
+  negate - return -x
+  Hint:
+    -x = ~x+1
+
+10) is Positive
+  return 1 if x>0, return 0 otherwise
+  you just have to check if MSB is zero or one
+    zero is positive
+
+11) isLessOrEqual
+  isLessOrEqual - if x<= y then return 1, else return 0
+  hint: you should observe the MSB sign bit and then take decision based on if both numbers are positive or negative
+
+Extra Credit - do it - its just harder from here onward

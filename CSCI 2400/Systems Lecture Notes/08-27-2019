@@ -1,3 +1,21 @@
 8/27/2019
 Systems Lecture Notes
-Day 1 
+Day 1
+
+Average time expected to spend - 5-10+ hours a week
+
+high level language -> pre-processor/compiler -> assembly code -> assembler and linker -> binary code /data -> memory
+
+Learn C - We aren't using C++
+
+------ Chapter 1
+
+Hardware Organization of a Computer System
+
+Logic:
+  And, Or, NOT, XOR, >, < ...
+Arithmetic
+  Add, Subtract...
+
+
+Main Memory - DRAM (Dynamic Random Access Memory)

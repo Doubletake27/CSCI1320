@@ -1,0 +1,185 @@
+8/29/2019
+Systems Lecture Notes
+Day 2
+
+Topics
+  Why bits?
+  Binary Logic
+  Representing information as bits
+
+Assignments
+  Data Lab Due Friday Sept 13 by 11:55PM
+  Voluntary C assessment quiz
+  Chap 2 Data Quiz will be released soon, due in about a week
+
+
+Binary Representation
+  0101
+    0 * 2^0 (1)
+    1 * 2^1 (2)
+    0 * 2^2 (4)
+    1 * 2^3 (8)
+
+  bit - binary digit
+  Easy for digital transistor circuits to represent
+   (Don't need 10 different voltage levels)
+  easy to implement digital logic operators
+
+Digital logic via Boolean algebra
+  Developed by George Boole in the 19th century
+
+  AND "&"
+    Output Y = A & B
+
+    & | 0 1
+    --------
+    0 | 0 0
+    1 | 0 1
+
+  OR "|"
+    Output Y = A | B
+
+    | | 0 1
+    --------
+    0 | 0 1
+    1 | 1 1
+
+  NOT "~"
+    Output Y = ~ A
+
+    ~ | 0 1
+    --------
+    X | 1 0
+
+  XOR "^"
+    Output Y = A ^ B
+
+    ^ | 0 1
+    --------
+    0 | 0 1
+    1 | 1 0
+
+  NAND "~&"
+    Output Y = ~ ( A & B )
+
+    ~&| 0 1
+    --------
+    0 | 1 1
+    1 | 1 0
+
+
+Implementing Digital Logic using Transistors
+  PMOS & NMOS
+  Learn the Shapes of the logic gates
+
+Can build Arithmetic with these gates
+
+    A B | SUM | CARRY
+    0 0 |  0  |   0
+    0 1 |  1  |   0
+    1 0 |  1  |   0
+    1 1 |  0  |   1
+          XOR    AND
+
+    One-bit Half Adder Circuit
+    8 Bit Full Adder by adding 8 one bit half adders together
+
+Base 2 to Decimal Converson
+  89 Base 10
+    64 | 89 - 64 = 25
+    16 | 25 - 16 = 9
+     8 | 9 - 8 = 1
+     1 | 1 - 1 = 0
+
+    1 + 8 + 16 + 64
+    0 1 0 1 1 0 0 1
+
+Hexadecimal Representation
+  HEX -  0123456789ABCDEF
+    A = 10
+    B = 11
+    C = 12
+    D = 13
+    E = 14
+    F = 15
+
+  0xAE328A19
+    '0x' acts as an indication that the number is Hexadecimal
+    capitalization doesn't matter
+
+Byte = 8 Bits
+  Binary: 00000000 to 11111111
+  Decimal: 0 to 255
+  Hex: 00 to FF
+
+  Memory addresses done by bytes
+    Start from 0
+
+Each CPU has "Word Size"
+  Early microprocessors were 8-bit CPUs.
+  Today many embedded microcontrollers are still 8-bit
+
+  Intel evolved to 16-bit processers called these "words"
+    assembly instructions followed by "w" stands for a 16 bit word, implies 16-bit values are added or moved
+  Machines became 32 bits so
+    assembly uses "1" for long
+  64 Bit CPUs
+    uses "q" as suffix
+
+Sizes of C Objects (in Bytes)
+  C Data Type | Intel_x634 | Typical 32 | Intel_x32
+    int | 4 | 4 | 4
+    long int | 8 | 4 | 4
+    char | 1 | 1 | 1
+    short | 2 | 2 | 2
+    float | 4 | 4 | 4
+    double | 8 | 8 | 8
+    long double | 10/16 | 8 | 10/12
+    char* | 8 | 4 | 4
+
+Address of a dataType is the address of the lowest byte
+
+Pointers in C
+  int x;
+  int *p = &x;
+
+  int * p declares the variable p to be a pointer to an integer
+    note this differs from the declaration "int p" which would just declare p to be an integer, not a pointer to an integer
+
+  &x grabs the address of x
+  ---
+  int x;
+  int *p = &x;
+  int y = *p; // Retrieves the value of whatever p is pointing to and assigns it to y
+  ---
+  char c;
+  int x;
+  double d;
+  char *p1 = &c;
+  int *p2 = &x;
+  double *p3 = &d;
+
+  the pointers are all the same width (4 bytes - IA32)
+
+
+Relations Between Logic Operations
+  DeMorgan's Laws
+    Express & in terms of | and vice-versa
+      A & B = ~ (~A | ~B)
+      A | B = ~ (~A & ~B)
+      A ^
+      A
+
+  General Boolean Algebras
+    Operate on Bit Vectors
+
+  Masking
+    Define a mask = 00000100
+    Then compute N & mask, and right shift it by 3
+      ie perform (N & mask) >> 3
+
+Examples
+  ~0x41      -> 0xBE
+  0100 0001  -> 1011 1110
+
+  
