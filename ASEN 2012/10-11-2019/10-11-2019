@@ -1,0 +1,19 @@
+Numerical Integration
+  Midpoint Rule
+  Trapezoid Rule (try trapz)
+  Simpson's Rule
+  Initial value problem
+
+  vout = alpha * h
+    where alpha = 1.5e6 ft^2 / day
+    vin = 2e^7 ft^3 /day
+
+    use delta t = 7 days, 4 days, 1 day, and 0.5 days
+
+    find if it stabilizes
+
+    [v, dVdh] = get_Volume(h,L)
+    h(t=0) = 20ft
+
+    Does h stabilize, if so , at what value?
+    which delta t value leads the most accurate result.

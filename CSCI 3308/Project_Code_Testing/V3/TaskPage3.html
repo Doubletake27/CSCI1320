@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Task Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="TaskPageScript3.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body onload="loadTaskPage(1,1)">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Campus Odyssey</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Leaderboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Challenge Feed</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Rules</a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" href="#">Info</a> -->
+          <a type="button" class="nav-link" data-toggle="modal" data-target="#infoModal">Info</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End of Navbar -->
+  <!-- Score Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Completed</th>
+        <th scope="col">Score</th>
+        <th scope="col">Rank</th>
+        <th scope="col">Remaining</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="completedTasks">xx/XXX</td>
+        <td id="score">XX</td>
+        <td id="rank">x/XX</td>
+        <td id="timeRemaining">Xh XXm</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- End Score Table -->
+  <!-- Category Accordian -->
+  <div class="accordion" id="categoryAccordion">
+    <!-- Category 1 -->
+    <div class="card">
+      <div class="card-header bg-info" id="category01Head">
+        <h2 class="mb-0">
+          <button class="btn text-white btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#catCollapse01" aria-expanded="false" aria-controls="catCollapse01">
+            <!-- Category 1 Title -->
+            Category 1 Title
+            <span class="badge badge-secondary">XX/YY</span>
+            <!-- End Category 1 Title -->
+          </button>
+        </h2>
+      </div>
+      <div id="catCollapse01" class="collapse" aria-labelledby="category01Head" data-parent="#categoryAccordion">
+        <div class="card-body">
+          <!-- Category 1 Task Accordian -->
+
+          <div class="accordion" id="accordionExample">
+            <!-- Task 1 -->
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Task 1 Title
+                    <span class="badge badge-info">Pts</span>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <!-- Task 1 Contents  -->
+                    <div class="alert alert-secondary" role="alert">
+                      This is the description of the task.
+                    </div>
+                    <!-- Submit Task Button-->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#submitModal">
+                      Submit Task
+                    </button>
+                    <!-- End I mage Upload Button -->
+                    <br/>
+                    <!-- Tags -->
+                    <div id="T001Tags">
+
+                    </div>
+                    <!-- <div id="T001Tags">
+                      <span class="badge badge-secondary">Tag 1</span>
+                      <span class="badge badge-secondary">Tag 2</span>
+                    </div> -->
+                    <!-- End Tags -->
+
+                  <!-- End Task 1 Contents  -->
+                </div>
+              </div>
+            </div>
+            <!-- Task 2  -->
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Task 2 Title
+                    <span class="badge badge-info">Pts</span>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <!-- Task 2 Contents -->
+                  Some placeholder content for the second accordion panel. This panel is hidden by default.
+                  <!-- End Task 2 Contents  -->
+                </div>
+              </div>
+            </div>
+            <!-- Task 3 -->
+            <div class="card bg-secondary"> <!-- bg-secondary Changes color and indicates completion-->
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Task 3 Title
+                    <span class="badge badge-info">Pts</span>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  <!-- Task 3 Contents -->
+                  And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+                  <!-- End Task 3 Contents -->
+                </div>
+              </div>
+            </div>
+            <!-- End Task List -->
+          </div>
+
+          <!-- End Category 1 Task Accordian -->
+        </div>
+      </div>
+    </div>
+    <!-- End Category 1 -->
+
+  </div>
+  <!-- End of Category Accordian -->
+
+  <!-- Submit Task Modal -->
+  <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="submitModalLabel">
+            Task Title
+            <span class="badge bg-success">pts</span>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- This is where the More info goes -->
+            <!-- Task Description -->
+            <div class="alert alert-secondary" role="alert">
+              This is the description of the task.
+            </div>
+            <!-- Form Submission -->
+            <form>
+              <!-- File Upload -->
+              <div class="form-group">
+                <!--label for="fileSubmit">Submit Photo</label-->
+                <input type="file" class="form-control-file" id="fileSubmit">
+              </div>
+              <!-- File Description -->
+              <div class="form-group">
+                <!--label for="exampleFormControlTextarea1">Example textarea</label-->
+                <textarea class="form-control" id="taskComment" rows="3" placeholder="Description"></textarea>
+              </div>
+            </form>
+          <!-- Tasks -->
+          <div>
+            <span class="badge badge-primary">Tag 1</span>
+            <span class="badge badge-primary">Tag 2</span>
+          </div>
+          <!-- End Modal Body -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="submitTask(1)">Submit Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Image Upload Modal -->
+
+  <!-- Info Modal  -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="infoModalLabel">Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- From info.html -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Location Agnostic -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">LA</span>
+                </td>
+                <td>Location Agnostic: Doesn't take place in a specific location.</td>
+              </tr>
+              <!-- Outdoor -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">Outdoor</span>
+                </td>
+                <td>Challenge takes place outdoors.</td>
+              </tr>
+              <!-- COVID -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">COVID</span>
+                </td>
+                <td>Challenge is COVID safe. No interaction with outside people or groups required.</td>
+              </tr>
+              <!-- Food -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">Food</span>
+                </td>
+                <td>Challenge involves food or eating.</td>
+              </tr>
+              <!-- Physical -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">Physcial</span>
+                </td>
+                <td>Challenge involves physcal activity.</td>
+              </tr>
+              <!-- Geo -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">Geo</span>
+                </td>
+                <td>Challenge includes a location based (geotagged) hint which can be revealed for a reduced score.</td>
+              </tr>
+              <!-- Community Service -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">Service</span>
+                </td>
+                <td>Challenge involves community service.</td>
+              </tr>
+              <!-- College -->
+              <tr>
+                <td>
+                  <span class="badge badge-primary">College</span>
+                </td>
+                <td>Challenge is college related.</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!-- End from info.html -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Info Modal -->
+</body>
+</html>

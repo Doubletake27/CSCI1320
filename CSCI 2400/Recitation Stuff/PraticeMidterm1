@@ -1,0 +1,27 @@
+Last question Fall 2017
+1a) 26?
+1b) 1 - Actually 4?
+1c) 5
+1d) 4(addresses) * 8(bytes per spot)
+1e)
+----
+Actual
+a) 16
+b) 1
+c) 32
+d) 120
+e) 12
+
+
+5--
+a) %edx
+b) %rax
+c) .L3
+d) %eax
+
+
+4--
+a) jle
+b) .L1
+c) %rax
+d) jne

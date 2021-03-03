@@ -1,0 +1,26 @@
+Calorimeter
+  A device used to determine the specific heat capacity of a material.
+  Uses the 1st law of Thermodynamics applied to an isolate system
+
+Specific heat capacity
+  The amount of energy needed to raise a unit mass of a material by
+  one unit of temperature
+
+In the isolate system
+  Delta U = 0
+  U2 - U1 = 0
+
+  (Mc*Uc2 + Ms*Us2) - (Mc*Uc1 + Ms*Us1) = 0
+    Mc = Mass calorimeter
+    Ms = Mass of Sample
+
+    U = cT = Specific Heat * Temperature
+
+    Cs = (Mc Cc (T2 - T0) )/(Ms (T1-T2 ))
+
+    Linear fit initial data up to when hot sample is added to generate initial temp
+      least squares line
+
+    Fit a line to the Average of Th and TL and advance upward
+
+    Monte carlo error simulation?

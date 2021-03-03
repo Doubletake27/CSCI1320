@@ -1,0 +1,43 @@
+9/26/2019
+Systems Lecture Notes
+Day 12
+
+gdb commands
+  next
+  step
+  continue
+  finish
+  tui enable / disable
+  where
+  break (Location)
+  break exit, function_one filename:linenumber
+  list
+  print variable (p)
+    print/x   prints variable in hex
+    print/t   prints variable in binary
+    print/d   prints variable in decimal
+    print/c   prints variable as character
+    print/o   prints variable as octal number
+  display
+
+  x/x $12 will pull the data stored at memory location 12
+  x/wx word
+  x/hx hex
+  x/bx byte
+
+  p &function   - Prints function addresslis
+  set variable = value
+
+  run till error then run where
+  can use variables already pulled with $
+
+---
+  info registers -- prints all register values
+  x/i $pc -- tells next instruction
+  disassemble function_one -- displays commands associated with f1
+
+  si - step instruction
+
+  source gdbinit --will run all the functions in that file in gdb
+
+  set breakpoint in front of explode bomb alwayss

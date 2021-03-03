@@ -4,3 +4,145 @@ Day 7
 
 Chapter 3
   Introduction to x86 Assembly Language
+  Assembly Quiz on moodle, due next Monday
+
+
+Recap
+  16 9-byte registers in a 64-bit x86 system
+
+  1st Assembly language instruction: mov
+    can move data between registers
+    can move data between register(cpu) and memory
+
+    Syntax
+      mov src, dest
+      movq %rsi, %rdi
+      movq $0x4cf1, %rcx
+      movq %rbx, (%rax)   /// () means that its a pointer
+
+
+Example of simple addressing modes
+
+  Void swap (long *xp, long *yp){
+    long t0= *xp;
+    long t1= *yp;
+    *xp = t1;
+    *yp = t0;
+  }
+
+  Assembly
+
+    swap:
+      movq (%rdi), %rax     #t0 = *xp
+      movq (%rdx), %rdx     #t1 = *yp
+      movq %rdx, (%rdi)     #*xp = t1
+      movq %rax, (%rsi)     #*yp = t0
+      ret
+
+Indexed addressing modes
+  movq 24(%rdi, %rsi, 4), %rax
+    move a quad word (8bytes) from the memory location
+    %rdi + 4*%rsi + 24 to register % rax
+
+  Special Cases
+    (Rb, Ri)          Mem[Reg[Rb]+Reg[Ri]]
+      movq (%rax,%rbx), %rdx
+
+    D(Rb,Ri)
+      movq %rdx, 12(%rax,%rbx)
+
+    (Rb,Ri,S)
+      movq (%rax,%rbx,8), %rdx
+
+    (Rb)
+      movq %rdx, (%rax)
+
+    (,Ri,S)
+      movq %rsi, (,%rdx,4)
+
+  Address Computation Examples
+    0x8(%rdx)  = 0xf000 + 0x8
+    (%rdx, %rcx) = 0xf000 + 0x100
+    (%rdx,%rcx,4) = 0xf000 + 4*0x100
+    0x80(,%rdx,2) = 2*0xf00 + 0x80
+
+  Arithmetica Operators
+    term Src, Dest
+
+    addq
+    subq
+    imulq
+    salq
+    sarq
+    shrq
+    xorq
+    andq
+    orq
+
+    Watch out for argument order
+    no distinction between signed and unsigned
+
+    One operand instructions
+      term Dest
+
+      incq
+      decq
+      negq
+      notq
+
+    lea instruction for Address Computation
+      lea = "Load Effective Address"
+        leaq Src, Dest
+        src is indexed address mode expression
+        Set Dest (must be register) to value denoted by expression
+
+        example: leaq 10(%rdx,%rdx,4), %rax
+
+        Stores pointer value into rax
+
+  Condition Codes
+    CF, ZF, SF, OF
+    CF - Cary Flag (if overflow from a+b (unsigned overflow))
+    ZF - Zero Flag (if t==0)
+    SF - Sign Flag (if < 0 as signed)
+    OF - Overflow Flag (if t's complement (signed overflow))
+
+    Explicit Setting:
+      Compare (cmp)
+        cmpq src2, src1   #a-b, Doesn't set destination
+
+      Reading Condition Codes
+        setX dest
+
+        sete
+        setne
+        sets
+        setns
+        setg
+        setge
+        setl
+        setle
+
+    Conditional jumps to different parts of code, depending on condition codes
+      Typically associated with compare above them
+
+    Conditional example
+      long absdiff(long x, long y){
+        long result;
+        if(x>y)
+          result = x-y;
+        else
+          result = y-x;
+        return result;
+      }
+
+      absdiff:
+        cmpq  %rsi, %rdi
+        jle   .L4
+        movq  %rdi, %rax
+        subq  %rsi, %rax
+        ret
+      .L4:
+        movq  %rsi, %rax
+        subq  %rdi, %rax
+        ret

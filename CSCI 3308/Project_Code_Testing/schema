@@ -1,0 +1,33 @@
+Event Database
+  Event ID
+  Event Name
+  Task ID List
+
+Task
+  ID [Primary Key] (Number)
+  Category (String)
+  Tags (String Array)
+  Title (String)
+  Description (Long String)
+  Points (Number)
+
+User
+  User ID [Primary Key]
+  First Name
+  Last Name
+  Event Name
+
+
+Task Submission
+  Submission ID [Primary Key]
+    Will have to figure out how to handle multiple concurrent submissions
+  Event ID
+  Task ID
+  Image
+  Description
+
+Team Database
+  Team ID [Primary Key]
+  Event ID
+  Team Name
+  User ID (int array)

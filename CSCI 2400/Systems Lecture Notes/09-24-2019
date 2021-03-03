@@ -1,0 +1,21 @@
+9/24/2019
+Systems Lecture Notes
+Day 9
+
+Function Calls and the Stack pointer
+
+Bomb Lab due Friday Oct 4 by 11:55
+
+
+Call Stack
+  Before each jump to the function code
+    store the return address in special memory location
+
+    %rsp    - Register Stack Pointer
+    Stores the pointer to the top of the stack
+
+    Before each function Call
+      push parameters onto stack
+      push return address onto the stack
+      push / allocate local variables on the stack
+      

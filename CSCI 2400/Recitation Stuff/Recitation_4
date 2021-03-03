@@ -1,0 +1,38 @@
+9/25/2019
+Recitation 4
+
+Bomb Lab: Due October, 4 2019
+  Phase 4 is a special phase that triggers the extra credit
+
+Assembly Language Instructions Review
+  mov %rsi, %rdi  - Copies address rsi into rdi
+  mov (%rsi), %rdi - Copies the value of rsi into rdi
+  mov 8(%rsi), %rdi - Copies 8 + the value of rsi into rdi
+  mov 24(%rax,%rsi,4), %rdi - R(rax) + R(Rsi)x4 + 24
+
+  q(quad, 64 bits)
+  l(long, 32 bits)
+  w(word, 16 bits)
+  b(byte, 8  bits)
+
+  lea - loads just the address rather than the content from memory
+
+  lea differs from mov, in that it wouldnt get the value from the address just the address
+
+  add
+  imul
+  sar - shift right
+  and
+  Inc - increment
+  sal - shift left
+  xor
+  or
+  dec - decrement
+  not
+  neg
+
+Try the online disassembler
+  upload the bomb executable
+  use the graph view
+
+  cmpl - compare line

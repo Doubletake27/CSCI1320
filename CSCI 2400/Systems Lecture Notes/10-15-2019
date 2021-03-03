@@ -1,0 +1,18 @@
+10/15/2019
+Systems Lecture Notes
+Day 15
+
+Floating Point Introduction
+Attack Lab - Due 10/23
+
+IEEE Standard 754
+  Everything to the right of the decimal represents negative powers of two
+  single precision (32 bits total)
+    8 exp bits, 23 frac bits
+  double precision (64 bits total)
+    11 exp bits, 52 frac bits
+  extended precision (80 total)
+    15 exp bits, 63 frac bits
+  quad precision (128 bits total)
+    15 exp, 112 frac
+  one more but i didnt get it

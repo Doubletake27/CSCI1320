@@ -1,0 +1,58 @@
+[
+ {
+   "ID": 1,
+   "Category": "College",
+   "Tags": "\"Food\"",
+   "Title": "Dining Hall Friend",
+   "Descripton": "Take a photo with someone currently working at a dining hall on campus",
+   "Points": 4
+ },
+ {
+   "ID": 2,
+   "Category": "College",
+   "Tags": "\"COVID\",\"Outdoor\"",
+   "Title": "Beautiful Campus",
+   "Descripton": "Take a picture of a member of your group in what you consider to be the prettiest part of the campus",
+   "Points": 4
+ },
+ {
+   "ID": 3,
+   "Category": "College",
+   "Tags": "",
+   "Title": "RA on Duty",
+   "Descripton": "Take a photo with an RA currently wearing a lanyard indicating that they are on duty",
+   "Points": 3
+ },
+ {
+   "ID": 4,
+   "Category": "Physical",
+   "Tags": "\"Physical\", \"COVID\",\"Geotagged\"",
+   "Title": "Hike the First Flatiron",
+   "Descripton": "Hike from Chatequa Park parking lot to the top of the first flat iron and and take a photo at the top",
+   "Points": 11
+ },
+ {
+   "ID": 5,
+   "Category": "Physical",
+   "Tags": "\"Physical\",\"Outdoor\"",
+   "Title": "Do 15 jumping jacks",
+   "Descripton": "Take a photo midair of a jumping jack",
+   "Points": 2
+ },
+ {
+   "ID": 6,
+   "Category": "Physical",
+   "Tags": "\"Outdoor\",\"Physical\"",
+   "Title": "Walk around a track",
+   "Descripton": "",
+   "Points": 3
+ },
+ {
+   "ID": 7,
+   "Category": "Quirky",
+   "Tags": "\"LA\"",
+   "Title": "Honk at a Goose",
+   "Descripton": "Take a photo of yourself honking at a goose",
+   "Points": 2
+ }
+]
